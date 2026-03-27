@@ -704,13 +704,13 @@ p {
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    padding: 100px 0 24px;
+    padding: 100px 0 20px;
     text-align: center;
   }
 
   .hero > .container {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
   }
 
   .hero-content {
@@ -720,7 +720,7 @@ p {
 
   .hero-content p {
     font-size: 0.95rem;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .hero-content .btn {
@@ -738,14 +738,15 @@ p {
     right: auto;
     top: auto;
     transform: none;
-    width: 60%;
-    max-width: 240px;
+    width: 55%;
+    max-width: 220px;
     margin: 0 auto;
     z-index: 1;
+    animation: none;
   }
 
   .hero-visual .arch-img {
-    height: 260px;
+    height: 230px;
   }
 }
 
@@ -2334,7 +2335,7 @@ p {
 /* Mobile */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 52px;
+    --section-padding: 40px;
     --header-height: 64px;
   }
 
