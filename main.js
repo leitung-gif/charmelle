@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Scroll Reveal Animations ---
   const revealElements = document.querySelectorAll('.reveal');
   if (revealElements.length > 0) {
+    const isMobile = window.innerWidth <= 768;
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -135,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: isMobile ? 0.05 : 0.1,
+      rootMargin: isMobile ? '0px' : '0px 0px -50px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));

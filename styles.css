@@ -704,18 +704,33 @@ p {
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    padding: 60px 0 40px;
+    padding: 100px 0 24px;
     text-align: center;
   }
 
   .hero > .container {
-    flex-direction: column-reverse;
-    gap: 0;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .hero-content {
     max-width: 100%;
-    padding-top: 24px;
+    padding-top: 0;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px !important;
   }
 
   .hero-visual {
@@ -723,18 +738,14 @@ p {
     right: auto;
     top: auto;
     transform: none;
-    width: 65%;
-    max-width: 280px;
+    width: 60%;
+    max-width: 240px;
     margin: 0 auto;
     z-index: 1;
   }
 
   .hero-visual .arch-img {
-    height: 300px;
-  }
-
-  .hero-content {
-    padding-top: 12px;
+    height: 260px;
   }
 }
 
@@ -745,7 +756,6 @@ p {
   pointer-events: none;
   z-index: 0;
   opacity: 0.08;
-  will-change: transform;
 }
 
 .blob--gold {
@@ -831,18 +841,21 @@ p {
 }
 
 /* Hide blobs on very small screens to save performance */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .blob {
+    animation: none !important;
+    opacity: 0.05;
+  }
   .blob--lg {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   .blob--md {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
   }
   .blob--sm {
-    width: 100px;
-    height: 100px;
+    display: none;
   }
 }
 
@@ -1825,6 +1838,54 @@ p {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* --- Mobile Performance Optimizations --- */
+@media (max-width: 768px) {
+  /* Simplify hero animations on mobile */
+  .hero-content .subtitle,
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .btn,
+  .hero-visual {
+    animation-duration: 0.4s !important;
+    animation-delay: 0s !important;
+  }
+
+  /* Simpler reveal transitions on mobile */
+  .reveal {
+    transition-duration: 0.3s !important;
+    transition-delay: 0s !important;
+  }
+
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3,
+  .reveal-delay-4 {
+    transition-delay: 0s !important;
+  }
+
+  /* Optimize painting */
+  * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* No backdrop-filter on mobile - expensive */
+  .site-header.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg-primary);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* --- Keyframe Animations --- */
 @keyframes fadeInUp {
   from {
@@ -2593,15 +2654,34 @@ p {
   }
 
   /* Lightbox */
+  .lightbox-overlay {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
   .lightbox-content {
-    width: 92%;
-    max-width: 400px;
-    padding: 28px 24px;
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 20px 24px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .lightbox-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .lightbox-content .btn--large {
+    padding: 14px 20px;
+    font-size: 0.9rem;
   }
 
   .lightbox-close {
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
   }
 
   /* Page hero */
