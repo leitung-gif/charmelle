@@ -653,6 +653,11 @@ p {
   pointer-events: none;
 }
 
+.hero-visual .arch-img--overlay::after {
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent 60%, rgba(45, 36, 30, 0.25));
+}
+
 /* --- Hero Section --- */
 .hero {
   position: relative;
@@ -710,6 +715,7 @@ p {
 .hero-visual .arch-img {
   height: 520px;
   box-shadow: var(--shadow-elevated);
+  border-radius: 16px;
 }
 
 @media (max-width: 900px) {
@@ -758,6 +764,7 @@ p {
 
   .hero-visual .arch-img {
     height: 230px;
+    border-radius: 12px;
   }
 }
 
