@@ -231,26 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Unsplash Image Loading ---
-  // Replace data-unsplash attributes with real images using the Unsplash API
-  const UNSPLASH_KEY = 'QutQnlTrArq9Zx-QW-tSPTe2RSAlfQUYfuZa-7_Ichk';
-  document.querySelectorAll('img[data-unsplash]').forEach(async (img) => {
-    const query = img.dataset.unsplash;
-    const w = img.dataset.width || 800;
-    const h = img.dataset.height || 600;
-    try {
-      const response = await fetch(
-        `https://api.unsplash.com/photos/random?query=${encodeURIComponent(query)}&orientation=portrait&client_id=${UNSPLASH_KEY}`
-      );
-      const data = await response.json();
-      if (data.urls) {
-        img.src = `${data.urls.raw}&w=${w}&h=${h}&fit=crop&q=80`;
-        img.alt = data.alt_description || query;
-      }
-    } catch (e) {
-      // Fallback: use a gradient placeholder
-      img.style.background = 'linear-gradient(135deg, var(--bg-section), var(--accent-shape))';
-    }
-  });
+  // REMOVED: API key was exposed client-side. No data-unsplash elements are used.
+  // If needed, implement via a server-side proxy to protect the API key.
 
   // --- Blog Category Filter ---
   const blogFilterBtns = document.querySelectorAll('.blog-categories .filter-btn');
@@ -274,6 +256,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  }
+  // --- Cookie Consent ---
+  const cookieBanner = document.querySelector('.cookie-consent');
+  if (cookieBanner && !localStorage.getItem('charmelle-cookies')) {
+    setTimeout(() => cookieBanner.classList.add('is-visible'), 1000);
+    
+    const acceptBtn = cookieBanner.querySelector('.btn-accept');
+    const declineBtn = cookieBanner.querySelector('.btn-decline');
+    
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('charmelle-cookies', 'accepted');
+        cookieBanner.classList.remove('is-visible');
+      });
+    }
+    if (declineBtn) {
+      declineBtn.addEventListener('click', () => {
+        localStorage.setItem('charmelle-cookies', 'declined');
+        cookieBanner.classList.remove('is-visible');
+      });
+    }
   }
 
 });

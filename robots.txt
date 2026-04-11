@@ -1,0 +1,9 @@
+# Charmelle Beauty Center - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.charmelle.ch/sitemap.xml
+
+# Disallow admin/internal paths
+Disallow: /generate-favicons.ps1

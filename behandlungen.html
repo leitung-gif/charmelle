@@ -3,11 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#C5A880">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- SEO Meta Tags -->
   <title>Behandlungen | Charmelle Beauty Center Aarau - Hydra Facial, Microneedling, Wimpernlifting</title>
   <meta name="description" content="Alle Behandlungen im Überblick: Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up, Haarentfernung & mehr. Preise und Details. Jetzt buchen!">
   <meta name="keywords" content="Hydra Facial Aarau, Microneedling Preise, Wimpernlifting Aarau, Anti-Aging Behandlung, Permanent Make-Up, Haarentfernung Laser, Gesichtspflege Aarau, Kosmetik Preise">
+  <meta name="author" content="Charmelle Beauty Center GmbH">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.charmelle.ch/behandlungen">
 
@@ -17,6 +29,25 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.charmelle.ch/behandlungen">
   <meta property="og:locale" content="de_CH">
+  <meta property="og:image" content="https://www.charmelle.ch/images/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Behandlungen | Charmelle Beauty Center Aarau">
+  <meta name="twitter:description" content="Hydra Facial, Microneedling, Wimpernlifting, Permanent Make-Up und mehr. Alle Behandlungen mit Preisen.">
+  <meta name="twitter:image" content="https://www.charmelle.ch/images/logo.png">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.charmelle.ch/"},
+      {"@type": "ListItem", "position": 2, "name": "Behandlungen", "item": "https://www.charmelle.ch/behandlungen"}
+    ]
+  }
+  </script>
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
@@ -63,6 +94,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Skip Navigation -->
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
   <!-- ===== ANNOUNCEMENT MARQUEE BAR ===== -->
   <div class="announcement-bar" role="marquee" aria-label="Aktuelle Angebote">
@@ -103,6 +136,8 @@
       </button>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- ===== PAGE HERO ===== -->
   <section class="page-hero">
@@ -315,7 +350,7 @@
             </button>
             <div class="faq-answer" role="region">
               <div class="faq-answer-inner">
-                Die LPG Endermologie ist eine patentierte, nicht-invasive Technologie aus Frankreich. Sie nutzt eine motorisierte Rollenmassage, die sanft und gezielt auf das Bindegewebe einwirkt. Für das Gesicht (Face Endermologie) stimuliert sie die natürliche Kollagen- und Elastinproduktion - das Ergebnis sind straffere Konturen und ein frischeres Hautbild, ganz ohne Nadeln. Für den Körper (Body Endermologie) wirkt sie effektiv gegen Cellulite, strafft die Haut und formt die Silhouette. Wir empfehlen eine Kur von 10 Sitzungen für optimale Langzeitergebnisse.
+                Die LPG Endermologie ist eine patentierte, nicht-invasive Technologie aus Frankreich. Sie nutzt eine motorisierte Rollenmassage, die sanft und gezielt auf das Bindegewebe einwirkt. Für das Gesicht (Face Endermologie) stimuliert sie die natürliche Kollagen- und Elastinproduktion - das Ergebnis sind straffere Konturen und ein frischeres Hautbild, ganz ohne Nadeln. Für den Körper (Body Endermologie) wirkt sie effektiv gegen Cellulite, strafft die Haut und formt die Silhouette. Wir empfehlen mindestens 10 Sitzungen für optimale Langzeitergebnisse.
               </div>
             </div>
           </div>
@@ -551,7 +586,7 @@
           <!-- Brauen & Wimpern färben -->
           <div class="treatment-item reveal">
             <div class="treatment-info">
-              <h4>Brauen & Wimpern färben</h4>
+              <h4>Brauen und Wimpern färben</h4>
               <p>Definierte Brauen und intensive Wimpern - für einen wachen, ausdrucksstarken Blick auch ohne Make-Up. Kombinierbar mit Regulieren und Zupfen für die perfekte Form.</p>
               <div class="treatment-meta">
                 <span class="duration">⏱ 15–30 Min.</span>
@@ -653,6 +688,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer" id="footer">
     <div class="container">
@@ -710,6 +747,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent" role="dialog" aria-label="Cookie-Hinweis">
+    <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. <a href="kontakt.html#datenschutz">Datenschutz</a></p>
+    <div class="cookie-consent-actions">
+      <button class="btn-accept">Akzeptieren</button>
+      <button class="btn-decline">Ablehnen</button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
