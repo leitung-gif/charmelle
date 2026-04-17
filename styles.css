@@ -376,7 +376,6 @@ p {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   height: var(--header-height);
-  overflow: hidden;
   transition: all var(--transition-smooth);
 }
 
@@ -742,6 +741,16 @@ p {
 
   .header-cta .btn {
     display: none;
+  }
+
+  /* Position cart next to hamburger */
+  .header-cta {
+    order: 2;
+    gap: 8px;
+  }
+
+  .menu-toggle {
+    order: 3;
   }
 }
 
