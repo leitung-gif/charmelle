@@ -412,9 +412,11 @@ remove_action( 'wp_head', 'wp_generator' );
 // <?php echo do_shortcode('[contact-form-7 id="FORM_ID" title="Kontakt"]'); ?>
 
 // ─── Blog Import Tool (one-time use) ───
-// REMOVED auto-include. Run manually by visiting:
-// https://www.charmelle.ch/?charmelle_import_blogs=1
-// Then delete import-blogs.php after successful import.
+// Only loads when visiting: ?charmelle_import_blogs=1
+// Delete import-blogs.php from theme after successful import.
+if ( isset( $_GET['charmelle_import_blogs'] ) && file_exists( get_template_directory() . '/import-blogs.php' ) ) {
+    require_once get_template_directory() . '/import-blogs.php';
+}
 
 // ─── Page-Specific SEO Data (replaces Yoast) ───
 function charmelle_get_page_seo() {
