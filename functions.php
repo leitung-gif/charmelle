@@ -94,7 +94,7 @@ function charmelle_ga4_tracking() {
 add_action( 'wp_head', 'charmelle_ga4_tracking', 99 );
 
 // ─── WebP Image Helper ───
-// Usage in templates: <?php charmelle_img('hero-treatment', 'Alt text', 'eager', '580', '520'); ?>
+// Usage in templates: charmelle_img('hero-treatment', 'Alt text', 'eager', '580', '520');
 function charmelle_img( $name, $alt = '', $loading = 'lazy', $width = '', $height = '', $class = '' ) {
     $t = get_template_directory_uri() . '/images/';
     // Determine original extension
@@ -435,7 +435,7 @@ remove_action( 'wp_head', 'wp_generator' );
 
 // ─── Contact Form 7 Support (if installed) ───
 // The contact form shortcode can be placed in page-kontakt.php using:
-// <?php echo do_shortcode('[contact-form-7 id="FORM_ID" title="Kontakt"]'); ?>
+// echo do_shortcode('[contact-form-7 id="FORM_ID" title="Kontakt"]');
 
 // ─── Blog Import Tool (one-time use) ───
 // Only loads when visiting: ?charmelle_import_blogs=1
