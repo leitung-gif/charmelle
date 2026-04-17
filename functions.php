@@ -27,6 +27,48 @@ function charmelle_theme_setup() {
 }
 add_action( 'after_setup_theme', 'charmelle_theme_setup' );
 
+// ─── Auto-configure Reading Settings (runs once) ───
+function charmelle_configure_reading_settings() {
+    if ( get_option( 'charmelle_reading_configured' ) ) return;
+
+    // Find or create the "Blog" page
+    $blog_page = get_page_by_path( 'blog' );
+    if ( ! $blog_page ) {
+        $blog_page_id = wp_insert_post( array(
+            'post_title'  => 'Blog',
+            'post_name'   => 'blog',
+            'post_status' => 'publish',
+            'post_type'   => 'page',
+        ) );
+    } else {
+        $blog_page_id = $blog_page->ID;
+    }
+
+    // Find the front page
+    $front_page = get_page_by_path( 'home' );
+    if ( ! $front_page ) {
+        // Try to find any page using the front-page template
+        $pages = get_pages();
+        foreach ( $pages as $p ) {
+            if ( get_page_template_slug( $p->ID ) === 'front-page.php' ) {
+                $front_page = $p;
+                break;
+            }
+        }
+    }
+
+    // Set reading settings
+    update_option( 'show_on_front', 'page' );
+    if ( $front_page ) {
+        update_option( 'page_on_front', $front_page->ID );
+    }
+    update_option( 'page_for_posts', $blog_page_id );
+
+    // Mark as configured
+    update_option( 'charmelle_reading_configured', true );
+}
+add_action( 'init', 'charmelle_configure_reading_settings' );
+
 // ─── Enqueue Styles & Scripts ───
 function charmelle_enqueue_assets() {
     $theme_uri = get_template_directory_uri();
