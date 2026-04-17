@@ -77,21 +77,19 @@ add_action( 'wp_enqueue_scripts', 'charmelle_enqueue_assets' );
 // Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
 function charmelle_ga4_tracking() {
     $ga4_id = ''; // <-- PASTE YOUR GA4 ID HERE, e.g. 'G-XXXXXXXXXX'
-    if ( empty( $ga4_id ) ) return; // Skip if no ID set
+    if ( empty( $ga4_id ) ) return;
 
-    ?>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $ga4_id ); ?>"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '<?php echo esc_js( $ga4_id ); ?>', {
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=None;Secure'
-    });
-    </script>
-    <?php
+    echo '<!-- Google Analytics 4 -->' . "\n";
+    echo '<script async src="https://www.googletagmanager.com/gtag/js?id=' . esc_attr( $ga4_id ) . '"></script>' . "\n";
+    echo '<script>' . "\n";
+    echo 'window.dataLayer = window.dataLayer || [];' . "\n";
+    echo 'function gtag(){dataLayer.push(arguments);}' . "\n";
+    echo 'gtag("js", new Date());' . "\n";
+    echo 'gtag("config", "' . esc_js( $ga4_id ) . '", {' . "\n";
+    echo '    "anonymize_ip": true,' . "\n";
+    echo '    "cookie_flags": "SameSite=None;Secure"' . "\n";
+    echo '});' . "\n";
+    echo '</script>' . "\n";
 }
 add_action( 'wp_head', 'charmelle_ga4_tracking', 99 );
 
@@ -170,56 +168,51 @@ add_action( 'wp_head', 'charmelle_preload_assets', 1 );
 // ─── Custom Meta Tags (SEO, OG, GEO) ───
 function charmelle_meta_tags() {
     $theme_uri = get_template_directory_uri();
-
-    // Common meta for all pages
-    ?>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( $theme_uri . '/images/favicon-32x32.png' ); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( $theme_uri . '/images/favicon-16x16.png' ); ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( $theme_uri . '/images/apple-touch-icon.png' ); ?>">
-    <meta name="theme-color" content="#C5A880">
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- Language & Region -->
-    <meta http-equiv="content-language" content="de-CH">
-    <link rel="alternate" hreflang="de-CH" href="https://www.charmelle.ch/">
-    <link rel="alternate" hreflang="de" href="https://www.charmelle.ch/">
-    <link rel="alternate" hreflang="x-default" href="https://www.charmelle.ch/">
-
-    <!-- GEO Tags -->
-    <meta name="geo.region" content="CH-AG">
-    <meta name="geo.placename" content="Aarau">
-    <meta name="geo.position" content="47.3925;8.0440">
-    <meta name="ICBM" content="47.3925, 8.0440">
-    <?php
-
-    // Determine page-specific SEO data
     $seo = charmelle_get_page_seo();
     $og_image = 'https://www.charmelle.ch/wp-content/themes/charmelle/images/logo.png';
-    ?>
-    <meta name="description" content="<?php echo esc_attr( $seo['description'] ); ?>">
-    <meta name="keywords" content="<?php echo esc_attr( $seo['keywords'] ); ?>">
-    <meta name="author" content="Charmelle Beauty Center GmbH">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="<?php echo esc_url( $seo['url'] ); ?>">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="<?php echo esc_attr( $seo['title'] ); ?>">
-    <meta property="og:description" content="<?php echo esc_attr( $seo['description'] ); ?>">
-    <meta property="og:image" content="<?php echo esc_url( $og_image ); ?>">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="<?php echo esc_url( $seo['url'] ); ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="de_CH">
-    <meta property="og:site_name" content="Charmelle Beauty Center">
+    // Favicon
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $theme_uri . '/images/favicon-32x32.png' ) . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url( $theme_uri . '/images/favicon-16x16.png' ) . '">' . "\n";
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url( $theme_uri . '/images/apple-touch-icon.png' ) . '">' . "\n";
+    echo '<meta name="theme-color" content="#C5A880">' . "\n";
+    echo '<meta name="format-detection" content="telephone=no">' . "\n";
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo esc_attr( $seo['title'] ); ?>">
-    <meta name="twitter:description" content="<?php echo esc_attr( $seo['description'] ); ?>">
-    <meta name="twitter:image" content="<?php echo esc_url( $og_image ); ?>">
-    <?php
+    // Language & Region
+    echo '<meta http-equiv="content-language" content="de-CH">' . "\n";
+    echo '<link rel="alternate" hreflang="de-CH" href="https://www.charmelle.ch/">' . "\n";
+    echo '<link rel="alternate" hreflang="de" href="https://www.charmelle.ch/">' . "\n";
+    echo '<link rel="alternate" hreflang="x-default" href="https://www.charmelle.ch/">' . "\n";
+
+    // GEO Tags
+    echo '<meta name="geo.region" content="CH-AG">' . "\n";
+    echo '<meta name="geo.placename" content="Aarau">' . "\n";
+    echo '<meta name="geo.position" content="47.3925;8.0440">' . "\n";
+    echo '<meta name="ICBM" content="47.3925, 8.0440">' . "\n";
+
+    // Page-specific SEO
+    echo '<meta name="description" content="' . esc_attr( $seo['description'] ) . '">' . "\n";
+    echo '<meta name="keywords" content="' . esc_attr( $seo['keywords'] ) . '">' . "\n";
+    echo '<meta name="author" content="Charmelle Beauty Center GmbH">' . "\n";
+    echo '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">' . "\n";
+    echo '<link rel="canonical" href="' . esc_url( $seo['url'] ) . '">' . "\n";
+
+    // Open Graph
+    echo '<meta property="og:title" content="' . esc_attr( $seo['title'] ) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr( $seo['description'] ) . '">' . "\n";
+    echo '<meta property="og:image" content="' . esc_url( $og_image ) . '">' . "\n";
+    echo '<meta property="og:image:width" content="1200">' . "\n";
+    echo '<meta property="og:image:height" content="630">' . "\n";
+    echo '<meta property="og:url" content="' . esc_url( $seo['url'] ) . '">' . "\n";
+    echo '<meta property="og:type" content="website">' . "\n";
+    echo '<meta property="og:locale" content="de_CH">' . "\n";
+    echo '<meta property="og:site_name" content="Charmelle Beauty Center">' . "\n";
+
+    // Twitter Card
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta name="twitter:title" content="' . esc_attr( $seo['title'] ) . '">' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr( $seo['description'] ) . '">' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url( $og_image ) . '">' . "\n";
 }
 add_action( 'wp_head', 'charmelle_meta_tags', 2 );
 
@@ -231,101 +224,98 @@ function charmelle_structured_data() {
 
     // ── BeautySalon + WebSite Schema (Homepage) ──
     if ( is_front_page() ) {
-        ?>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "BeautySalon",
-                    "@id": "<?php echo $base; ?>/#organization",
-                    "name": "Charmelle Beauty Center",
-                    "alternateName": ["Charmelle", "Beauty Center Charmelle", "Charmelle Beauty Center GmbH"],
-                    "image": "<?php echo $logo; ?>",
-                    "logo": "<?php echo $logo; ?>",
-                    "url": "<?php echo $base; ?>/",
-                    "telephone": "+41628226647",
-                    "email": "info@charmelle.ch",
-                    "description": "Premium Kosmetikstudio in Aarau. Seit über 30 Jahren bieten wir Gesichtspflege, Hydra Facial, Microneedling, Anti-Aging-Behandlungen, LPG Endermologie, Wimpernlifting, Permanent Make-Up und medizinische Kosmetik im Kanton Aargau.",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Girixweg 7",
-                        "addressLocality": "Aarau",
-                        "addressRegion": "AG",
-                        "postalCode": "5000",
-                        "addressCountry": "CH"
-                    },
-                    "geo": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 47.3925,
-                        "longitude": 8.0440
-                    },
-                    "openingHoursSpecification": [
-                        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Thursday"], "opens": "09:00", "closes": "19:00"},
-                        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "18:30"},
-                        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Friday"], "opens": "09:00", "closes": "18:30"},
-                        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "14:00"}
-                    ],
-                    "priceRange": "CHF 30 – CHF 650",
-                    "currenciesAccepted": "CHF",
-                    "paymentAccepted": "Bargeld, EC-Karte, Kreditkarte, TWINT",
-                    "areaServed": [
-                        {"@type": "City", "name": "Aarau"},
-                        {"@type": "State", "name": "Kanton Aargau"},
-                        {"@type": "City", "name": "Buchs AG"},
-                        {"@type": "City", "name": "Rohr AG"},
-                        {"@type": "City", "name": "Suhr"},
-                        {"@type": "City", "name": "Gränichen"},
-                        {"@type": "City", "name": "Erlinsbach"},
-                        {"@type": "City", "name": "Küttigen"},
-                        {"@type": "City", "name": "Oberentfelden"},
-                        {"@type": "City", "name": "Unterentfelden"}
-                    ],
-                    "sameAs": [
-                        "https://www.instagram.com/beauty_charmelle/",
-                        "https://www.facebook.com/charmellebeautycenter/"
-                    ],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "5.0",
-                        "bestRating": "5",
-                        "worstRating": "1",
-                        "ratingCount": "44",
-                        "reviewCount": "44"
-                    },
-                    "hasOfferCatalog": {
-                        "@type": "OfferCatalog",
-                        "name": "Kosmetik-Behandlungen",
-                        "itemListElement": [
-                            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hydra Facial Syndeo", "description": "Die Hollywood-Behandlung für strahlende Haut"}},
-                            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Microneedling mit Hyaluron", "description": "Medical-Kosmetik zur Hauterneuerung und Straffung"}},
-                            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LPG Endermologie", "description": "Patentierte Technologie für Straffung und Body-Forming"}},
-                            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wimpernlifting", "description": "Natürlicher Wow-Effekt für Ihre Wimpern"}},
-                            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Permanent Make-Up", "description": "Augenbrauen, Lippen und Lidstriche dauerhaft betont"}}
-                        ]
-                    }
-                },
-                {
-                    "@type": "WebSite",
-                    "@id": "<?php echo $base; ?>/#website",
-                    "url": "<?php echo $base; ?>",
-                    "name": "Charmelle Beauty Center",
-                    "description": "Premium Kosmetikstudio in Aarau seit über 30 Jahren",
-                    "publisher": {"@id": "<?php echo $base; ?>/#organization"},
-                    "inLanguage": "de-CH",
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": {
-                            "@type": "EntryPoint",
-                            "urlTemplate": "<?php echo $base; ?>/?s={search_term_string}"
-                        },
-                        "query-input": "required name=search_term_string"
-                    }
-                }
-            ]
-        }
-        </script>
-        <?php
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@graph'   => array(
+                array(
+                    '@type'         => 'BeautySalon',
+                    '@id'           => $base . '/#organization',
+                    'name'          => 'Charmelle Beauty Center',
+                    'alternateName' => array( 'Charmelle', 'Beauty Center Charmelle', 'Charmelle Beauty Center GmbH' ),
+                    'image'         => $logo,
+                    'logo'          => $logo,
+                    'url'           => $base . '/',
+                    'telephone'     => '+41628226647',
+                    'email'         => 'info@charmelle.ch',
+                    'description'   => 'Premium Kosmetikstudio in Aarau. Seit über 30 Jahren bieten wir Gesichtspflege, Hydra Facial, Microneedling, Anti-Aging-Behandlungen, LPG Endermologie, Wimpernlifting, Permanent Make-Up und medizinische Kosmetik im Kanton Aargau.',
+                    'address'       => array(
+                        '@type'           => 'PostalAddress',
+                        'streetAddress'   => 'Girixweg 7',
+                        'addressLocality' => 'Aarau',
+                        'addressRegion'   => 'AG',
+                        'postalCode'      => '5000',
+                        'addressCountry'  => 'CH',
+                    ),
+                    'geo' => array(
+                        '@type'     => 'GeoCoordinates',
+                        'latitude'  => 47.3925,
+                        'longitude' => 8.0440,
+                    ),
+                    'openingHoursSpecification' => array(
+                        array( '@type' => 'OpeningHoursSpecification', 'dayOfWeek' => array( 'Monday', 'Thursday' ), 'opens' => '09:00', 'closes' => '19:00' ),
+                        array( '@type' => 'OpeningHoursSpecification', 'dayOfWeek' => 'Tuesday', 'opens' => '09:00', 'closes' => '18:30' ),
+                        array( '@type' => 'OpeningHoursSpecification', 'dayOfWeek' => array( 'Wednesday', 'Friday' ), 'opens' => '09:00', 'closes' => '18:30' ),
+                        array( '@type' => 'OpeningHoursSpecification', 'dayOfWeek' => 'Saturday', 'opens' => '08:30', 'closes' => '14:00' ),
+                    ),
+                    'priceRange'         => 'CHF 30 - CHF 650',
+                    'currenciesAccepted' => 'CHF',
+                    'paymentAccepted'    => 'Bargeld, EC-Karte, Kreditkarte, TWINT',
+                    'areaServed' => array(
+                        array( '@type' => 'City', 'name' => 'Aarau' ),
+                        array( '@type' => 'State', 'name' => 'Kanton Aargau' ),
+                        array( '@type' => 'City', 'name' => 'Buchs AG' ),
+                        array( '@type' => 'City', 'name' => 'Rohr AG' ),
+                        array( '@type' => 'City', 'name' => 'Suhr' ),
+                        array( '@type' => 'City', 'name' => 'Graenichen' ),
+                        array( '@type' => 'City', 'name' => 'Erlinsbach' ),
+                        array( '@type' => 'City', 'name' => 'Kuettigen' ),
+                        array( '@type' => 'City', 'name' => 'Oberentfelden' ),
+                        array( '@type' => 'City', 'name' => 'Unterentfelden' ),
+                    ),
+                    'sameAs' => array(
+                        'https://www.instagram.com/beauty_charmelle/',
+                        'https://www.facebook.com/charmellebeautycenter/',
+                    ),
+                    'aggregateRating' => array(
+                        '@type'       => 'AggregateRating',
+                        'ratingValue' => '5.0',
+                        'bestRating'  => '5',
+                        'worstRating' => '1',
+                        'ratingCount' => '44',
+                        'reviewCount' => '44',
+                    ),
+                    'hasOfferCatalog' => array(
+                        '@type' => 'OfferCatalog',
+                        'name'  => 'Kosmetik-Behandlungen',
+                        'itemListElement' => array(
+                            array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Hydra Facial Syndeo', 'description' => 'Die Hollywood-Behandlung fuer strahlende Haut' ) ),
+                            array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Microneedling mit Hyaluron', 'description' => 'Medical-Kosmetik zur Hauterneuerung und Straffung' ) ),
+                            array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'LPG Endermologie', 'description' => 'Patentierte Technologie fuer Straffung und Body-Forming' ) ),
+                            array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Wimpernlifting', 'description' => 'Natuerlicher Wow-Effekt fuer Ihre Wimpern' ) ),
+                            array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Permanent Make-Up', 'description' => 'Augenbrauen, Lippen und Lidstriche dauerhaft betont' ) ),
+                        ),
+                    ),
+                ),
+                array(
+                    '@type'       => 'WebSite',
+                    '@id'         => $base . '/#website',
+                    'url'         => $base,
+                    'name'        => 'Charmelle Beauty Center',
+                    'description' => 'Premium Kosmetikstudio in Aarau seit ueber 30 Jahren',
+                    'publisher'   => array( '@id' => $base . '/#organization' ),
+                    'inLanguage'  => 'de-CH',
+                    'potentialAction' => array(
+                        '@type'  => 'SearchAction',
+                        'target' => array(
+                            '@type'       => 'EntryPoint',
+                            'urlTemplate' => $base . '/?s={search_term_string}',
+                        ),
+                        'query-input' => 'required name=search_term_string',
+                    ),
+                ),
+            ),
+        );
+        echo '<script type="application/ld+json">' . "\n" . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) . "\n" . '</script>' . "\n";
     }
 
     // ── BreadcrumbList Schema (all subpages) ──
@@ -350,7 +340,7 @@ function charmelle_structured_data() {
             $crumbs[] = array( 'name' => 'Blog', 'url' => $base . '/blog/' );
             $crumbs[] = array( 'name' => get_the_title() );
         } elseif ( is_404() ) {
-            $crumbs[] = array( 'name' => '404 — Seite nicht gefunden' );
+            $crumbs[] = array( 'name' => '404 - Seite nicht gefunden' );
         } else {
             $crumbs[] = array( 'name' => get_the_title() );
         }
@@ -367,96 +357,46 @@ function charmelle_structured_data() {
             }
             $items[] = $item;
         }
-        ?>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": <?php echo wp_json_encode( $items ); ?>
-        }
-        </script>
-        <?php
+        $breadcrumb = array( '@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $items );
+        echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
     }
 
     // ── FAQPage Schema (Behandlungen page) ──
     if ( is_page( 'behandlungen' ) ) {
-        ?>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Wie oft sollte man eine Gesichtsbehandlung machen?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Wir empfehlen eine professionelle Gesichtsbehandlung alle 4-6 Wochen. So kann die Haut optimal regenerieren und die Ergebnisse werden nachhaltig verbessert. Bei speziellen Behandlungen wie Microneedling oder Hydra Facial besprechen wir den idealen Rhythmus individuell."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Was kostet eine Behandlung bei Charmelle?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Unsere Behandlungen starten ab CHF 15.— für Haarentfernung mit Wachs. Eine klassische Gesichtspflege kostet ab CHF 155.—, Hydra Facial ab CHF 165.—, Microneedling ab CHF 250.— und Permanent Make-Up ab CHF 350.—. Die genauen Preise finden Sie auf unserer Behandlungsseite."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Brauche ich einen Termin?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Ja, wir arbeiten ausschliesslich mit Terminen. So können wir uns voll und ganz auf Sie konzentrieren. Buchen Sie bequem online, per Telefon (062 822 66 47) oder WhatsApp (079 828 66 47)."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Welche Zahlungsmittel akzeptiert Charmelle?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Wir akzeptieren Bargeld, EC-Karte, Kreditkarte (Visa, Mastercard) und TWINT."
-                    }
-                }
-            ]
-        }
-        </script>
-        <?php
+        $faq = array(
+            '@context'   => 'https://schema.org',
+            '@type'      => 'FAQPage',
+            'mainEntity' => array(
+                array( '@type' => 'Question', 'name' => 'Wie oft sollte man eine Gesichtsbehandlung machen?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Wir empfehlen eine professionelle Gesichtsbehandlung alle 4-6 Wochen. So kann die Haut optimal regenerieren und die Ergebnisse werden nachhaltig verbessert. Bei speziellen Behandlungen wie Microneedling oder Hydra Facial besprechen wir den idealen Rhythmus individuell.' ) ),
+                array( '@type' => 'Question', 'name' => 'Was kostet eine Behandlung bei Charmelle?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Unsere Behandlungen starten ab CHF 15 fuer Haarentfernung mit Wachs. Eine klassische Gesichtspflege kostet ab CHF 155, Hydra Facial ab CHF 165, Microneedling ab CHF 250 und Permanent Make-Up ab CHF 350. Die genauen Preise finden Sie auf unserer Behandlungsseite.' ) ),
+                array( '@type' => 'Question', 'name' => 'Brauche ich einen Termin?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Ja, wir arbeiten ausschliesslich mit Terminen. So koennen wir uns voll und ganz auf Sie konzentrieren. Buchen Sie bequem online, per Telefon (062 822 66 47) oder WhatsApp (079 828 66 47).' ) ),
+                array( '@type' => 'Question', 'name' => 'Welche Zahlungsmittel akzeptiert Charmelle?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Wir akzeptieren Bargeld, EC-Karte, Kreditkarte (Visa, Mastercard) und TWINT.' ) ),
+            ),
+        );
+        echo '<script type="application/ld+json">' . wp_json_encode( $faq, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
     }
 
     // ── Article Schema (Blog posts) ──
     if ( is_singular( 'post' ) ) {
-        ?>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "<?php echo esc_js( get_the_title() ); ?>",
-            "description": "<?php echo esc_js( wp_trim_words( get_the_excerpt(), 25, '…' ) ); ?>",
-            "image": "<?php echo has_post_thumbnail() ? esc_url( get_the_post_thumbnail_url( null, 'large' ) ) : $logo; ?>",
-            "datePublished": "<?php echo get_the_date( 'c' ); ?>",
-            "dateModified": "<?php echo get_the_modified_date( 'c' ); ?>",
-            "author": {
-                "@type": "Organization",
-                "name": "Charmelle Beauty Center"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "@id": "<?php echo $base; ?>/#organization",
-                "name": "Charmelle Beauty Center",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "<?php echo $logo; ?>"
-                }
-            },
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "<?php echo esc_url( get_permalink() ); ?>"
-            },
-            "inLanguage": "de-CH"
-        }
-        </script>
-        <?php
+        $article = array(
+            '@context'       => 'https://schema.org',
+            '@type'          => 'Article',
+            'headline'       => get_the_title(),
+            'description'    => wp_trim_words( get_the_excerpt(), 25, '...' ),
+            'image'          => has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'large' ) : $logo,
+            'datePublished'  => get_the_date( 'c' ),
+            'dateModified'   => get_the_modified_date( 'c' ),
+            'author'         => array( '@type' => 'Organization', 'name' => 'Charmelle Beauty Center' ),
+            'publisher'      => array(
+                '@type' => 'Organization',
+                '@id'   => $base . '/#organization',
+                'name'  => 'Charmelle Beauty Center',
+                'logo'  => array( '@type' => 'ImageObject', 'url' => $logo ),
+            ),
+            'mainEntityOfPage' => array( '@type' => 'WebPage', '@id' => get_permalink() ),
+            'inLanguage'       => 'de-CH',
+        );
+        echo '<script type="application/ld+json">' . wp_json_encode( $article, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
     }
 }
 add_action( 'wp_head', 'charmelle_structured_data', 5 );
