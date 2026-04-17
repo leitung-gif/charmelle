@@ -64,8 +64,94 @@ function charmelle_enqueue_assets() {
         $theme_ver,
         true // Load in footer
     );
+
+    // Pass AJAX URL to frontend
+    wp_localize_script( 'charmelle-script', 'charmelle_ajax', array(
+        'url'   => admin_url( 'admin-ajax.php' ),
+        'nonce' => wp_create_nonce( 'charmelle_newsletter' ),
+    ) );
 }
 add_action( 'wp_enqueue_scripts', 'charmelle_enqueue_assets' );
+
+// ─── Google Analytics 4 (Placeholder) ───
+// Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
+function charmelle_ga4_tracking() {
+    $ga4_id = ''; // <-- PASTE YOUR GA4 ID HERE, e.g. 'G-XXXXXXXXXX'
+    if ( empty( $ga4_id ) ) return; // Skip if no ID set
+
+    ?>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $ga4_id ); ?>"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '<?php echo esc_js( $ga4_id ); ?>', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+    });
+    </script>
+    <?php
+}
+add_action( 'wp_head', 'charmelle_ga4_tracking', 99 );
+
+// ─── WebP Image Helper ───
+// Usage in templates: <?php charmelle_img('hero-treatment', 'Alt text', 'eager', '580', '520'); ?>
+function charmelle_img( $name, $alt = '', $loading = 'lazy', $width = '', $height = '', $class = '' ) {
+    $t = get_template_directory_uri() . '/images/';
+    // Determine original extension
+    $ext = '';
+    $dir = get_template_directory() . '/images/';
+    foreach ( array( 'png', 'jpg', 'jpeg' ) as $e ) {
+        if ( file_exists( $dir . $name . '.' . $e ) ) {
+            $ext = $e;
+            break;
+        }
+    }
+    $has_webp = file_exists( $dir . $name . '.webp' );
+    $attrs = '';
+    if ( $width )   $attrs .= ' width="' . esc_attr( $width ) . '"';
+    if ( $height )  $attrs .= ' height="' . esc_attr( $height ) . '"';
+    if ( $class )   $attrs .= ' class="' . esc_attr( $class ) . '"';
+    $fetchpriority = ( $loading === 'eager' ) ? ' fetchpriority="high"' : '';
+
+    if ( $has_webp && $ext ) {
+        echo '<picture>';
+        echo '<source srcset="' . esc_url( $t . $name . '.webp' ) . '" type="image/webp">';
+        echo '<img src="' . esc_url( $t . $name . '.' . $ext ) . '" alt="' . esc_attr( $alt ) . '" loading="' . esc_attr( $loading ) . '"' . $fetchpriority . $attrs . '>';
+        echo '</picture>';
+    } elseif ( $ext ) {
+        echo '<img src="' . esc_url( $t . $name . '.' . $ext ) . '" alt="' . esc_attr( $alt ) . '" loading="' . esc_attr( $loading ) . '"' . $fetchpriority . $attrs . '>';
+    }
+}
+
+// ─── Newsletter AJAX Handler ───
+function charmelle_newsletter_signup() {
+    check_ajax_referer( 'charmelle_newsletter', 'nonce' );
+    $email = sanitize_email( $_POST['email'] ?? '' );
+    if ( ! is_email( $email ) ) {
+        wp_send_json_error( 'Ungültige E-Mail-Adresse.' );
+    }
+    // Store in wp_options
+    $subscribers = get_option( 'charmelle_newsletter_subscribers', array() );
+    if ( in_array( $email, $subscribers, true ) ) {
+        wp_send_json_success( 'Bereits angemeldet.' );
+    }
+    $subscribers[] = $email;
+    update_option( 'charmelle_newsletter_subscribers', $subscribers );
+
+    // Notify admin
+    wp_mail(
+        get_option( 'admin_email' ),
+        'Neue Newsletter-Anmeldung — Charmelle',
+        'Neue Anmeldung: ' . $email . "\n\nGesamte Abonnenten: " . count( $subscribers ),
+        array( 'Content-Type: text/plain; charset=UTF-8' )
+    );
+
+    wp_send_json_success( 'Erfolgreich angemeldet.' );
+}
+add_action( 'wp_ajax_charmelle_newsletter', 'charmelle_newsletter_signup' );
+add_action( 'wp_ajax_nopriv_charmelle_newsletter', 'charmelle_newsletter_signup' );
 
 // ─── Preload Critical Assets + GEO Discovery Links ───
 function charmelle_preload_assets() {

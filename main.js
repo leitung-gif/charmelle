@@ -295,21 +295,44 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = new Date().getFullYear();
   });
 
-  // --- Newsletter Form (inline) ---
+  // --- Newsletter Form (WP AJAX) ---
   document.querySelectorAll('.newsletter-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const emailInput = form.querySelector('input[type="email"]');
-      if (emailInput && emailInput.value) {
-        // Store subscription locally (connect to Mailchimp/MailerLite in production)
-        const email = emailInput.value;
-        console.log('Newsletter subscription:', email);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!emailInput || !emailInput.value) return;
+
+      // Disable button during submission
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '...';
+      }
+
+      try {
+        const formData = new FormData();
+        formData.append('action', 'charmelle_newsletter');
+        formData.append('email', emailInput.value);
+        formData.append('nonce', (typeof charmelle_ajax !== 'undefined') ? charmelle_ajax.nonce : '');
+
+        const response = await fetch(
+          (typeof charmelle_ajax !== 'undefined') ? charmelle_ajax.url : '/wp-admin/admin-ajax.php',
+          { method: 'POST', body: formData }
+        );
+        const data = await response.json();
+
         form.innerHTML = `
           <div style="text-align:center;padding:16px 0;">
             <div style="font-size:2rem;margin-bottom:8px;">✨</div>
             <p style="color:var(--text-white);font-weight:500;">Vielen Dank! Wir melden uns bald bei Ihnen.</p>
           </div>
         `;
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Anmelden';
+        }
+        console.error('Newsletter signup failed:', err);
       }
     });
   });

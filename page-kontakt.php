@@ -152,11 +152,13 @@ get_header();
       <div class="legal-section reveal" id="impressum">
         <h3>Impressum</h3>
         <p><strong>Firma:</strong> Charmelle Beauty Center GmbH</p>
+        <p><strong>Rechtsform:</strong> Gesellschaft mit beschränkter Haftung</p>
+        <p><strong>Handelsregister-Nr.:</strong> CH-400.4.024.451-7 (Handelsregister Kanton Aargau)</p>
+        <p><strong>Branche:</strong> Erbringung personenbezogener Dienstleistungen der Gesundheit und Schönheit</p>
         <p><strong>Adresse:</strong> Girixweg 7, 5000 Aarau, Schweiz</p>
         <p><strong>Telefon:</strong> <a href="tel:+41628226647">062 822 66 47</a></p>
         <p><strong>E-Mail:</strong> <a href="mailto:info@charmelle.ch">info@charmelle.ch</a></p>
         <p><strong>Website:</strong> <a href="https://www.charmelle.ch">www.charmelle.ch</a></p>
-        <p><strong>Handelsregistereintrag:</strong> Eingetragen im Handelsregister des Kantons Aargau.</p>
         <p><strong>Webdesign:</strong> <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></p>
       </div>
 
