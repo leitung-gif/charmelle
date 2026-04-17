@@ -7,50 +7,26 @@ get_header();
 $t = get_template_directory_uri();
 ?>
 
-<style>
-  .video-hero{padding:48px 0 56px;background:var(--bg-secondary);overflow:hidden}
-  .video-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
-  .video-hero-bubble{max-width:320px;aspect-ratio:3/4;border-radius:500px 500px 20px 20px;overflow:hidden;box-shadow:0 20px 50px rgba(74,59,50,.12);border:3px solid rgba(197,168,128,.15);margin-left:auto}
-  .video-hero-bubble video{width:100%;height:100%;object-fit:cover;display:block;transform:scale(0.9)}
-  .video-hero-text .subtitle{display:block;margin-bottom:12px}
-  .video-hero-text h1{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;color:var(--text-heading);line-height:1.15;margin-bottom:16px}
-  .video-hero-text p{font-size:.98rem;color:var(--text-light);line-height:1.75;margin-bottom:24px;max-width:480px}
-  .welcome-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
-  .welcome-visual{order:2}
-  .welcome-visual .arch-img{max-height:360px;max-width:320px;margin-left:auto}
-  .welcome-text{order:1}
-  .welcome-text h2{margin-bottom:8px}
-  .welcome-text p{color:var(--text-light);font-size:.95rem;line-height:1.75}
-  @media(max-width:900px){
-    .video-hero{padding:32px 0 40px}
-    .video-hero-grid{grid-template-columns:1fr;gap:24px}
-    .video-hero-bubble{max-width:280px;margin:0 auto}
-    .video-hero-text{padding:0;text-align:center}
-    .video-hero-text p{margin:0 auto 24px}
-    .video-hero-text .hero-buttons{justify-content:center}
-    .welcome-grid{grid-template-columns:1fr;gap:28px}
-    .welcome-visual{order:-1}
-    .welcome-visual .arch-img{max-width:260px;margin:0 auto}
-    .welcome-text{order:2}
-  }
-</style>
-
-  <!-- ===== VIDEO HERO ===== -->
-  <section class="video-hero" id="hero">
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero section" id="hero" style="position:relative;overflow:hidden;">
+    <div class="blob blob--gold blob--lg blob--float-1" style="top:60px;left:-100px;opacity:0.06;"></div>
+    <div class="blob blob--cream blob--md blob--float-2" style="bottom:-60px;right:10%;opacity:0.07;"></div>
     <div class="container">
-      <div class="video-hero-grid">
-        <div class="video-hero-bubble">
-          <video autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>">
-            <source src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" type="video/mp4">
-          </video>
-        </div>
-        <div class="video-hero-text">
-          <span class="subtitle">Ihr Kosmetikstudio in Aarau</span>
+      <div class="split-section">
+        <div class="hero-content">
+          <span class="subtitle">Ihr Kosmetikstudio in Aarau — seit über 30 Jahren</span>
           <h1>Professionelle Kosmetik und <em class="text-italic">Hautpflege</em></h1>
-          <p>Das Charmelle Beauty Center vereint seit über 30 Jahren medizinische Hightech-Kosmetik mit ganzheitlicher Schönheitspflege. Hydra Facial, Microneedling, LPG Endermologie und mehr — durchgeführt von diplomierten Kosmetikerinnen EFZ im Herzen von Aarau.</p>
-          <div class="hero-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <p style="color:var(--text-light);font-size:1.05rem;line-height:1.75;margin-bottom:28px;">Das Charmelle Beauty Center vereint seit über 30 Jahren medizinische Hightech-Kosmetik mit ganzheitlicher Schönheitspflege. Hydra Facial, Microneedling, LPG Endermologie und mehr — durchgeführt von diplomierten Kosmetikerinnen EFZ im Herzen von Aarau.</p>
+          <div class="hero-buttons" style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener">Termin Buchen</a>
             <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--outline btn--large">Behandlungen entdecken</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="arch-img" style="max-width:380px;margin-left:auto;">
+            <video autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <source src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
