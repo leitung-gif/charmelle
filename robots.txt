@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.charmelle.ch/sitemap.xml
-Sitemap: https://www.charmelle.ch/sitemap_index.xml
+Sitemap: https://www.charmelle.ch/wp-sitemap.xml
 
 # WordPress
 Disallow: /wp-admin/

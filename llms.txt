@@ -93,3 +93,14 @@ Bargeld, EC-Karte, Kreditkarte (Visa, Mastercard), TWINT
 Online: https://charmelle.coboma.ch/booking
 Telefon: +41 62 822 66 47
 WhatsApp: +41 79 828 66 47
+
+## Pages
+
+- [Startseite](https://www.charmelle.ch/): Homepage mit Übersicht aller Behandlungen und Studio-Impressionen
+- [Behandlungen](https://www.charmelle.ch/behandlungen/): Alle Kosmetik-Behandlungen mit Preisen
+- [Team](https://www.charmelle.ch/team/): Unser Team aus Kosmetikerinnen EFZ
+- [Shop](https://www.charmelle.ch/shop/): Pflegeprodukte online kaufen
+- [Blog](https://www.charmelle.ch/blog/): Beauty-Tipps und Neuigkeiten
+- [Gutscheine](https://www.charmelle.ch/gutscheine/): Geschenkgutscheine ab CHF 50.—
+- [Kontakt](https://www.charmelle.ch/kontakt/): Adresse, Öffnungszeiten, Anfahrt
+

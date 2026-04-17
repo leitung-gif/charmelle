@@ -24,7 +24,7 @@
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
                     <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>">Behandlungen</a>
                     <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>">Team</a>
-                    <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>">Shop</a>
+                    <a href="<?php echo function_exists('wc_get_page_id') ? esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) : esc_url( home_url( '/shop/' ) ); ?>">Shop</a>
                     <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a>
                     <a href="<?php echo esc_url( home_url( '/gutscheine/' ) ); ?>">Gutscheine</a>
                     <a href="<?php echo esc_url( home_url( '/kontakt/' ) ); ?>">Kontakt</a>
@@ -44,7 +44,7 @@
                     <a href="https://wa.me/+41798286647" target="_blank" rel="noopener">WhatsApp: 079 828 66 47</a>
                     <a href="mailto:info@charmelle.ch">info@charmelle.ch</a>
                     <a href="<?php echo esc_url( home_url( '/kontakt/' ) ); ?>">Girixweg 7, 5000 Aarau</a>
-                    <span style="font-size:0.82rem;color:rgba(253,251,247,0.4);display:block;margin-top:8px;">Mo &amp; Do: 09:00-19:00 · Mi &amp; Fr: 09:00-18:30 · Sa: 08:30-14:00</span>
+                    <span style="font-size:0.82rem;color:rgba(253,251,247,0.4);display:block;margin-top:8px;">Mo &amp; Do: 09:00-19:00 · Di, Mi &amp; Fr: 09:00-18:30 · Sa: 08:30-14:00</span>
                 </div>
             </div>
             <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>

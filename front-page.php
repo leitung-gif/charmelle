@@ -24,7 +24,7 @@ $t = get_template_directory_uri();
       </div>
       <div class="hero-visual">
         <div class="arch-img arch-img--overlay">
-          <img src="<?php echo esc_url( $t . '/images/hero-treatment.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau - Kosmetikstudio im Kanton Aargau" loading="eager" width="580" height="520">
+          <img src="<?php echo esc_url( $t . '/images/hero-treatment.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau - Kosmetikstudio im Kanton Aargau" loading="eager" fetchpriority="high" width="580" height="520">
         </div>
       </div>
     </div>
