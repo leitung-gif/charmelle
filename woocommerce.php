@@ -4,6 +4,7 @@
  * Overrides the default WooCommerce page wrapper.
  */
 get_header();
+$t = get_template_directory_uri();
 ?>
 
   <!-- ===== PAGE HERO ===== -->
@@ -15,7 +16,9 @@ get_header();
         <p>Hochwertige Pflegeprodukte von Med Beauty Swiss, Team Dr. Joseph, Thalgo und mehr - direkt zu Ihnen nach Hause.</p>
       <?php elseif ( is_product_category() ) : ?>
         <h1><?php single_cat_title(); ?></h1>
-        <p><?php echo category_description(); ?></p>
+        <?php if ( category_description() ) : ?>
+          <p><?php echo category_description(); ?></p>
+        <?php endif; ?>
       <?php elseif ( is_product() ) : ?>
         <h1><?php the_title(); ?></h1>
       <?php else : ?>
@@ -23,6 +26,33 @@ get_header();
       <?php endif; ?>
     </div>
   </section>
+
+  <?php if ( is_shop() || is_product_category() ) : ?>
+  <!-- ===== CATEGORY FILTER BAR ===== -->
+  <section class="shop-categories" id="shop-filter">
+    <div class="container">
+      <div class="category-filter-bar">
+        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="category-pill<?php echo is_shop() ? ' active' : ''; ?>">Alle Produkte</a>
+        <?php
+        $categories = get_terms( array(
+            'taxonomy'   => 'product_cat',
+            'hide_empty' => true,
+            'parent'     => 0,
+            'exclude'    => array( get_option('default_product_cat') ),
+        ) );
+        if ( $categories && ! is_wp_error( $categories ) ) :
+            foreach ( $categories as $cat ) :
+                $active = ( is_product_category( $cat->slug ) ) ? ' active' : '';
+        ?>
+            <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="category-pill<?php echo $active; ?>"><?php echo esc_html( $cat->name ); ?> <span class="cat-count"><?php echo esc_html( $cat->count ); ?></span></a>
+        <?php
+            endforeach;
+        endif;
+        ?>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
 
   <section class="section" id="shop-content">
     <div class="container">

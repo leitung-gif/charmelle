@@ -518,6 +518,69 @@ function charmelle_woocommerce_inline_styles() {
     if ( ! class_exists( 'WooCommerce' ) ) return;
     $css = '
     /* ═══════════════════════════════════════════════════
+       Category Filter Bar
+       ═══════════════════════════════════════════════════ */
+    .shop-categories {
+        padding: 0 0 8px;
+        background: var(--bg-secondary, #F7F3ED);
+    }
+    .category-filter-bar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 24px 0;
+    }
+    .category-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 22px;
+        border-radius: 50px;
+        background: var(--bg-primary);
+        color: var(--text-heading);
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid var(--border-color, #E8E0D4);
+        transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        white-space: nowrap;
+    }
+    .category-pill:hover {
+        border-color: var(--accent-gold);
+        color: var(--accent-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(184,149,106,0.15);
+    }
+    .category-pill.active {
+        background: var(--accent-gold);
+        color: #fff;
+        border-color: var(--accent-gold);
+    }
+    .category-pill .cat-count {
+        font-size: 0.72rem;
+        opacity: 0.7;
+        font-weight: 400;
+    }
+    .category-pill.active .cat-count {
+        opacity: 0.85;
+    }
+    @media (max-width: 600px) {
+        .category-filter-bar {
+            justify-content: flex-start;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 12px;
+        }
+        .category-pill {
+            padding: 8px 18px;
+            font-size: 0.82rem;
+        }
+    }
+
+    /* ═══════════════════════════════════════════════════
        WooCommerce Product Grid — Charmelle Design System
        ═══════════════════════════════════════════════════ */
 
