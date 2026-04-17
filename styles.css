@@ -3580,3 +3580,80 @@ p {
     font-size: 1.5rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════
+   Legal Pages (AGB, Datenschutz, Impressum)
+   ═══════════════════════════════════════════════════ */
+.container--narrow {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.legal-content {
+  padding-bottom: 80px;
+}
+
+.legal-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.legal-content p {
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.legal-content ul {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.legal-content ul li {
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 6px;
+  list-style: disc;
+}
+
+.legal-content a {
+  color: var(--accent-gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(197, 168, 128, 0.3);
+  text-underline-offset: 3px;
+  transition: all var(--transition-smooth);
+}
+
+.legal-content a:hover {
+  color: var(--accent-gold-dark);
+  text-decoration-color: var(--accent-gold);
+}
+
+.legal-footer {
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.legal-footer p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
