@@ -3701,3 +3701,24 @@ p {
   color: var(--text-light);
   font-size: 0.95rem;
 }
+
+/* ═══════════════════════════════════════════════════
+   Nuclear Overrides — Plugin CSS fixes
+   ═══════════════════════════════════════════════════ */
+
+/* Force hide hamburger on desktop — overrides any cached/plugin CSS */
+@media (min-width: 1101px) {
+  .menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* WhatsApp sticky button — right side on desktop */
+@media (min-width: 992px) {
+  #okapi-wasb-button {
+    left: auto !important;
+    right: 20px !important;
+  }
+}

@@ -139,7 +139,7 @@ $t = get_template_directory_uri();
         <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-1.jpg'); ?>" alt="Charmelle Beauty Center Aarau - Behandlungsraum" loading="lazy" width="773" height="1030"></div>
         <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-2.jpg'); ?>" alt="Kosmetikliege und Ambiente bei Charmelle" loading="lazy" width="773" height="1030"></div>
         <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-3.jpg'); ?>" alt="Professionelle Geräte bei Charmelle Aarau" loading="lazy" width="773" height="1030"></div>
-        <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-4.png'); ?>" alt="Studio Einrichtung Charmelle Beauty Center" loading="lazy" width="1024" height="1024"></div>
+        <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-4.jpg'); ?>" alt="Studio Einrichtung Charmelle Beauty Center" loading="lazy" width="1024" height="1024"></div>
         <div class="arch-img"><img src="<?php echo esc_url($t.'/images/studio-5.jpg'); ?>" alt="Empfang und Lounge im Charmelle Aarau" loading="lazy" width="773" height="1030"></div>
       </div>
     </div>
@@ -149,7 +149,7 @@ $t = get_template_directory_uri();
   <section class="philosophy-inline" id="unsere-philosophie">
     <div class="container">
       <div class="philosophy-grid reveal">
-        <div class="arch-img" style="aspect-ratio: 3/4;"><img src="<?php echo esc_url($t.'/images/studio-4.png'); ?>" alt="Charmelle Beauty Center - Unsere Philosophie" loading="lazy" width="1024" height="1024"></div>
+        <div class="arch-img" style="aspect-ratio: 3/4;"><img src="<?php echo esc_url($t.'/images/studio-4.jpg'); ?>" alt="Charmelle Beauty Center - Unsere Philosophie" loading="lazy" width="1024" height="1024"></div>
         <div class="philosophy-text">
           <span class="subtitle">Unsere Philosophie</span>
           <h2>Mehr als nur Kosmetik - <em class="text-italic">eine Lebensphilosophie</em></h2>
