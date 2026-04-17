@@ -408,6 +408,9 @@ add_action( 'before_woocommerce_init', function () {
     }
 } );
 
+// ─── WooCommerce: Remove duplicate archive title (we have our own hero) ───
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
 // ─── WooCommerce: Custom Wrapper ───
 function charmelle_wc_wrapper_start() {
     echo '<div class="charmelle-woocommerce-wrap container">';
