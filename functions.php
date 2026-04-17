@@ -70,6 +70,11 @@ function charmelle_enqueue_assets() {
         'url'   => admin_url( 'admin-ajax.php' ),
         'nonce' => wp_create_nonce( 'charmelle_newsletter' ),
     ) );
+
+    // WooCommerce cart fragments for AJAX cart count updates
+    if ( class_exists( 'WooCommerce' ) ) {
+        wp_enqueue_script( 'wc-cart-fragments' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'charmelle_enqueue_assets' );
 
@@ -92,6 +97,26 @@ function charmelle_ga4_tracking() {
     echo '</script>' . "\n";
 }
 add_action( 'wp_head', 'charmelle_ga4_tracking', 99 );
+
+// ─── WooCommerce Cart Fragment (AJAX cart count update) ───
+function charmelle_cart_fragment( $fragments ) {
+    $count = WC()->cart->get_cart_contents_count();
+    $cart_url = wc_get_cart_url();
+
+    ob_start();
+    ?>
+    <a href="<?php echo esc_url( $cart_url ); ?>" class="header-cart" aria-label="Warenkorb" title="Warenkorb">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <?php if ( $count > 0 ) : ?>
+        <span class="cart-count"><?php echo esc_html( $count ); ?></span>
+        <?php endif; ?>
+    </a>
+    <?php
+    $fragments['a.header-cart'] = ob_get_clean();
+
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'charmelle_cart_fragment' );
 
 // ─── WebP Image Helper ───
 // Usage in templates: charmelle_img('hero-treatment', 'Alt text', 'eager', '580', '520');

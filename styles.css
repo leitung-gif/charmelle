@@ -481,7 +481,51 @@ p {
 }
 
 .header-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   flex-shrink: 0;
+}
+
+/* Cart icon in header */
+.header-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-heading);
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all var(--transition-smooth);
+}
+
+.header-cart:hover {
+  color: var(--accent-gold);
+  background: rgba(197, 168, 128, 0.08);
+}
+
+.header-cart svg {
+  display: block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: var(--accent-gold);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 4px;
+  border: 2px solid var(--bg-primary);
 }
 
 /* --- Buttons --- */
@@ -636,7 +680,7 @@ p {
     letter-spacing: 0.15em;
   }
 
-  .header-cta {
+  .header-cta .btn {
     display: none;
   }
 
