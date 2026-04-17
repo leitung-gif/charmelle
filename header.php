@@ -15,12 +15,12 @@
     <div class="announcement-bar" aria-label="Aktuelle Angebote" aria-live="off">
         <div class="marquee-track">
             <span class="marquee-item"><span class="dot"></span>Hochzeit Angebot - Fragen Sie uns</span>
-            <span class="marquee-item"><span class="dot"></span>10+1 Abos - 10 Behandlungen buchen, 1 gratis</span>
-            <span class="marquee-item"><span class="dot"></span>Rabatte für Lernende - Jetzt informieren</span>
+            <span class="marquee-item"><span class="dot"></span>Kostenlose Hautanalyse — Jetzt Termin vereinbaren</span>
+            <span class="marquee-item"><span class="dot"></span>Rabatte bei Lernenden - Jetzt informieren</span>
             <span class="marquee-item"><span class="dot"></span>Geschenkgutscheine ab CHF 50.—</span>
             <span class="marquee-item"><span class="dot"></span>Hochzeit Angebot - Fragen Sie uns</span>
-            <span class="marquee-item"><span class="dot"></span>10+1 Abos - 10 Behandlungen buchen, 1 gratis</span>
-            <span class="marquee-item"><span class="dot"></span>Rabatte für Lernende - Jetzt informieren</span>
+            <span class="marquee-item"><span class="dot"></span>Kostenlose Hautanalyse — Jetzt Termin vereinbaren</span>
+            <span class="marquee-item"><span class="dot"></span>Rabatte bei Lernenden - Jetzt informieren</span>
             <span class="marquee-item"><span class="dot"></span>Geschenkgutscheine ab CHF 50.—</span>
         </div>
     </div>
