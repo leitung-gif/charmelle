@@ -10,7 +10,7 @@ $t = get_template_directory_uri();
 <style>
   .video-hero{padding:48px 0 56px;background:var(--bg-secondary);overflow:hidden}
   .video-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
-  .video-hero-bubble{max-width:400px;aspect-ratio:3/4;border-radius:500px 500px 20px 20px;overflow:hidden;box-shadow:0 20px 50px rgba(74,59,50,.12);border:3px solid rgba(197,168,128,.15)}
+  .video-hero-bubble{max-width:320px;aspect-ratio:3/4;border-radius:500px 500px 20px 20px;overflow:hidden;box-shadow:0 20px 50px rgba(74,59,50,.12);border:3px solid rgba(197,168,128,.15);margin-left:auto}
   .video-hero-bubble video{width:100%;height:100%;object-fit:cover;display:block;transform:scale(0.9)}
   .video-hero-text .subtitle{display:block;margin-bottom:12px}
   .video-hero-text h1{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;color:var(--text-heading);line-height:1.15;margin-bottom:16px}
