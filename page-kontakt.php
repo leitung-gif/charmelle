@@ -128,41 +128,5 @@ get_header();
     </div>
   </section>
 
-  <!-- ===== LEGAL / IMPRESSUM / DATENSCHUTZ ===== -->
-  <section class="section" id="legal">
-    <div class="container container--narrow">
-
-      <div class="legal-section reveal" id="agb">
-        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
-        <p><strong>Terminabsagen:</strong> Wir bitten um rechtzeitige Absage (mindestens 24 Stunden vor dem Termin). Bei kurzfristigen Absagen oder Nichterscheinen behalten wir uns vor, den vollen Behandlungspreis in Rechnung zu stellen.</p>
-        <p><strong>Gutscheine:</strong> Gutscheine sind 5 Jahre ab Kaufdatum gültig und einlösbar für alle Behandlungen und Produkte im Charmelle Beauty Center. Barauszahlung ist ausgeschlossen.</p>
-        <p><strong>Zahlungsmittel:</strong> Wir akzeptieren Bargeld, EC-Karte, Kreditkarte (Visa, Mastercard) und TWINT.</p>
-        <p><strong>Haftung:</strong> Die Behandlungen werden nach bestem Wissen und Gewissen durchgeführt. Für individuelle Hautreaktionen kann keine Haftung übernommen werden.</p>
-      </div>
-
-      <div class="legal-section reveal" id="datenschutz">
-        <h3>Datenschutzerklärung</h3>
-        <p><strong>Verantwortlich:</strong> Charmelle Beauty Center GmbH, Girixweg 7, 5000 Aarau, Schweiz.</p>
-        <p><strong>Datenerhebung:</strong> Wir erheben personenbezogene Daten nur im Rahmen der Terminbuchung, des Newsletter-Abonnements und der Gutscheinbestellung. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
-        <p><strong>Cookies:</strong> Diese Website verwendet technisch notwendige Cookies. Analytische Cookies werden nur mit Ihrer Einwilligung eingesetzt.</p>
-        <p><strong>Ihre Rechte:</strong> Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer personenbezogenen Daten. Kontaktieren Sie uns unter <a href="mailto:info@charmelle.ch">info@charmelle.ch</a>.</p>
-        <p><strong>Anwendbares Recht:</strong> Es gilt das schweizerische Datenschutzgesetz (DSG).</p>
-      </div>
-
-      <div class="legal-section reveal" id="impressum">
-        <h3>Impressum</h3>
-        <p><strong>Firma:</strong> Charmelle Beauty Center GmbH</p>
-        <p><strong>Rechtsform:</strong> Gesellschaft mit beschränkter Haftung</p>
-        <p><strong>Handelsregister-Nr.:</strong> CH-400.4.024.451-7 (Handelsregister Kanton Aargau)</p>
-        <p><strong>Branche:</strong> Erbringung personenbezogener Dienstleistungen der Gesundheit und Schönheit</p>
-        <p><strong>Adresse:</strong> Girixweg 7, 5000 Aarau, Schweiz</p>
-        <p><strong>Telefon:</strong> <a href="tel:+41628226647">062 822 66 47</a></p>
-        <p><strong>E-Mail:</strong> <a href="mailto:info@charmelle.ch">info@charmelle.ch</a></p>
-        <p><strong>Website:</strong> <a href="https://www.charmelle.ch">www.charmelle.ch</a></p>
-        <p><strong>Webdesign:</strong> <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></p>
-      </div>
-
-    </div>
-  </section>
 
 <?php get_footer(); ?>

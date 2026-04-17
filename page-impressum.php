@@ -34,11 +34,12 @@ get_header(); ?>
       <h2>Handelsregistereintrag</h2>
       <p>Eingetragener Firmenname: Charmelle Beauty Center GmbH<br>
       Rechtsform: Gesellschaft mit beschränkter Haftung (GmbH)<br>
+      Handelsregister-Nr.: CH-400.4.024.451-7<br>
       Handelsregisteramt: Kanton Aargau<br>
       Sitz: Aarau</p>
 
-      <h2>Mehrwertsteuernummer</h2>
-      <p>CHE-XXX.XXX.XXX MWST</p>
+      <h2>UID / Mehrwertsteuernummer</h2>
+      <p>CHE-400.4.024.451-7</p>
 
       <h2>Haftungsausschluss</h2>
       <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen auf dieser Website.</p>
