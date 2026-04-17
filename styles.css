@@ -366,6 +366,130 @@ p {
   100% { transform: translateX(-50%); }
 }
 
+/* ═══════════════════════════════════════════════════
+   Video Hero — Bubble Shape
+   ═══════════════════════════════════════════════════ */
+.video-hero {
+  padding: 60px 0 80px;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.video-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.video-hero-bubble {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 48% 52% 42% 58% / 55% 45% 55% 45%;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(74, 59, 50, 0.15);
+}
+
+.video-hero-bubble video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-hero-text {
+  padding-right: 20px;
+}
+
+.video-hero-text .subtitle {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.video-hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.video-hero-text p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 500px;
+}
+
+/* Welcome Section (formerly hero) */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.welcome-visual .arch-img {
+  max-height: 520px;
+}
+
+.welcome-text h2 {
+  margin-bottom: 8px;
+}
+
+.welcome-text p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .video-hero {
+    padding: 40px 0 60px;
+  }
+
+  .video-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .video-hero-bubble {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .video-hero-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .video-hero-text p {
+    margin: 0 auto 28px;
+  }
+
+  .video-hero-text .hero-buttons {
+    justify-content: center;
+  }
+
+  .welcome-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .welcome-visual {
+    order: -1;
+  }
+
+  .welcome-visual .arch-img {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
 /* --- Header / Navigation --- */
 .site-header {
   position: sticky;

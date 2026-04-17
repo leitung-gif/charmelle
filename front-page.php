@@ -7,27 +7,48 @@ get_header();
 $t = get_template_directory_uri();
 ?>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero section" id="hero">
-    <div class="blob blob--gold blob--lg blob--float-1" style="top: 60px; left: -100px; opacity: 0.06;"></div>
-    <div class="blob blob--cream blob--md blob--float-2" style="bottom: -60px; right: 10%; opacity: 0.07;"></div>
-    <div class="blob blob--sand blob--sm blob--float-3" style="top: 40%; left: 45%; opacity: 0.05;"></div>
+  <!-- ===== VIDEO HERO ===== -->
+  <section class="video-hero" id="hero">
     <div class="container">
-      <div class="hero-content">
-        <span class="subtitle">Kosmetikstudio in Aarau - seit über 30 Jahren</span>
-        <h1>Wo Schönheit auf Expertise trifft</h1>
-        <p>Willkommen bei Charmelle Beauty Center - Ihrem Premium-Kosmetikstudio im Herzen von Aarau. Seit über drei Jahrzehnten vereinen wir medizinische Hightech-Behandlungen mit einem exklusiven Wellness-Erlebnis. Unsere erfahrenen Kosmetikerinnen EFZ bieten Ihnen eine ganzheitliche Schönheitspflege, die Körper, Geist und Seele als Einheit betrachtet.</p>
-        <div class="hero-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener">Termin Buchen</a>
-          <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--outline btn--large">Behandlungen entdecken</a>
+      <div class="video-hero-grid">
+        <div class="video-hero-bubble">
+          <video autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>">
+            <source src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-hero-text">
+          <span class="subtitle">Ihr Kosmetikstudio in Aarau</span>
+          <h1>Professionelle Kosmetik &amp; <em class="text-italic">Hautpflege</em></h1>
+          <p>Das Charmelle Beauty Center vereint seit über 30 Jahren medizinische Hightech-Kosmetik mit ganzheitlicher Schönheitspflege. Hydra Facial, Microneedling, LPG Endermologie und mehr — durchgeführt von diplomierten Kosmetikerinnen EFZ im Herzen von Aarau.</p>
+          <div class="hero-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener">Termin Buchen</a>
+            <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--outline btn--large">Behandlungen entdecken</a>
+          </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="arch-img arch-img--overlay">
-          <picture>
-            <source srcset="<?php echo esc_url( $t . '/images/hero-treatment.webp' ); ?>" type="image/webp">
-            <img src="<?php echo esc_url( $t . '/images/hero-treatment.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau - Kosmetikstudio im Kanton Aargau" loading="eager" fetchpriority="high" width="580" height="520">
-          </picture>
+    </div>
+  </section>
+
+  <!-- ===== WELCOME / ABOUT SECTION (formerly hero) ===== -->
+  <section class="section" id="willkommen">
+    <div class="container">
+      <div class="welcome-grid reveal">
+        <div class="welcome-visual">
+          <div class="arch-img arch-img--overlay">
+            <picture>
+              <source srcset="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" type="image/png">
+              <img src="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau" loading="lazy" width="580" height="520">
+            </picture>
+          </div>
+        </div>
+        <div class="welcome-text">
+          <span class="subtitle">Seit über 30 Jahren</span>
+          <h2>Wo Schönheit auf <em class="text-italic">Expertise</em> trifft</h2>
+          <hr class="golden-rule">
+          <p>Willkommen bei Charmelle Beauty Center — Ihrem Premium-Kosmetikstudio im Herzen von Aarau. Seit über drei Jahrzehnten vereinen wir medizinische Hightech-Behandlungen mit einem exklusiven Wellness-Erlebnis. Unsere erfahrenen Kosmetikerinnen EFZ bieten Ihnen eine ganzheitliche Schönheitspflege, die Körper, Geist und Seele als Einheit betrachtet.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+            <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="btn btn--outline">Unser Team kennenlernen</a>
+          </div>
         </div>
       </div>
     </div>
