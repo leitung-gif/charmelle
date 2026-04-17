@@ -396,14 +396,17 @@ p {
   z-index: 10;
 }
 
-.logo {
-  display: flex;
+.logo,
+.site-header .logo,
+#site-header .logo {
+  display: flex !important;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
   max-height: var(--header-height);
-  overflow: hidden;
+  max-width: 200px !important;
+  overflow: hidden !important;
 }
 
 .logo-text {
@@ -423,12 +426,17 @@ p {
   margin-top: 2px;
 }
 
-.logo-img {
+.logo-img,
+.site-header .logo img,
+.header-inner .logo img,
+#site-header .logo img,
+#site-header img.logo-img {
   height: 44px !important;
   max-height: 44px !important;
   width: auto !important;
-  display: block;
-  object-fit: contain;
+  max-width: 200px !important;
+  display: block !important;
+  object-fit: contain !important;
 }
 
 .main-nav {
