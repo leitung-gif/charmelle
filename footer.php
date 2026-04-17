@@ -51,9 +51,9 @@
             <div class="footer-bottom">
                 <span>&copy; <?php echo date('Y'); ?> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
                 <div class="footer-legal">
-                    <a href="<?php echo esc_url( home_url( '/kontakt/#agb' ) ); ?>">AGB</a>
-                    <a href="<?php echo esc_url( home_url( '/kontakt/#datenschutz' ) ); ?>">Datenschutz</a>
-                    <a href="<?php echo esc_url( home_url( '/kontakt/#impressum' ) ); ?>">Impressum</a>
+                    <a href="<?php echo esc_url( home_url( '/agb/' ) ); ?>">AGB</a>
+                    <a href="<?php echo esc_url( home_url( '/datenschutz/' ) ); ?>">Datenschutz</a>
+                    <a href="<?php echo esc_url( home_url( '/impressum/' ) ); ?>">Impressum</a>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
 
     <!-- Cookie Consent Banner -->
     <div class="cookie-consent" role="dialog" aria-label="Cookie-Hinweis">
-        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. <a href="<?php echo esc_url( home_url( '/kontakt/#datenschutz' ) ); ?>">Datenschutz</a></p>
+        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. <a href="<?php echo esc_url( home_url( '/datenschutz/' ) ); ?>">Datenschutz</a></p>
         <div class="cookie-consent-actions">
             <button class="btn-accept">Akzeptieren</button>
             <button class="btn-decline">Ablehnen</button>
