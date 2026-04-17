@@ -451,13 +451,18 @@ if ( isset( $_GET['charmelle_import_blogs'] ) && file_exists( get_template_direc
 function charmelle_get_page_seo() {
     $base = 'https://www.charmelle.ch';
 
-    // Default (front page)
+    // Default fallback
     $seo = array(
         'title'       => 'Charmelle Beauty Center Aarau — Kosmetikstudio',
         'description' => 'Charmelle Beauty Center in Aarau — Ihr Kosmetikstudio für Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up & LPG Endermologie. Erfahrene Kosmetikerinnen EFZ. Seit über 30 Jahren.',
         'keywords'    => 'Kosmetikstudio Aarau, Beauty Center Aarau, Hydra Facial Aarau, Microneedling Aarau, Anti-Aging Aarau, Gesichtspflege Aarau, Wimpernlifting Aarau, Permanent Make-Up Aarau, Kosmetikerin EFZ Aarau, LPG Endermologie Aarau',
         'url'         => $base . '/',
     );
+
+    // Front page always wins — must come first
+    if ( is_front_page() ) {
+        return $seo; // Use the default which IS the front page SEO
+    }
 
     if ( is_page( 'behandlungen' ) ) {
         $seo = array(
