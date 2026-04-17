@@ -29,7 +29,7 @@
     <header class="site-header" id="site-header">
         <div class="header-inner">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" aria-label="Charmelle Beauty Center - Startseite">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.png' ); ?>" alt="Charmelle Beauty Center Logo" class="logo-img">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.png' ); ?>" alt="Charmelle Beauty Center Logo" class="logo-img" style="height:44px!important;max-height:44px!important;width:auto!important;max-width:200px!important;object-fit:contain!important;">
             </a>
             <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"<?php if ( is_front_page() ) echo ' class="active"'; ?>>Home</a>
