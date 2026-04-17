@@ -7,6 +7,34 @@ get_header();
 $t = get_template_directory_uri();
 ?>
 
+<style>
+  .video-hero{padding:48px 0 56px;background:var(--bg-secondary);overflow:hidden}
+  .video-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+  .video-hero-bubble{max-width:420px;aspect-ratio:5/4;border-radius:50%;overflow:hidden;box-shadow:0 20px 50px rgba(74,59,50,.12)}
+  .video-hero-bubble video{width:100%;height:100%;object-fit:cover;display:block}
+  .video-hero-text .subtitle{display:block;margin-bottom:12px}
+  .video-hero-text h1{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;color:var(--text-heading);line-height:1.15;margin-bottom:16px}
+  .video-hero-text p{font-size:.98rem;color:var(--text-light);line-height:1.75;margin-bottom:24px;max-width:480px}
+  .welcome-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+  .welcome-visual{order:2}
+  .welcome-visual .arch-img{max-height:360px;max-width:320px;margin-left:auto}
+  .welcome-text{order:1}
+  .welcome-text h2{margin-bottom:8px}
+  .welcome-text p{color:var(--text-light);font-size:.95rem;line-height:1.75}
+  @media(max-width:900px){
+    .video-hero{padding:32px 0 40px}
+    .video-hero-grid{grid-template-columns:1fr;gap:24px}
+    .video-hero-bubble{max-width:280px;margin:0 auto}
+    .video-hero-text{padding:0;text-align:center}
+    .video-hero-text p{margin:0 auto 24px}
+    .video-hero-text .hero-buttons{justify-content:center}
+    .welcome-grid{grid-template-columns:1fr;gap:28px}
+    .welcome-visual{order:-1}
+    .welcome-visual .arch-img{max-width:260px;margin:0 auto}
+    .welcome-text{order:2}
+  }
+</style>
+
   <!-- ===== VIDEO HERO ===== -->
   <section class="video-hero" id="hero">
     <div class="container">
@@ -29,18 +57,10 @@ $t = get_template_directory_uri();
     </div>
   </section>
 
-  <!-- ===== WELCOME / ABOUT SECTION (formerly hero) ===== -->
+  <!-- ===== WELCOME / ABOUT SECTION ===== -->
   <section class="section" id="willkommen">
     <div class="container">
       <div class="welcome-grid reveal">
-        <div class="welcome-visual">
-          <div class="arch-img arch-img--overlay">
-            <picture>
-              <source srcset="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" type="image/png">
-              <img src="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau" loading="lazy" width="580" height="520">
-            </picture>
-          </div>
-        </div>
         <div class="welcome-text">
           <span class="subtitle">Seit über 30 Jahren</span>
           <h2>Wo Schönheit auf <em class="text-italic">Expertise</em> trifft</h2>
@@ -48,6 +68,11 @@ $t = get_template_directory_uri();
           <p>Willkommen bei Charmelle Beauty Center — Ihrem Premium-Kosmetikstudio im Herzen von Aarau. Seit über drei Jahrzehnten vereinen wir medizinische Hightech-Behandlungen mit einem exklusiven Wellness-Erlebnis. Unsere erfahrenen Kosmetikerinnen EFZ bieten Ihnen eine ganzheitliche Schönheitspflege, die Körper, Geist und Seele als Einheit betrachtet.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
             <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="btn btn--outline">Unser Team kennenlernen</a>
+          </div>
+        </div>
+        <div class="welcome-visual">
+          <div class="arch-img arch-img--overlay">
+            <img src="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau" loading="lazy" width="580" height="520">
           </div>
         </div>
       </div>
