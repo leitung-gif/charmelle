@@ -67,13 +67,17 @@ function charmelle_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'charmelle_enqueue_assets' );
 
-// ─── Preload Critical Assets ───
+// ─── Preload Critical Assets + GEO Discovery Links ───
 function charmelle_preload_assets() {
     $theme_uri = get_template_directory_uri();
     echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/hero-treatment.png' ) . '" as="image" fetchpriority="high">' . "\n";
     echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/logo.png' ) . '" as="image">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    // GEO / AI Discovery Links
+    echo '<link rel="llms" type="text/plain" href="https://www.charmelle.ch/llms.txt">' . "\n";
+    echo '<link rel="alternate" type="text/plain" href="https://www.charmelle.ch/llms-full.txt" title="Extended AI Summary">' . "\n";
+    echo '<link rel="author" type="text/plain" href="https://www.charmelle.ch/humans.txt">' . "\n";
 }
 add_action( 'wp_head', 'charmelle_preload_assets', 1 );
 
@@ -222,7 +226,15 @@ function charmelle_structured_data() {
                     "name": "Charmelle Beauty Center",
                     "description": "Premium Kosmetikstudio in Aarau seit über 30 Jahren",
                     "publisher": {"@id": "<?php echo $base; ?>/#organization"},
-                    "inLanguage": "de-CH"
+                    "inLanguage": "de-CH",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": {
+                            "@type": "EntryPoint",
+                            "urlTemplate": "<?php echo $base; ?>/?s={search_term_string}"
+                        },
+                        "query-input": "required name=search_term_string"
+                    }
                 }
             ]
         }
@@ -400,9 +412,9 @@ remove_action( 'wp_head', 'wp_generator' );
 // <?php echo do_shortcode('[contact-form-7 id="FORM_ID" title="Kontakt"]'); ?>
 
 // ─── Blog Import Tool (one-time use) ───
-if ( file_exists( get_template_directory() . '/import-blogs.php' ) ) {
-    require_once get_template_directory() . '/import-blogs.php';
-}
+// REMOVED auto-include. Run manually by visiting:
+// https://www.charmelle.ch/?charmelle_import_blogs=1
+// Then delete import-blogs.php after successful import.
 
 // ─── Page-Specific SEO Data (replaces Yoast) ───
 function charmelle_get_page_seo() {
@@ -410,7 +422,7 @@ function charmelle_get_page_seo() {
 
     // Default (front page)
     $seo = array(
-        'title'       => 'Charmelle Beauty Center Aarau | Premium Kosmetikstudio seit über 30 Jahren',
+        'title'       => 'Charmelle Beauty Center Aarau — Kosmetikstudio',
         'description' => 'Charmelle Beauty Center in Aarau — Ihr Kosmetikstudio für Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up & LPG Endermologie. Erfahrene Kosmetikerinnen EFZ. Seit über 30 Jahren.',
         'keywords'    => 'Kosmetikstudio Aarau, Beauty Center Aarau, Hydra Facial Aarau, Microneedling Aarau, Anti-Aging Aarau, Gesichtspflege Aarau, Wimpernlifting Aarau, Permanent Make-Up Aarau, Kosmetikerin EFZ Aarau, LPG Endermologie Aarau',
         'url'         => $base . '/',
@@ -418,49 +430,49 @@ function charmelle_get_page_seo() {
 
     if ( is_page( 'behandlungen' ) ) {
         $seo = array(
-            'title'       => 'Behandlungen | Charmelle Beauty Center Aarau — Hydra Facial, Microneedling & mehr',
+            'title'       => 'Behandlungen — Charmelle Beauty Center Aarau',
             'description' => 'Alle Behandlungen im Charmelle Beauty Center Aarau: Hydra Facial Syndeo, Microneedling, LPG Endermologie, Dermabrasion, Wimpernlifting, Permanent Make-Up, Gesichtspflege, Anti-Aging und medizinische Kosmetik.',
             'keywords'    => 'Hydra Facial Aarau, Microneedling Aarau, LPG Endermologie, Gesichtspflege Aarau, Wimpernlifting, Permanent Make-Up Aarau, Anti-Aging Behandlung, Kosmetik Behandlungen Aargau',
             'url'         => $base . '/behandlungen/',
         );
     } elseif ( is_page( 'team' ) ) {
         $seo = array(
-            'title'       => 'Unser Team | Charmelle Beauty Center Aarau — Erfahrene Kosmetikerinnen EFZ',
+            'title'       => 'Team — Charmelle Beauty Center Aarau',
             'description' => 'Lernen Sie das Charmelle-Team kennen: Aurora, Oriana, Giulia, Elif & Stella — erfahrene Kosmetikerinnen EFZ in Aarau. Wir sprechen Deutsch, Italienisch & Englisch.',
             'keywords'    => 'Kosmetikerin Aarau, Beauty Team Aarau, Kosmetikerin EFZ, Berufsbildnerin, Visagistin, Kosmetikstudio Team Aarau',
             'url'         => $base . '/team/',
         );
     } elseif ( is_page( 'kontakt' ) ) {
         $seo = array(
-            'title'       => 'Kontakt | Charmelle Beauty Center — Girixweg 7, 5000 Aarau',
+            'title'       => 'Kontakt — Charmelle Beauty Center Aarau',
             'description' => 'Kontaktieren Sie das Charmelle Beauty Center Aarau: ☎ 062 822 66 47 · 📍 Girixweg 7, 5000 Aarau · WhatsApp: 079 828 66 47 · Termin online buchen.',
             'keywords'    => 'Kontakt Charmelle Aarau, Kosmetikstudio Aarau Adresse, Beauty Center Telefonnummer, Termin buchen Aarau, Girixweg 7 Aarau',
             'url'         => $base . '/kontakt/',
         );
     } elseif ( is_page( 'gutscheine' ) ) {
         $seo = array(
-            'title'       => 'Geschenkgutscheine | Charmelle Beauty Center Aarau — Das perfekte Geschenk',
+            'title'       => 'Gutscheine — Charmelle Beauty Center Aarau',
             'description' => 'Schenken Sie Schönheit und Wohlbefinden! Geschenkgutscheine von Charmelle Beauty Center Aarau ab CHF 50.— Wertgutschein. Online bestellen & verschenken.',
             'keywords'    => 'Geschenkgutschein Kosmetik Aarau, Beauty Gutschein, Wertgutschein Kosmetikstudio, Geschenk Gesichtspflege, Gutschein Hydra Facial',
             'url'         => $base . '/gutscheine/',
         );
     } elseif ( function_exists( 'is_shop' ) && is_shop() ) {
         $seo = array(
-            'title'       => 'Shop | Charmelle Beauty Center Aarau — Pflegeprodukte online kaufen',
+            'title'       => 'Shop — Charmelle Beauty Center Aarau',
             'description' => 'Hochwertige Pflegeprodukte im Charmelle Online-Shop: Med Beauty Swiss, Team Dr. Joseph, Thalgo und mehr. Professionelle Hautpflege direkt zu Ihnen nach Hause.',
             'keywords'    => 'Kosmetik Shop Aarau, Pflegeprodukte kaufen, Med Beauty Swiss, Thalgo Produkte, Hautpflege Online Shop Schweiz',
             'url'         => $base . '/shop/',
         );
     } elseif ( is_singular( 'post' ) ) {
         $seo = array(
-            'title'       => get_the_title() . ' | Charmelle Beauty Center Blog',
+            'title'       => get_the_title() . ' — Charmelle Blog',
             'description' => wp_trim_words( get_the_excerpt(), 25, '…' ),
             'keywords'    => 'Beauty Blog, Hautpflege Tipps, Kosmetik Aarau, Charmelle Blog',
             'url'         => get_permalink(),
         );
     } elseif ( is_home() ) {
         $seo = array(
-            'title'       => 'Blog | Charmelle Beauty Center Aarau — Beauty-Tipps & Neuigkeiten',
+            'title'       => 'Blog — Charmelle Beauty Center Aarau',
             'description' => 'Beauty-Wissen, Pflegetipps und Neuigkeiten aus dem Charmelle Beauty Center Aarau. Erfahren Sie mehr über Hydra Facial, Microneedling und professionelle Hautpflege.',
             'keywords'    => 'Beauty Blog Aarau, Hautpflege Tipps, Kosmetik Ratgeber, Hydra Facial Erfahrung, Microneedling Blog',
             'url'         => $base . '/blog/',
@@ -613,3 +625,37 @@ function charmelle_woocommerce_inline_styles() {
     wp_add_inline_style( 'charmelle-design-system', $css );
 }
 add_action( 'wp_enqueue_scripts', 'charmelle_woocommerce_inline_styles', 20 );
+
+// ─── Accessibility & Polish CSS ───
+function charmelle_a11y_inline_styles() {
+    $css = '
+    /* Focus-visible outlines for keyboard navigation */
+    :focus-visible {
+        outline: 2px solid var(--accent-gold);
+        outline-offset: 2px;
+    }
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+    /* Hamburger menu touch target (min 44x44px) */
+    .menu-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Mobile font-size: minimum 16px (prevents iOS zoom on input focus) */
+    @media (max-width: 768px) {
+        body {
+            font-size: 16px;
+        }
+        input, select, textarea {
+            font-size: 16px;
+        }
+    }
+    ';
+    wp_add_inline_style( 'charmelle-design-system', $css );
+}
+add_action( 'wp_enqueue_scripts', 'charmelle_a11y_inline_styles', 21 );
+

@@ -1,0 +1,14 @@
+/* Charmelle Beauty Center — www.charmelle.ch */
+
+/* TEAM */
+  Owner & Lead Cosmetics: Aurora Mezzaucella, Oriana Raso
+  Design & Development: Lorien Group (lorien.group)
+
+/* SITE */
+  Standards: HTML5, CSS3, WordPress, WooCommerce
+  Fonts: Playfair Display, Jost, Great Vibes (Google Fonts)
+  Software: WordPress 6.x, WooCommerce, PHP 8.x
+
+/* LOCATION */
+  Girixweg 7, 5000 Aarau, Switzerland
+  Since: 1994

@@ -9,7 +9,7 @@ get_header();
     <div class="container">
       <span class="subtitle">Beiträge</span>
       <h1><?php the_archive_title(); ?></h1>
-      <?php if ( the_archive_description() ) : ?>
+      <?php if ( get_the_archive_description() ) : ?>
         <p><?php echo get_the_archive_description(); ?></p>
       <?php endif; ?>
     </div>

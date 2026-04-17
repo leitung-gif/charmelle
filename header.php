@@ -12,7 +12,7 @@
     <a href="#main-content" class="skip-link" id="skip-nav">Zum Inhalt springen</a>
 
     <!-- ===== ANNOUNCEMENT MARQUEE BAR ===== -->
-    <div class="announcement-bar" role="marquee" aria-label="Aktuelle Angebote">
+    <div class="announcement-bar" aria-label="Aktuelle Angebote" aria-live="off">
         <div class="marquee-track">
             <span class="marquee-item"><span class="dot"></span>Hochzeit Angebot - Fragen Sie uns</span>
             <span class="marquee-item"><span class="dot"></span>10+1 Abos - 10 Behandlungen buchen, 1 gratis</span>

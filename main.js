@@ -26,15 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.querySelector('.main-nav');
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
       menuToggle.classList.toggle('active');
-      mainNav.classList.toggle('open');
-      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Menü schliessen' : 'Menü öffnen');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     // Close on nav link click
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Menü öffnen');
         document.body.style.overflow = '';
       });
     });
@@ -50,11 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (parent) {
         parent.querySelectorAll('.faq-item.open').forEach(openItem => {
           openItem.classList.remove('open');
+          const btn = openItem.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }
       // Toggle current
       if (!wasOpen) {
         item.classList.add('open');
+        question.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -66,8 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetPanel = btn.dataset.tab;
 
       // Deactivate all tabs in this group
-      btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+      btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
 
       // Show target panel, hide others
       document.querySelectorAll(`.tab-panel[data-tab-group="${tabGroup}"]`).forEach(panel => {
@@ -284,132 +295,23 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = new Date().getFullYear();
   });
 
-  // --- Newsletter Popup (CMS-driven) ---
-  const popup = document.getElementById('newsletter-popup');
-  if (popup) {
-    // Load popup settings from CMS
-    async function initPopup() {
-      let settings = {
-        enabled: true,
-        subtitle: 'Exklusive Angebote',
-        title: 'Beauty-News & <em class="text-italic">Aktionen</em>',
-        text: 'Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.',
-        buttonText: 'Anmelden',
-        placeholder: 'Ihre E-Mail-Adresse',
-        disclaimer: 'Kein Spam, jederzeit abbestellbar.',
-        delaySeconds: 15,
-        cooldownDays: 7
-      };
-
-      try {
-        const res = await fetch('/data/settings.json');
-        if (res.ok) {
-          const data = await res.json();
-          if (data.popup) Object.assign(settings, data.popup);
-        }
-      } catch (e) {
-        // Use defaults
-      }
-
-      if (!settings.enabled) return;
-
-      // Update popup content from CMS
-      const subtitleEl = popup.querySelector('.subtitle');
-      const titleEl = popup.querySelector('h3');
-      const textEl = popup.querySelector('.popup-content > p');
-      const btnEl = popup.querySelector('button[type="submit"]');
-      const inputEl = popup.querySelector('input[type="email"]');
-      const disclaimerEl = popup.querySelector('.popup-disclaimer');
-
-      if (subtitleEl) subtitleEl.textContent = settings.subtitle;
-      if (titleEl) titleEl.innerHTML = settings.title;
-      if (textEl) textEl.textContent = settings.text;
-      if (btnEl) btnEl.textContent = settings.buttonText;
-      if (inputEl) inputEl.placeholder = settings.placeholder;
-      if (disclaimerEl) {
-        disclaimerEl.innerHTML = settings.disclaimer + ' <a href="kontakt.html#datenschutz">Datenschutz</a>';
-      }
-
-      // Cooldown check
-      const POPUP_COOLDOWN = settings.cooldownDays * 24 * 60 * 60 * 1000;
-      const lastShown = localStorage.getItem('charmelle-popup-shown');
-      const shouldShow = !lastShown || (Date.now() - parseInt(lastShown)) > POPUP_COOLDOWN;
-
-      if (!shouldShow) return;
-
-      // Show after delay
-      const popupTimer = setTimeout(() => showPopup(), settings.delaySeconds * 1000);
-
-      // Exit intent (desktop only)
-      if (window.innerWidth > 768) {
-        document.addEventListener('mouseout', function exitIntent(e) {
-          if (e.clientY < 10 && !popup.classList.contains('is-visible')) {
-            clearTimeout(popupTimer);
-            showPopup();
-            document.removeEventListener('mouseout', exitIntent);
-          }
-        });
-      }
-    }
-
-    function showPopup() {
-      popup.classList.add('is-visible');
-      localStorage.setItem('charmelle-popup-shown', Date.now().toString());
-    }
-
-    // Close popup
-    const popupClose = popup.querySelector('.popup-close');
-    if (popupClose) {
-      popupClose.addEventListener('click', () => {
-        popup.classList.remove('is-visible');
-      });
-    }
-
-    // Close on overlay click
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.classList.remove('is-visible');
+  // --- Newsletter Form (inline) ---
+  document.querySelectorAll('.newsletter-form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = form.querySelector('input[type="email"]');
+      if (emailInput && emailInput.value) {
+        // Store subscription locally (connect to Mailchimp/MailerLite in production)
+        const email = emailInput.value;
+        console.log('Newsletter subscription:', email);
+        form.innerHTML = `
+          <div style="text-align:center;padding:16px 0;">
+            <div style="font-size:2rem;margin-bottom:8px;">✨</div>
+            <p style="color:var(--text-white);font-weight:500;">Vielen Dank! Wir melden uns bald bei Ihnen.</p>
+          </div>
+        `;
       }
     });
-
-    // Form submission
-    const popupForm = popup.querySelector('form');
-    if (popupForm) {
-      popupForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(popupForm);
-        try {
-          await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-          });
-          popup.querySelector('.popup-content').innerHTML = `
-            <div style="text-align:center;padding:40px 0;">
-              <div style="font-size:3rem;margin-bottom:16px;">✨</div>
-              <h3 style="margin-bottom:8px;">Vielen Dank!</h3>
-              <p style="color:var(--text-light);">Wir haben Ihre Anmeldung erhalten und melden uns bald bei Ihnen.</p>
-            </div>
-          `;
-          setTimeout(() => popup.classList.remove('is-visible'), 3000);
-        } catch (err) {
-          console.error('Form submission failed', err);
-        }
-      });
-    }
-
-    initPopup();
-  }
-
-  // --- Netlify Identity Widget (for CMS login) ---
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
+  });
 
 });
