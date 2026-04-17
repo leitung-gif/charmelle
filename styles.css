@@ -376,6 +376,7 @@ p {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   height: var(--header-height);
+  overflow: hidden;
   transition: all var(--transition-smooth);
 }
 
@@ -391,6 +392,8 @@ p {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -399,6 +402,8 @@ p {
   gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  max-height: var(--header-height);
+  overflow: hidden;
 }
 
 .logo-text {
@@ -419,9 +424,11 @@ p {
 }
 
 .logo-img {
-  height: 44px;
-  width: auto;
+  height: 44px !important;
+  max-height: 44px !important;
+  width: auto !important;
   display: block;
+  object-fit: contain;
 }
 
 .main-nav {
