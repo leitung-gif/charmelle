@@ -14,6 +14,14 @@
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
+
+  <!-- Snipcart Styles -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css">
 
   <title>Shop - Kosmetikprodukte | Charmelle Beauty Center Aarau</title>
   <meta name="description" content="Hochwertige Kosmetikprodukte von Med Beauty Swiss, Team Dr. Joseph, Thalgo und Dr. Niedermeier Regulatpro. Online bestellen bei Charmelle Beauty Center Aarau.">
@@ -64,143 +72,304 @@
   </script>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .brand-showcase {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+    /* ===== SHOP PAGE STYLES ===== */
+
+    /* --- Filter Bar --- */
+    .shop-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
-    .brand-showcase-card {
+    .shop-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .shop-filter-btn {
+      padding: 10px 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .shop-filter-btn:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+    .shop-filter-btn.active {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: #fff;
+    }
+    .shop-search-wrap {
+      position: relative;
+      min-width: 240px;
+    }
+    .shop-search-wrap input {
+      width: 100%;
+      padding: 10px 16px 10px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 100px;
+      background: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      transition: border-color var(--transition-fast);
+    }
+    .shop-search-wrap input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+    .shop-search-wrap input::placeholder {
+      color: var(--text-light);
+    }
+    .shop-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+    .shop-result-count {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      min-width: max-content;
+    }
+
+    /* --- Product Grid --- */
+    #product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* --- Product Card --- */
+    .product-card {
       background: var(--bg-primary);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
       overflow: hidden;
       transition: all var(--transition-smooth);
-      text-decoration: none;
-      color: inherit;
+      animation: shopFadeIn 0.5s ease both;
       display: flex;
       flex-direction: column;
     }
-    .brand-showcase-card:hover {
+    @keyframes shopFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .product-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-elevated);
-      border-color: var(--accent-gold);
+      border-color: var(--accent-gold-light);
     }
-    .brand-showcase-visual {
-      aspect-ratio: 16/9;
+    .product-card-image {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-section);
+    }
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .product-card:hover .product-card-image img {
+      transform: scale(1.06);
+    }
+    .product-card-image--placeholder {
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
-    .brand-showcase-visual.medbeauty { background: linear-gradient(135deg, #f8f0e8 0%, #e8d5c0 50%, #d4bc9a 100%); }
-    .brand-showcase-visual.drjoseph { background: linear-gradient(135deg, #e8f0e6 0%, #c5d8b8 50%, #a3bf94 100%); }
-    .brand-showcase-visual.thalgo { background: linear-gradient(135deg, #e0eef8 0%, #b0cfe8 50%, #7fb5d8 100%); }
-    .brand-showcase-visual.regulatpro { background: linear-gradient(135deg, #f5ece4 0%, #e8d4c0 50%, #d8b896 100%); }
-    .brand-showcase-visual .brand-icon {
-      font-size: 3rem;
-      opacity: 0.6;
+    .product-card-image--placeholder[data-brand*="med-beauty"] { background: linear-gradient(135deg, #f8f0e8, #e8d5c0); }
+    .product-card-image--placeholder[data-brand*="team-dr-joseph"] { background: linear-gradient(135deg, #e8f0e6, #c5d8b8); }
+    .product-card-image--placeholder[data-brand*="thalgo"] { background: linear-gradient(135deg, #e0eef8, #b0cfe8); }
+    .product-card-image--placeholder[data-brand*="niedermeier"] { background: linear-gradient(135deg, #f5ece4, #e8d4c0); }
+    .product-card-image--placeholder[data-brand*="is-clinical"] { background: linear-gradient(135deg, #f0f4f8, #d1dce8); }
+    .product-placeholder-icon {
+      font-size: 3.5rem;
+      opacity: 0.3;
     }
-    .brand-showcase-visual .product-count-badge {
+    .product-badge {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
-      padding: 6px 14px;
+      top: 14px;
+      left: 14px;
+      background: var(--accent-gold);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
       border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--text-primary);
     }
-    .brand-showcase-body {
-      padding: 28px;
+    .product-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
       flex: 1;
     }
-    .brand-showcase-body .brand-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
+    .product-brand-tag {
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--accent-gold);
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .brand-showcase-body h3 {
-      margin-bottom: 8px;
-      font-size: 1.3rem;
-    }
-    .brand-showcase-body p {
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-    .brand-showcase-body .price-range {
+    .product-name {
       font-family: var(--font-heading);
-      color: var(--accent-gold);
-      font-size: 1rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .brand-showcase-body .brand-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--accent-gold);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .brand-showcase-body .brand-cta::after {
-      content: '→';
-      transition: transform var(--transition-fast);
-    }
-    .brand-showcase-card:hover .brand-cta::after {
-      transform: translateX(4px);
-    }
-
-    /* Product previews */
-    .product-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .product-preview-pill {
-      background: var(--bg-section);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      padding: 14px 16px;
-      text-align: center;
-      font-size: 0.82rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 4px;
       color: var(--text-primary);
-      font-weight: 500;
     }
-    .product-preview-pill .pill-price {
-      display: block;
+    .product-size {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .product-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+    }
+    .product-price {
       font-family: var(--font-heading);
-      color: var(--accent-gold);
-      font-size: 0.95rem;
-      margin-top: 4px;
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    @media (max-width: 768px) {
-      .brand-showcase {
-        grid-template-columns: 1fr;
-      }
-      .product-preview-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
+    /* --- Cart Button (floating) --- */
+    .shop-cart-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(184, 149, 106, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: all var(--transition-fast);
     }
-    @media (max-width: 400px) {
-      .product-preview-grid {
-        grid-template-columns: 1fr;
-      }
+    .shop-cart-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(184, 149, 106, 0.5);
+    }
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--accent-espresso);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* --- Empty State --- */
+    .shop-empty {
+      display: none;
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .shop-empty-icon {
+      font-size: 3rem;
+      opacity: 0.3;
+      margin-bottom: 16px;
+    }
+    .shop-error {
+      text-align: center;
+      padding: 48px;
+      color: var(--text-light);
+    }
+
+    /* --- Brand Section (below products) --- */
+    .brand-strip {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 32px 0;
+    }
+    .brand-strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.82rem;
+      transition: color var(--transition-fast);
+    }
+    .brand-strip-item:hover {
+      color: var(--accent-gold);
+    }
+    .brand-strip-icon {
+      font-size: 1.6rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--bg-section);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+    }
+    .brand-strip-item:hover .brand-strip-icon {
+      border-color: var(--accent-gold);
+      background: rgba(184,149,106,0.08);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      #product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    @media (max-width: 768px) {
+      .shop-toolbar { flex-direction: column; align-items: stretch; }
+      .shop-search-wrap { min-width: auto; }
+      .shop-filters { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 4px; }
+      .shop-filter-btn { flex-shrink: 0; }
+    }
+    @media (max-width: 520px) {
+      #product-grid { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -225,10 +394,10 @@
   <!-- ===== HEADER ===== -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
+      <a href="index.html" class="logo" aria-label="Charmelle Beauty Center - Startseite">
         <img src="images/logo.png" alt="Charmelle Beauty Center Logo" class="logo-img">
       </a>
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <a href="index.html">Home</a>
         <a href="behandlungen.html">Behandlungen</a>
         <a href="team.html">Team</a>
@@ -254,154 +423,76 @@
     <div class="container text-center">
       <span class="subtitle">Premium Produkte</span>
       <h1>Unser <em class="text-italic">Shop</em></h1>
-      <p>Hochwertige Pflegeprodukte unserer exklusiven Marken - direkt online bestellen oder im Studio in Aarau beraten lassen.</p>
+      <p>Hochwertige Pflegeprodukte unserer exklusiven Marken — direkt online bestellen oder im Studio in Aarau beraten lassen.</p>
     </div>
   </section>
 
-  <!-- ===== BRAND CARDS ===== -->
-  <section class="section" id="marken">
+  <!-- ===== BRAND STRIP ===== -->
+  <section class="section" style="padding-top: 0; padding-bottom: 0;">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="subtitle">Exklusive Marken</span>
-        <h2>Unsere <em class="text-italic">Produktlinien</em></h2>
-        <hr class="golden-rule golden-rule--center">
-        <p>Wir arbeiten ausschliesslich mit hochwertigen Marken, die für Innovation, Wirksamkeit und Nachhaltigkeit stehen.</p>
-      </div>
-
-      <div class="brand-showcase">
-
-        <!-- Med Beauty Swiss -->
-        <a href="https://www.charmelle.ch/shop_2/med-beauty-produkte/" class="brand-showcase-card reveal" target="_blank" rel="noopener">
-          <div class="brand-showcase-visual medbeauty">
-            <span class="brand-icon">✦</span>
-            <span class="product-count-badge">8 Produktlinien</span>
-          </div>
-          <div class="brand-showcase-body">
-            <span class="brand-tag">✦ Swiss Made</span>
-            <h3>Med Beauty Swiss</h3>
-            <p>Medizinische Kosmetik auf höchstem Niveau. Cell Premium, Gly Clean, Skinetin Moss, VIP Vitamin Power und mehr.</p>
-            <span class="brand-cta">Produkte entdecken</span>
-          </div>
-        </a>
-
-        <!-- Team Dr. Joseph -->
-        <a href="https://www.charmelle.ch/shop_2/team-dr-joseph/" class="brand-showcase-card reveal reveal-delay-1" target="_blank" rel="noopener">
-          <div class="brand-showcase-visual drjoseph">
-            <span class="brand-icon">🌿</span>
-            <span class="product-count-badge">22 Produkte</span>
-          </div>
-          <div class="brand-showcase-body">
-            <span class="brand-tag">✦ Südtiroler Naturkosmetik</span>
-            <h3>Team Dr. Joseph</h3>
-            <p>Alpines Kräuterwissen meets moderne Wissenschaft. Reinigung, Seren, Cremes und Sonnenschutz ab CHF 32.—</p>
-            <span class="price-range">CHF 32.— bis CHF 150.—</span>
-            <span class="brand-cta">Produkte entdecken</span>
-          </div>
-        </a>
-
-        <!-- Thalgo -->
-        <a href="https://www.charmelle.ch/shop_2/thalgo/" class="brand-showcase-card reveal reveal-delay-2" target="_blank" rel="noopener">
-          <div class="brand-showcase-visual thalgo">
-            <span class="brand-icon">🌊</span>
-            <span class="product-count-badge">17 Produkte</span>
-          </div>
-          <div class="brand-showcase-body">
-            <span class="brand-tag">✦ Meeresbasierte Pflege</span>
-            <h3>Thalgo</h3>
-            <p>Die Kraft des Meeres für Ihre Haut. Anti-Aging, Hyalu-Procollagene, Silicium Lift und Feuchtigkeitspflege ab CHF 30.—</p>
-            <span class="price-range">CHF 30.— bis CHF 98.—</span>
-            <span class="brand-cta">Produkte entdecken</span>
-          </div>
-        </a>
-
-        <!-- Regulatpro -->
-        <a href="https://www.charmelle.ch/shop_2/hyaluron-beauty-drink/" class="brand-showcase-card reveal reveal-delay-3" target="_blank" rel="noopener">
-          <div class="brand-showcase-visual regulatpro">
-            <span class="brand-icon">💎</span>
-            <span class="product-count-badge">2 Produkte</span>
-          </div>
-          <div class="brand-showcase-body">
-            <span class="brand-tag">✦ Beauty von innen</span>
-            <h3>Dr. Niedermeier Regulatpro</h3>
-            <p>Natürlicher Anti-Aging Beauty Drink und Collagen-Kur. Schönheit beginnt von innen.</p>
-            <span class="price-range">CHF 57.90 bis CHF 89.90</span>
-            <span class="brand-cta">Produkte entdecken</span>
-          </div>
-        </a>
-
-        <!-- iS Clinical -->
-        <a href="#" class="brand-showcase-card reveal reveal-delay-4" target="_blank" rel="noopener">
-          <div class="brand-showcase-visual" style="background: linear-gradient(135deg, #f0f4f8 0%, #d1dce8 50%, #a8bdd4 100%);">
-            <span class="brand-icon">⚗</span>
-            <span class="product-count-badge">Neu im Sortiment</span>
-          </div>
-          <div class="brand-showcase-body">
-            <span class="brand-tag">✦ Medical Grade Skincare</span>
-            <h3>iS Clinical</h3>
-            <p>Pharmazeutische Hautpflege auf höchstem Niveau. Klinisch getestete Wirkstoffe für sichtbare Ergebnisse. Jetzt auch bei der Fire + Ice Behandlung im Einsatz.</p>
-            <span class="brand-cta">Produkte entdecken</span>
-          </div>
-        </a>
-
+      <div class="brand-strip">
+        <button class="brand-strip-item shop-filter-btn" data-filter="alle">
+          <span class="brand-strip-icon">✦</span>
+          Alle Marken
+        </button>
+        <button class="brand-strip-item shop-filter-btn" data-filter="Team Dr. Joseph">
+          <span class="brand-strip-icon">🌿</span>
+          Dr. Joseph
+        </button>
+        <button class="brand-strip-item shop-filter-btn" data-filter="Thalgo">
+          <span class="brand-strip-icon">🌊</span>
+          Thalgo
+        </button>
+        <button class="brand-strip-item shop-filter-btn" data-filter="Dr. Niedermeier Regulatpro">
+          <span class="brand-strip-icon">💎</span>
+          Regulatpro
+        </button>
+        <button class="brand-strip-item shop-filter-btn" data-filter="Med Beauty Swiss">
+          <span class="brand-strip-icon">✧</span>
+          Med Beauty
+        </button>
+        <button class="brand-strip-item shop-filter-btn" data-filter="iS Clinical">
+          <span class="brand-strip-icon">⚗</span>
+          iS Clinical
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ===== PRODUKTÜBERSICHT ===== -->
-  <section class="section section--sand" id="sortiment">
+  <!-- ===== SHOP GRID ===== -->
+  <section class="section" id="sortiment">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="subtitle">Bestseller-Übersicht</span>
-        <h2>Beliebte <em class="text-italic">Produkte</em></h2>
-        <hr class="golden-rule golden-rule--center">
-        <p>Ein Auszug aus unserem Sortiment - im Studio beraten wir Sie persönlich zu Ihrem idealen Pflegeprodukt.</p>
-      </div>
 
-      <!-- Team Dr. Joseph Highlights -->
-      <div class="reveal">
-        <h3 style="margin-bottom: 4px;">Team Dr. Joseph - Highlights</h3>
-        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 16px;">Südtiroler Naturkosmetik für jeden Hauttyp</p>
-        <div class="product-preview-grid">
-          <div class="product-preview-pill">Delicate Cleansing Milk<span class="pill-price">CHF 34.—</span></div>
-          <div class="product-preview-pill">Ultra Hydration Serum<span class="pill-price">CHF 78.—</span></div>
-          <div class="product-preview-pill">Hyaluronic Repair Booster<span class="pill-price">CHF 150.—</span></div>
-          <div class="product-preview-pill">Supreme Well Aging Cream<span class="pill-price">CHF 104.—</span></div>
-          <div class="product-preview-pill">Gentle Couperose Cream<span class="pill-price">CHF 88.—</span></div>
-          <div class="product-preview-pill">Daily Moisturizing Cream<span class="pill-price">CHF 70.—</span></div>
-          <div class="product-preview-pill">Sun Cream SPF30<span class="pill-price">CHF 46.—</span></div>
-          <div class="product-preview-pill">Purifying Cleansing Gel<span class="pill-price">CHF 32.—</span></div>
+      <!-- Toolbar -->
+      <div class="shop-toolbar">
+        <div class="shop-filters">
+          <button class="shop-filter-btn active" data-filter="alle">Alle</button>
+          <button class="shop-filter-btn" data-filter="serum">Seren</button>
+          <button class="shop-filter-btn" data-filter="creme">Cremes</button>
+          <button class="shop-filter-btn" data-filter="reinigung">Reinigung</button>
+          <button class="shop-filter-btn" data-filter="anti-aging">Anti-Aging</button>
+          <button class="shop-filter-btn" data-filter="sonnenschutz">Sonnenschutz</button>
+          <button class="shop-filter-btn" data-filter="drinks">Drinks</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="shop-result-count" id="result-count"></span>
+          <div class="shop-search-wrap">
+            <svg class="shop-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="shop-search" placeholder="Produkt suchen…" autocomplete="off">
+          </div>
         </div>
       </div>
 
-      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 40px 0;">
+      <!-- Product Grid (dynamically filled by shop.js) -->
+      <div id="product-grid" aria-label="Produktübersicht"></div>
 
-      <!-- Thalgo Highlights -->
-      <div class="reveal">
-        <h3 style="margin-bottom: 4px;">Thalgo - Highlights</h3>
-        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 16px;">Meeresbasierte Anti-Aging & Feuchtigkeitspflege</p>
-        <div class="product-preview-grid">
-          <div class="product-preview-pill">Hyalu-Procollagene Serum<span class="pill-price">CHF 94.—</span></div>
-          <div class="product-preview-pill">Silicium Serum Intensif<span class="pill-price">CHF 98.—</span></div>
-          <div class="product-preview-pill">Cold Marine Nutri-Crème<span class="pill-price">CHF 58.—</span></div>
-          <div class="product-preview-pill">Source Marine Creme<span class="pill-price">CHF 56.—</span></div>
-          <div class="product-preview-pill">Silicium Nachtcreme<span class="pill-price">CHF 89.—</span></div>
-          <div class="product-preview-pill">Silicium Augencreme<span class="pill-price">CHF 59.—</span></div>
-          <div class="product-preview-pill">Reinigungsmilch<span class="pill-price">CHF 30.—</span></div>
-          <div class="product-preview-pill">Reinigungsschaum<span class="pill-price">CHF 35.—</span></div>
-        </div>
+      <!-- Empty State -->
+      <div class="shop-empty" id="shop-empty">
+        <div class="shop-empty-icon">🔍</div>
+        <h3>Keine Produkte gefunden</h3>
+        <p style="color: var(--text-light);">Versuchen Sie einen anderen Suchbegriff oder Filter.</p>
       </div>
 
-      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 40px 0;">
-
-      <!-- Regulatpro -->
-      <div class="reveal">
-        <h3 style="margin-bottom: 4px;">Dr. Niedermeier Regulatpro</h3>
-        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 16px;">Schönheit von innen</p>
-        <div class="product-preview-grid" style="max-width: 500px;">
-          <div class="product-preview-pill">Hyaluron Beauty Drink<span class="pill-price">CHF 57.90</span></div>
-          <div class="product-preview-pill">Regulatpro® Collagen<span class="pill-price">CHF 89.90</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -411,7 +502,7 @@
       <div class="reveal">
         <span style="font-family: var(--font-heading); font-size: 2rem; display: block; margin-bottom: 8px; color: var(--accent-gold);">Persönliche Beratung</span>
         <h2 style="color: var(--text-white);">Welches Produkt ist das richtige für Sie?</h2>
-        <p style="color: rgba(253,251,247,0.6); max-width: 540px; margin: 12px auto 28px;">Unsere Kosmetikerinnen analysieren Ihren Hauttyp und empfehlen Ihnen die perfekte Pflege - kostenlos und unverbindlich.</p>
+        <p style="color: rgba(253,251,247,0.6); max-width: 540px; margin: 12px auto 28px;">Unsere Kosmetikerinnen analysieren Ihren Hauttyp und empfehlen Ihnen die perfekte Pflege — kostenlos und unverbindlich.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--white btn--large" target="_blank" rel="noopener">Beratung buchen</a>
           <a href="tel:+41628226647" class="btn btn--outline btn--large" style="border-color:rgba(253,251,247,0.3);color:var(--text-white);">062 822 66 47</a>
@@ -421,6 +512,12 @@
   </section>
 
   </main>
+
+  <!-- ===== FLOATING CART BUTTON ===== -->
+  <button class="shop-cart-btn snipcart-checkout" aria-label="Warenkorb öffnen">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span class="cart-count">0</span>
+  </button>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer" id="footer">
@@ -447,10 +544,10 @@
         </div>
         <div class="footer-col">
           <h5>Shop Marken</h5>
-          <a href="#marken">Med Beauty Swiss</a>
-          <a href="#marken">Team Dr. Joseph</a>
-          <a href="#marken">Thalgo</a>
-          <a href="#marken">Dr. Niedermeier Regulatpro</a>
+          <a href="#sortiment">Med Beauty Swiss</a>
+          <a href="#sortiment">Team Dr. Joseph</a>
+          <a href="#sortiment">Thalgo</a>
+          <a href="#sortiment">Dr. Niedermeier Regulatpro</a>
         </div>
         <div class="footer-col">
           <h5>Kontakt</h5>
@@ -462,7 +559,7 @@
       </div>
       <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
+        <span>&copy; <span class="copyright-year">2025</span> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-legal">
           <a href="kontakt.html#agb">AGB</a>
           <a href="kontakt.html#datenschutz">Datenschutz</a>
@@ -481,6 +578,11 @@
     </div>
   </div>
 
+  <!-- Snipcart -->
+  <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY" data-currency="chf" data-config-modal-style="side"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+
   <script src="main.js"></script>
+  <script src="shop.js"></script>
 </body>
 </html>

@@ -1,9 +1,44 @@
-# Charmelle Beauty Center - robots.txt
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://www.charmelle.ch/sitemap.xml
+Sitemap: https://www.charmelle.ch/sitemap_index.xml
 
-# Disallow admin/internal paths
-Disallow: /generate-favicons.ps1
+# WordPress
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-includes/
+Disallow: /readme.html
+Disallow: /license.txt
+Disallow: /xmlrpc.php
+
+# WooCommerce
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /warenkorb/
+Disallow: /kasse/
+Disallow: /mein-konto/
+
+# Query parameters
+Disallow: /*?add-to-cart=*
+Disallow: /*?orderby=*
+
+# AI Crawlers - Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /

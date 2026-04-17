@@ -15,6 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
   <!-- SEO Meta Tags -->
   <title>Behandlungen | Charmelle Beauty Center Aarau - Hydra Facial, Microneedling, Wimpernlifting</title>
   <meta name="description" content="Alle Behandlungen im Überblick: Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up, Haarentfernung & mehr. Preise und Details. Jetzt buchen!">
@@ -738,7 +740,7 @@
       </div>
       <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
+        <span>&copy; <span class="copyright-year">2025</span> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-legal">
           <a href="kontakt.html#agb">AGB</a>
           <a href="kontakt.html#datenschutz">Datenschutz</a>
@@ -754,9 +756,26 @@
     <div class="cookie-consent-actions">
       <button class="btn-accept">Akzeptieren</button>
       <button class="btn-decline">Ablehnen</button>
+  </div>
+
+  <!-- Newsletter Popup -->
+  <div class="newsletter-popup" id="newsletter-popup" role="dialog" aria-label="Newsletter">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Schliessen">✕</button>
+      <span class="subtitle">Exklusive Angebote</span>
+      <h3>Beauty-News & <em class="text-italic">Aktionen</em></h3>
+      <p>Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.</p>
+      <form class="popup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="hidden" style="display:none;"><input name="bot-field"></p>
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        <button type="submit" class="btn btn--primary">Anmelden</button>
+        <p class="popup-disclaimer">Kein Spam, jederzeit abbestellbar. <a href="kontakt.html#datenschutz">Datenschutz</a></p>
+      </form>
     </div>
   </div>
 
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

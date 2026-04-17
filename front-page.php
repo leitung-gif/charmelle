@@ -1,190 +1,14 @@
-<!DOCTYPE html>
-<html lang="de-CH">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#C5A880">
-  <meta name="format-detection" content="telephone=no">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
-
-  <!-- Preload Hero Image -->
-  <link rel="preload" as="image" href="images/hero-treatment.png">
-
-  <!-- SEO Meta Tags -->
-  <title>Charmelle Beauty Center Aarau | Ihr Premium-Kosmetikstudio seit über 30 Jahren</title>
-  <meta name="description" content="Charmelle Beauty Center in Aarau - Ihr Kosmetikstudio für Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up & LPG Endermologie. Erfahrene Kosmetikerinnen EFZ. Seit über 30 Jahren. Jetzt Termin buchen!">
-  <meta name="keywords" content="Kosmetikstudio Aarau, Beauty Center Aarau, Hydra Facial Aarau, Microneedling Aarau, Anti-Aging Aarau, Gesichtspflege Aarau, Wimpernlifting Aarau, Permanent Make-Up Aarau, Haarentfernung Laser Aarau, Kosmetikerin EFZ Aarau, LPG Endermologie Aarau, Microblading Aarau, Gesichtsbehandlung Aargau, Kryolipolyse Aarau, Med Beauty Swiss, Thalgo Aarau, Kosmetik Kanton Aargau">
-  <meta name="author" content="Charmelle Beauty Center GmbH">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="canonical" href="https://www.charmelle.ch/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Charmelle Beauty Center Aarau | Premium Kosmetikstudio seit über 30 Jahren">
-  <meta property="og:description" content="Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting und medizinische Kosmetik in wohlfühlender Atmosphäre. Erfahrene Kosmetikerinnen EFZ in Aarau. Jetzt Termin buchen.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.charmelle.ch/">
-  <meta property="og:locale" content="de_CH">
-  <meta property="og:site_name" content="Charmelle Beauty Center">
-  <meta property="og:image" content="https://www.charmelle.ch/images/logo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Charmelle Beauty Center Aarau | Premium Kosmetikstudio seit über 30 Jahren">
-  <meta name="twitter:description" content="Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting und medizinische Kosmetik in Aarau. Seit über 30 Jahren.">
-  <meta name="twitter:image" content="https://www.charmelle.ch/images/logo.png">
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Charmelle Beauty Center",
-    "image": "images/logo.png",
-    "description": "Premium Kosmetikstudio in Aarau. Seit über 30 Jahren bieten wir Gesichtspflege, Hydra Facial, Microneedling, Anti-Aging-Behandlungen, LPG Endermologie, Wimpernlifting, Permanent Make-Up und medizinische Kosmetik im Kanton Aargau.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Girixweg 7",
-      "addressLocality": "Aarau",
-      "postalCode": "5000",
-      "addressRegion": "AG",
-      "addressCountry": "CH"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "47.3925",
-      "longitude": "8.0440"
-    },
-    "telephone": "+41628226647",
-    "email": "info@charmelle.ch",
-    "url": "https://www.charmelle.ch",
-    "priceRange": "$$",
-    "currenciesAccepted": "CHF",
-    "paymentAccepted": "Bargeld, EC-Karte, Kreditkarte, TWINT",
-    "areaServed": [
-      {"@type": "City", "name": "Aarau"},
-      {"@type": "State", "name": "Kanton Aargau"},
-      {"@type": "City", "name": "Buchs AG"},
-      {"@type": "City", "name": "Rohr AG"},
-      {"@type": "City", "name": "Suhr"},
-      {"@type": "City", "name": "Gränichen"},
-      {"@type": "City", "name": "Erlinsbach"},
-      {"@type": "City", "name": "Küttigen"},
-      {"@type": "City", "name": "Oberentfelden"},
-      {"@type": "City", "name": "Unterentfelden"}
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "44",
-      "bestRating": "5"
-    },
-    "sameAs": [
-      "https://www.instagram.com/beauty_charmelle/"
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Thursday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday"],
-        "opens": "09:00",
-        "closes": "18:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Wednesday","Friday"],
-        "opens": "09:00",
-        "closes": "18:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "08:30",
-        "closes": "14:00"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Kosmetik-Behandlungen",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hydra Facial Syndeo", "description": "Die Hollywood-Behandlung für strahlende Haut"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Microneedling mit Hyaluron", "description": "Medical-Kosmetik zur Hauterneuerung und Straffung"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LPG Endermologie", "description": "Patentierte Technologie für Straffung und Body-Forming"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wimpernlifting", "description": "Natürlicher Wow-Effekt für Ihre Wimpern"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Permanent Make-Up", "description": "Augenbrauen, Lippen und Lidstriche dauerhaft betont"}}
-      ]
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="styles.css?v=6">
-</head>
-<body>
-  <!-- Skip Navigation -->
-  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
-
-  <!-- ===== ANNOUNCEMENT MARQUEE BAR ===== -->
-  <div class="announcement-bar" role="marquee" aria-label="Aktuelle Angebote">
-    <div class="marquee-track">
-      <span class="marquee-item"><span class="dot"></span>Hochzeit Angebot - Fragen Sie uns</span>
-      <span class="marquee-item"><span class="dot"></span>10+1 Abos - 10 Behandlungen buchen, 1 gratis</span>
-      <span class="marquee-item"><span class="dot"></span>Rabatte für Lernende - Jetzt informieren</span>
-      <span class="marquee-item"><span class="dot"></span>Geschenkgutscheine ab CHF 50.—</span>
-      <span class="marquee-item"><span class="dot"></span>Hochzeit Angebot - Fragen Sie uns</span>
-      <span class="marquee-item"><span class="dot"></span>10+1 Abos - 10 Behandlungen buchen, 1 gratis</span>
-      <span class="marquee-item"><span class="dot"></span>Rabatte für Lernende - Jetzt informieren</span>
-      <span class="marquee-item"><span class="dot"></span>Geschenkgutscheine ab CHF 50.—</span>
-    </div>
-  </div>
-
-  <!-- ===== HEADER ===== -->
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="Charmelle Beauty Center - Startseite">
-        <img src="images/logo.png" alt="Charmelle Beauty Center Logo" class="logo-img">
-      </a>
-      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="behandlungen.html">Behandlungen</a>
-        
-        <a href="team.html">Team</a>
-        <a href="produkte.html">Shop</a>
-        <a href="blog.html">Blog</a>
-        <a href="gutscheine.html">Gutscheine</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small header-cta--mobile" style="display:none;" target="_blank" rel="noopener">Termin Buchen</a>
-      </nav>
-      <div class="header-cta">
-        <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin Buchen</a>
-      </div>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main id="main-content">
+<?php
+/**
+ * Template Name: Front Page
+ * The homepage template for Charmelle Beauty Center.
+ */
+get_header();
+$t = get_template_directory_uri();
+?>
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero section" id="hero">
-    <!-- Organic flowing blobs -->
     <div class="blob blob--gold blob--lg blob--float-1" style="top: 60px; left: -100px; opacity: 0.06;"></div>
     <div class="blob blob--cream blob--md blob--float-2" style="bottom: -60px; right: 10%; opacity: 0.07;"></div>
     <div class="blob blob--sand blob--sm blob--float-3" style="top: 40%; left: 45%; opacity: 0.05;"></div>
@@ -195,12 +19,12 @@
         <p>Willkommen bei Charmelle Beauty Center - Ihrem Premium-Kosmetikstudio im Herzen von Aarau. Seit über drei Jahrzehnten vereinen wir medizinische Hightech-Behandlungen mit einem exklusiven Wellness-Erlebnis. Unsere erfahrenen Kosmetikerinnen EFZ bieten Ihnen eine ganzheitliche Schönheitspflege, die Körper, Geist und Seele als Einheit betrachtet.</p>
         <div class="hero-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener">Termin Buchen</a>
-          <a href="behandlungen.html" class="btn btn--outline btn--large">Behandlungen entdecken</a>
+          <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--outline btn--large">Behandlungen entdecken</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="arch-img arch-img--overlay">
-          <img src="images/hero-treatment.png" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau - Kosmetikstudio im Kanton Aargau" loading="eager" width="580" height="520">
+          <img src="<?php echo esc_url( $t . '/images/hero-treatment.png' ); ?>" alt="Professionelle Gesichtsbehandlung im Charmelle Beauty Center Aarau - Kosmetikstudio im Kanton Aargau" loading="eager" width="580" height="520">
         </div>
       </div>
     </div>
@@ -222,7 +46,6 @@
 
   <!-- ===== CATEGORY TEASERS ===== -->
   <section class="section section--sand" id="kategorien" style="position:relative;overflow:hidden;">
-    <!-- Organic blob -->
     <div class="blob blob--cream blob--lg blob--float-2" style="top: -120px; right: -80px; opacity: 0.1;"></div>
     <div class="blob blob--gold blob--sm blob--float-3" style="bottom: 10%; left: -40px; opacity: 0.06;"></div>
     <div class="container" style="position:relative;z-index:1;">
@@ -232,26 +55,25 @@
         <hr class="golden-rule golden-rule--center">
         <p>Drei Kompetenzbereiche, ein Ziel - Ihre strahlendste Version. Von medizinischer Hightech-Kosmetik über klassische Verwöhnpflege bis zu ausdrucksstarken Wimpern und Brauen.</p>
       </div>
-
       <div class="grid grid--3">
-        <a href="behandlungen.html#hightech" class="category-card reveal reveal-delay-1">
-          <img src="images/studio-real-3.jpg" alt="Medizinische Hightech-Behandlungen - Hydra Facial, Microneedling, LPG Endermologie in Aarau" width="529" height="705" loading="lazy">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#hightech' ) ); ?>" class="category-card reveal reveal-delay-1">
+          <img src="<?php echo esc_url( $t . '/images/studio-real-3.jpg' ); ?>" alt="Medizinische Hightech-Behandlungen - Hydra Facial, Microneedling, LPG Endermologie in Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Medizinische High-Tech</h3>
             <p>Hydra Facial · Microneedling · LPG · Laser</p>
           </div>
         </a>
-        <a href="behandlungen.html#klassisch" class="category-card reveal reveal-delay-2">
-          <img src="images/studio-real-1.jpg" alt="Klassische Gesichtspflege und Anti-Aging-Behandlungen im Beauty Center Aarau" width="529" height="705" loading="lazy">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#klassisch' ) ); ?>" class="category-card reveal reveal-delay-2">
+          <img src="<?php echo esc_url( $t . '/images/studio-real-1.jpg' ); ?>" alt="Klassische Gesichtspflege und Anti-Aging-Behandlungen im Beauty Center Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Klassische Pflege</h3>
             <p>Verwöhnpflege · Anti-Aging · Regeneration</p>
           </div>
         </a>
-        <a href="behandlungen.html#ausdrucksstark" class="category-card reveal reveal-delay-3">
-          <img src="images/studio-real-4.jpg" alt="Wimpernlifting, Permanent Make-Up, Nägel im Kosmetikstudio Aarau" width="529" height="705" loading="lazy">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#ausdrucksstark' ) ); ?>" class="category-card reveal reveal-delay-3">
+          <img src="<?php echo esc_url( $t . '/images/studio-real-4.jpg' ); ?>" alt="Wimpernlifting, Permanent Make-Up, Nägel im Kosmetikstudio Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Ausdrucksstark</h3>
@@ -264,12 +86,11 @@
 
   <!-- ===== ABOUT / PHILOSOPHY STRIP ===== -->
   <section class="section" id="philosophie" style="position:relative;overflow:hidden;">
-    <!-- Organic blob -->
     <div class="blob blob--sand blob--md blob--float-1" style="top: -40px; left: -60px; opacity: 0.07;"></div>
     <div class="blob blob--gold blob--sm blob--float-2" style="bottom: -30px; right: 5%; opacity: 0.05;"></div>
     <div class="container" style="max-width: 900px; text-align: center; position:relative; z-index:1;">
       <div class="reveal">
-        <img src="images/logo.png" alt="Charmelle Beauty Center" style="height: 56px; margin: 0 auto 16px; display: block;">
+        <img src="<?php echo esc_url( $t . '/images/logo.png' ); ?>" alt="Charmelle Beauty Center" style="height: 56px; margin: 0 auto 16px; display: block;">
         <h2>Mehr als ein Kosmetikstudio - <em class="text-italic">Ihre Beauty-Oase in Aarau</em></h2>
         <hr class="golden-rule golden-rule--center">
         <p style="font-size: 1.05rem; color: var(--text-light); max-width: 720px; margin: 0 auto;">
@@ -279,8 +100,8 @@
           Unser Kosmetiksortiment basiert auf einer klaren Philosophie: Wir verwenden natürliche und innovative Inhaltsstoffe, setzen auf die neuesten wissenschaftlichen Erkenntnisse und bieten Ihnen hochwertige, wirksame Hautpflege. Alle unsere Produkte werden ohne Tierversuche und ökologisch unbedenklich hergestellt.
         </p>
         <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px;">
-          <a href="team.html#philosophie" class="btn btn--outline">Unsere Philosophie</a>
-          <a href="team.html" class="btn btn--ghost">Unser Team kennenlernen </a>
+          <a href="<?php echo esc_url( home_url( '/team/#philosophie' ) ); ?>" class="btn btn--outline">Unsere Philosophie</a>
+          <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="btn btn--ghost">Unser Team kennenlernen</a>
         </div>
       </div>
     </div>
@@ -291,7 +112,7 @@
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 4/3;">
-          <img src="images/hydra-facial.png" alt="Hydra Facial Syndeo Behandlung bei Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Hydra Facial Syndeo Behandlung bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
           <span class="subtitle">Aktion des Monats</span>
@@ -311,7 +132,6 @@
 
   <!-- ===== STUDIO IMPRESSIONS ===== -->
   <section class="section" id="studio-preview" style="position:relative;overflow:hidden;">
-    <!-- Organic blob -->
     <div class="blob blob--cream blob--lg blob--float-3" style="top: 20%; right: -120px; opacity: 0.08;"></div>
     <div class="blob blob--gold blob--md blob--float-1" style="bottom: -80px; left: 10%; opacity: 0.06;"></div>
     <div class="container" style="position:relative;z-index:1;">
@@ -322,10 +142,10 @@
         <p>Lichtdurchflutet, elegant und einladend - ein Ort am Girixweg 7 in Aarau, an dem Sie sich entspannen und in professionellen Händen aufgehoben fühlen können.</p>
       </div>
       <div class="studio-collage reveal">
-        <div class="blob-img"><img src="images/studio-real-4.jpg" alt="Behandlungsliege mit Handtüchern und Kerze im Charmelle Beauty Center Aarau" loading="lazy" width="529" height="705"></div>
-        <div class="blob-img"><img src="images/studio-real-3.jpg" alt="LPG Endermologie Gerät und Kunst im Charmelle Behandlungsraum" loading="lazy" width="529" height="705"></div>
-        <div class="blob-img"><img src="images/studio-real-2.jpg" alt="Handtücher und Deko im Charmelle Kosmetikstudio Aarau" loading="lazy" width="529" height="705"></div>
-        <div class="blob-img"><img src="images/studio-real-1.jpg" alt="Entspannende Atmosphäre im Kosmetikstudio Charmelle Aarau" loading="lazy" width="529" height="705"></div>
+        <div class="blob-img"><img src="<?php echo esc_url( $t . '/images/studio-real-4.jpg' ); ?>" alt="Behandlungsliege mit Handtüchern und Kerze im Charmelle Beauty Center Aarau" loading="lazy" width="529" height="705"></div>
+        <div class="blob-img"><img src="<?php echo esc_url( $t . '/images/studio-real-3.jpg' ); ?>" alt="LPG Endermologie Gerät und Kunst im Charmelle Behandlungsraum" loading="lazy" width="529" height="705"></div>
+        <div class="blob-img"><img src="<?php echo esc_url( $t . '/images/studio-real-2.jpg' ); ?>" alt="Handtücher und Deko im Charmelle Kosmetikstudio Aarau" loading="lazy" width="529" height="705"></div>
+        <div class="blob-img"><img src="<?php echo esc_url( $t . '/images/studio-real-1.jpg' ); ?>" alt="Entspannende Atmosphäre im Kosmetikstudio Charmelle Aarau" loading="lazy" width="529" height="705"></div>
       </div>
     </div>
   </section>
@@ -341,7 +161,7 @@
       </div>
       <div class="grid grid--3">
         <div class="team-card reveal reveal-delay-1">
-          <div class="arch-img"><img src="images/aurora.jpg" alt="Aurora Mezzaucella - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
+          <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/aurora.jpg' ); ?>" alt="Aurora Mezzaucella - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
           <h3>Aurora Mezzaucella</h3>
           <p class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</p>
           <div class="team-languages">
@@ -350,7 +170,7 @@
           </div>
         </div>
         <div class="team-card reveal reveal-delay-2">
-          <div class="arch-img"><img src="images/oriana.jpg" alt="Oriana Raso - Kosmetikerin EFZ und Berufsbildnerin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
+          <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/oriana.jpg' ); ?>" alt="Oriana Raso - Kosmetikerin EFZ und Berufsbildnerin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
           <h3>Oriana Raso</h3>
           <p class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</p>
           <div class="team-languages">
@@ -359,7 +179,7 @@
           </div>
         </div>
         <div class="team-card reveal reveal-delay-3">
-          <div class="arch-img"><img src="images/giulia.jpg" alt="Giulia Arcerito - Kosmetikerin EFZ bei Charmelle Aarau" width="1030" height="754" loading="lazy"></div>
+          <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/giulia.jpg' ); ?>" alt="Giulia Arcerito - Kosmetikerin EFZ bei Charmelle Aarau" width="1030" height="754" loading="lazy"></div>
           <h3>Giulia Arcerito</h3>
           <p class="team-role">Kosmetikerin EFZ</p>
           <div class="team-languages">
@@ -370,7 +190,7 @@
         </div>
       </div>
       <div class="text-center mt-lg reveal">
-        <a href="team.html" class="btn btn--outline">Das gesamte Team kennenlernen</a>
+        <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="btn btn--outline">Das gesamte Team kennenlernen</a>
       </div>
     </div>
   </section>
@@ -422,7 +242,6 @@
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="section section--sand" id="bewertungen" style="position:relative;overflow:hidden;">
-    <!-- Organic blob -->
     <div class="blob blob--gold blob--md blob--float-2" style="top: -50px; left: -40px; opacity: 0.07;"></div>
     <div class="blob blob--cream blob--sm blob--float-1" style="bottom: 20%; right: -30px; opacity: 0.06;"></div>
     <div class="container container--narrow" style="position:relative;z-index:1;">
@@ -483,7 +302,7 @@
         <div class="grid grid--2" style="gap: 16px;">
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Hydra Facial Syndeo</h4>
-            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Die Hollywood-Behandlung - Reinigung, Exfoliation, Extraktion & Hydration in einem Schritt. Ab CHF 165.—</p>
+            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Die Hollywood-Behandlung - Reinigung, Exfoliation, Extraktion &amp; Hydration in einem Schritt. Ab CHF 165.—</p>
           </div>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Microneedling mit Hyaluron</h4>
@@ -507,11 +326,31 @@
           </div>
         </div>
         <div class="text-center" style="margin-top: 32px;">
-          <a href="behandlungen.html" class="btn btn--primary">Alle Behandlungen & Preise ansehen</a>
+          <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--primary">Alle Behandlungen &amp; Preise ansehen</a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===== FEATURED PRODUCTS FROM WOOCOMMERCE ===== -->
+  <?php if ( class_exists( 'WooCommerce' ) ) : ?>
+  <section class="section section--sand" id="bestseller">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Unser Shop</span>
+        <h2>Bestseller direkt <em class="text-italic">zu Ihnen nach Hause</em></h2>
+        <hr class="golden-rule golden-rule--center">
+        <p>Hochwertige Pflegeprodukte von Med Beauty Swiss, Team Dr. Joseph und Thalgo - jetzt online bestellen.</p>
+      </div>
+      <div class="reveal">
+        <?php echo do_shortcode( '[products limit="3" columns="3" orderby="popularity" order="DESC"]' ); ?>
+      </div>
+      <div class="text-center mt-lg reveal">
+        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn btn--outline">Alle Produkte im Shop</a>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
 
   <!-- ===== NEWSLETTER ===== -->
   <section class="section section--dark" id="newsletter">
@@ -531,67 +370,6 @@
     </div>
   </section>
 
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" id="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo.png" alt="Charmelle Beauty Center Logo" style="height:48px;margin-bottom:16px;filter:brightness(1.3);">
-          <p>Ihr Premium-Kosmetikstudio in Aarau. Seit über 30 Jahren vereinen wir medizinische Expertise mit Wohlfühl-Atmosphäre. Hydra Facial, Microneedling, LPG, Wimpernlifting und mehr im Kanton Aargau.</p>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/beauty_charmelle/" target="_blank" rel="noopener" aria-label="Charmelle Beauty Center auf Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://wa.me/+41798286647" target="_blank" rel="noopener" aria-label="WhatsApp Charmelle">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-            <a href="tel:+41628226647" aria-label="Telefon Charmelle Aarau">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <a href="index.html">Home</a>
-          <a href="behandlungen.html">Behandlungen</a>
-          <a href="team.html">Team</a>
-          <a href="produkte.html">Shop</a>
-          <a href="blog.html">Blog</a>
-          <a href="gutscheine.html">Gutscheine</a>
-          <a href="kontakt.html">Kontakt</a>
-        </div>
-        <div class="footer-col">
-          <h5>Beliebte Behandlungen</h5>
-          <a href="behandlungen.html#hightech">Hydra Facial Syndeo</a>
-          <a href="behandlungen.html#hightech">Microneedling</a>
-          <a href="behandlungen.html#hightech">LPG Endermologie</a>
-          <a href="behandlungen.html#klassisch">Gesichtspflege</a>
-          <a href="behandlungen.html#ausdrucksstark">Wimpernlifting</a>
-          <a href="behandlungen.html#ausdrucksstark">Permanent Make-Up</a>
-        </div>
-        <div class="footer-col">
-          <h5>Kontakt</h5>
-          <a href="tel:+41628226647">062 822 66 47</a>
-          <a href="https://wa.me/+41798286647" target="_blank" rel="noopener">WhatsApp: 079 828 66 47</a>
-          <a href="mailto:info@charmelle.ch">info@charmelle.ch</a>
-          <a href="kontakt.html">Girixweg 7, 5000 Aarau</a>
-          <span style="font-size:0.82rem;color:rgba(253,251,247,0.4);display:block;margin-top:8px;">Mo & Do: 09:00-19:00 · Mi & Fr: 09:00-18:30 · Sa: 08:30-14:00</span>
-        </div>
-      </div>
-      <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>
-      <div class="footer-bottom">
-        <span>&copy; <span class="copyright-year">2025</span> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
-        <div class="footer-legal">
-          <a href="kontakt.html#agb">AGB</a>
-          <a href="kontakt.html#datenschutz">Datenschutz</a>
-          <a href="kontakt.html#impressum">Impressum</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
   <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Aktion des Monats">
     <div class="lightbox-content">
@@ -605,15 +383,4 @@
     </div>
   </div>
 
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-consent" role="dialog" aria-label="Cookie-Hinweis">
-    <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. <a href="kontakt.html#datenschutz">Datenschutz</a></p>
-    <div class="cookie-consent-actions">
-      <button class="btn-accept">Akzeptieren</button>
-      <button class="btn-decline">Ablehnen</button>
-    </div>
-  </div>
-
-  <script src="main.js?v=3"></script>
-</body>
-</html>
+<?php get_footer(); ?>

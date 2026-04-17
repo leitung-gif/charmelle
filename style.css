@@ -1,0 +1,17 @@
+/*
+Theme Name: Charmelle Beauty Center
+Theme URI: https://www.charmelle.ch
+Author: Lorien Group
+Author URI: https://www.lorien.group
+Description: Custom WordPress/WooCommerce theme for Charmelle Beauty Center — Premium Kosmetikstudio in Aarau seit über 30 Jahren. Hydra Facial, Microneedling, LPG Endermologie, Anti-Aging, Wimpernlifting, Permanent Make-Up und mehr.
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+License: All Rights Reserved
+License URI: https://www.charmelle.ch
+Text Domain: charmelle
+Tags: beauty, cosmetics, woocommerce, custom-theme, one-page, responsive
+*/
+
+/* Design system is loaded from styles.css via functions.php enqueue */

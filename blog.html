@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
+
   <title>Beauty Blog | Hautpflege-Tipps & Trends - Charmelle Beauty Center Aarau</title>
   <meta name="description" content="Entdecken Sie Expertentipps zu Hautpflege, Anti-Aging, Hydra Facial, saisonaler Pflege und Clean Beauty. Der Beauty Blog von Charmelle Beauty Center in Aarau.">
   <meta name="author" content="Charmelle Beauty Center GmbH">
@@ -127,96 +130,16 @@
     </div>
   </section>
 
-  <!-- ===== BLOG GRID ===== -->
+  <!-- ===== BLOG GRID (dynamic) ===== -->
   <section class="section" id="blog-posts">
     <div class="container">
-      <div class="blog-grid">
-
-        <!-- Blog Post 1 -->
-        <article class="blog-card reveal" data-category="hautpflege">
-          <div class="blog-card-image">
-            <img src="images/studio-3.jpg" alt="Hautpflege Routine für strahlende Haut - Tipps von Charmelle Beauty Aarau" loading="lazy">
-            <span class="blog-category-tag">Hautpflege</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">15. März 2025</p>
-            <h3>Die perfekte Hautpflege-Routine: Morgens und Abends</h3>
-            <p>Erfahren Sie, wie eine professionelle Hautpflege-Routine aussieht und welche Schritte wirklich wichtig sind. Unsere Kosmetikerinnen verraten ihr Expertenwissen für jeden Hauttyp.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 2 -->
-        <article class="blog-card reveal reveal-delay-1" data-category="behandlungen">
-          <div class="blog-card-image">
-            <img src="images/studio-1.jpg" alt="Hydra Facial Behandlung erklärt - Charmelle Beauty Aarau" loading="lazy">
-            <span class="blog-category-tag">Behandlungen</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">28. Februar 2025</p>
-            <h3>Hydra Facial Syndeo: Alles, was Sie wissen müssen</h3>
-            <p>Die Hollywood-Behandlung erobert die Schweiz. Wir erklären, wie Hydra Facial funktioniert, für wen es geeignet ist und warum es die sanfteste Art der Hauterneuerung ist.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 3 -->
-        <article class="blog-card reveal reveal-delay-2" data-category="tipps">
-          <div class="blog-card-image">
-            <img src="images/studio-4.png" alt="Winterpflege Tipps für trockene Haut" loading="lazy">
-            <span class="blog-category-tag">Tipps & Tricks</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">10. Februar 2025</p>
-            <h3>Winterhaut adé: 7 Tipps gegen trockene Haut</h3>
-            <p>Die kalte Jahreszeit strapaziert unsere Haut. Mit diesen sieben Expertentipps schützen Sie Ihre Haut optimal vor Kälte, Heizungsluft und Feuchtigkeitsverlust.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 4 -->
-        <article class="blog-card reveal" data-category="clean-beauty">
-          <div class="blog-card-image">
-            <img src="images/studio-5.jpg" alt="Clean Beauty Produkte ohne Tierversuche" loading="lazy">
-            <span class="blog-category-tag">Clean Beauty</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">25. Januar 2025</p>
-            <h3>Clean Beauty: Was steckt hinter dem Trend?</h3>
-            <p>Natürliche Inhaltsstoffe, keine Tierversuche und nachhaltige Verpackungen - wir erklären, warum Clean Beauty mehr als ein Trend ist und wie wir es bei Charmelle leben.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 5 -->
-        <article class="blog-card reveal reveal-delay-1" data-category="behandlungen">
-          <div class="blog-card-image">
-            <img src="images/studio-2.jpg" alt="Microneedling Behandlung bei Charmelle Aarau" loading="lazy">
-            <span class="blog-category-tag">Behandlungen</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">12. Januar 2025</p>
-            <h3>Microneedling: Natürliche Hauterneuerung ohne OP</h3>
-            <p>Wie Microneedling die Kollagenproduktion anregt, Narben mildert und Falten reduziert. Ein Blick hinter die Behandlung, die Ihre Haut von innen heraus erneuert.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 6 -->
-        <article class="blog-card reveal reveal-delay-2" data-category="wellness">
-          <div class="blog-card-image">
-            <img src="images/studio-3.jpg" alt="Spa und Wellness Erlebnis im Kosmetikstudio" loading="lazy">
-            <span class="blog-category-tag">Wellness</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-date">5. Januar 2025</p>
-            <h3>Self-Care Rituale: Ihr persönliches Spa-Erlebnis</h3>
-            <p>Gönnen Sie sich regelmässig eine Auszeit. Wir zeigen Ihnen einfache Self-Care Rituale, die Sie zuhause umsetzen können - und wann ein professioneller Spa-Tag sinnvoll ist.</p>
-            <span class="read-more">Weiterlesen</span>
-          </div>
-        </article>
-
+      <div class="blog-grid" id="blog-grid">
+        <!-- Posts loaded dynamically by blog.js -->
+        <p style="text-align:center;color:var(--text-light);padding:40px;grid-column:1/-1;">Beiträge werden geladen…</p>
       </div>
+
+      <!-- Individual Post View -->
+      <div id="blog-post-view" style="display:none;"></div>
     </div>
   </section>
 
@@ -229,8 +152,10 @@
         <p style="color: rgba(253,251,247,0.6); max-width: 480px; margin: 8px auto 28px;">
           Erhalten Sie neue Blog-Beiträge, exklusive Angebote und Beauty-Tipps direkt in Ihre Inbox.
         </p>
-        <form class="newsletter-form" action="#" method="post" aria-label="Newsletter Anmeldung">
-          <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail-Adresse" id="blog-newsletter-email">
+        <form class="newsletter-form" name="blog-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Newsletter Anmeldung">
+          <input type="hidden" name="form-name" value="blog-newsletter">
+          <p style="display:none;"><input name="bot-field"></p>
+          <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail-Adresse" id="blog-newsletter-email">
           <button type="submit" class="btn btn--primary">Anmelden</button>
         </form>
       </div>
@@ -280,7 +205,7 @@
       </div>
       <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
+        <span>&copy; <span class="copyright-year">2025</span> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-legal">
           <a href="kontakt.html#agb">AGB</a>
           <a href="kontakt.html#datenschutz">Datenschutz</a>
@@ -299,6 +224,25 @@
     </div>
   </div>
 
+  <!-- Newsletter Popup -->
+  <div class="newsletter-popup" id="newsletter-popup" role="dialog" aria-label="Newsletter">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Schliessen">✕</button>
+      <span class="subtitle">Exklusive Angebote</span>
+      <h3>Beauty-News & <em class="text-italic">Aktionen</em></h3>
+      <p>Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.</p>
+      <form class="popup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="hidden" style="display:none;"><input name="bot-field"></p>
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        <button type="submit" class="btn btn--primary">Anmelden</button>
+        <p class="popup-disclaimer">Kein Spam, jederzeit abbestellbar. <a href="kontakt.html#datenschutz">Datenschutz</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="main.js"></script>
+  <script src="blog.js"></script>
 </body>
 </html>

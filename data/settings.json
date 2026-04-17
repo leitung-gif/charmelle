@@ -1,0 +1,13 @@
+{
+  "popup": {
+    "enabled": true,
+    "subtitle": "Exklusive Angebote",
+    "title": "Beauty-News & Aktionen",
+    "text": "Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.",
+    "buttonText": "Anmelden",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "disclaimer": "Kein Spam, jederzeit abbestellbar.",
+    "delaySeconds": 15,
+    "cooldownDays": 7
+  }
+}

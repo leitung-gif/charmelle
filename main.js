@@ -279,4 +279,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- Dynamic Copyright Year ---
+  document.querySelectorAll('.copyright-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+
+  // --- Newsletter Popup (CMS-driven) ---
+  const popup = document.getElementById('newsletter-popup');
+  if (popup) {
+    // Load popup settings from CMS
+    async function initPopup() {
+      let settings = {
+        enabled: true,
+        subtitle: 'Exklusive Angebote',
+        title: 'Beauty-News & <em class="text-italic">Aktionen</em>',
+        text: 'Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.',
+        buttonText: 'Anmelden',
+        placeholder: 'Ihre E-Mail-Adresse',
+        disclaimer: 'Kein Spam, jederzeit abbestellbar.',
+        delaySeconds: 15,
+        cooldownDays: 7
+      };
+
+      try {
+        const res = await fetch('/data/settings.json');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.popup) Object.assign(settings, data.popup);
+        }
+      } catch (e) {
+        // Use defaults
+      }
+
+      if (!settings.enabled) return;
+
+      // Update popup content from CMS
+      const subtitleEl = popup.querySelector('.subtitle');
+      const titleEl = popup.querySelector('h3');
+      const textEl = popup.querySelector('.popup-content > p');
+      const btnEl = popup.querySelector('button[type="submit"]');
+      const inputEl = popup.querySelector('input[type="email"]');
+      const disclaimerEl = popup.querySelector('.popup-disclaimer');
+
+      if (subtitleEl) subtitleEl.textContent = settings.subtitle;
+      if (titleEl) titleEl.innerHTML = settings.title;
+      if (textEl) textEl.textContent = settings.text;
+      if (btnEl) btnEl.textContent = settings.buttonText;
+      if (inputEl) inputEl.placeholder = settings.placeholder;
+      if (disclaimerEl) {
+        disclaimerEl.innerHTML = settings.disclaimer + ' <a href="kontakt.html#datenschutz">Datenschutz</a>';
+      }
+
+      // Cooldown check
+      const POPUP_COOLDOWN = settings.cooldownDays * 24 * 60 * 60 * 1000;
+      const lastShown = localStorage.getItem('charmelle-popup-shown');
+      const shouldShow = !lastShown || (Date.now() - parseInt(lastShown)) > POPUP_COOLDOWN;
+
+      if (!shouldShow) return;
+
+      // Show after delay
+      const popupTimer = setTimeout(() => showPopup(), settings.delaySeconds * 1000);
+
+      // Exit intent (desktop only)
+      if (window.innerWidth > 768) {
+        document.addEventListener('mouseout', function exitIntent(e) {
+          if (e.clientY < 10 && !popup.classList.contains('is-visible')) {
+            clearTimeout(popupTimer);
+            showPopup();
+            document.removeEventListener('mouseout', exitIntent);
+          }
+        });
+      }
+    }
+
+    function showPopup() {
+      popup.classList.add('is-visible');
+      localStorage.setItem('charmelle-popup-shown', Date.now().toString());
+    }
+
+    // Close popup
+    const popupClose = popup.querySelector('.popup-close');
+    if (popupClose) {
+      popupClose.addEventListener('click', () => {
+        popup.classList.remove('is-visible');
+      });
+    }
+
+    // Close on overlay click
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('is-visible');
+      }
+    });
+
+    // Form submission
+    const popupForm = popup.querySelector('form');
+    if (popupForm) {
+      popupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(popupForm);
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          });
+          popup.querySelector('.popup-content').innerHTML = `
+            <div style="text-align:center;padding:40px 0;">
+              <div style="font-size:3rem;margin-bottom:16px;">✨</div>
+              <h3 style="margin-bottom:8px;">Vielen Dank!</h3>
+              <p style="color:var(--text-light);">Wir haben Ihre Anmeldung erhalten und melden uns bald bei Ihnen.</p>
+            </div>
+          `;
+          setTimeout(() => popup.classList.remove('is-visible'), 3000);
+        } catch (err) {
+          console.error('Form submission failed', err);
+        }
+      });
+    }
+
+    initPopup();
+  }
+
+  // --- Netlify Identity Widget (for CMS login) ---
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+
 });

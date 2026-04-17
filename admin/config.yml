@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+# Locale
+locale: "de"
+
+collections:
+  # ===== SHOP PRODUCTS =====
+  - name: "shop"
+    label: "Shop"
+    files:
+      - label: "Produktkatalog"
+        name: "products"
+        file: "data/products.json"
+        description: "Alle Produkte im Shop verwalten"
+        fields:
+          - label: "Produkte"
+            name: "products"
+            widget: "list"
+            label_singular: "Produkt"
+            summary: "{{fields.name}} ({{fields.brand}}) — CHF {{fields.price}}"
+            fields:
+              - { label: "Produkt-ID", name: "id", widget: "string", hint: "Eindeutige ID, z.B. thalgo-serum-hyalu" }
+              - { label: "Produktname", name: "name", widget: "string" }
+              - { label: "Marke", name: "brand", widget: "select", options: ["Med Beauty Swiss", "Team Dr. Joseph", "Thalgo", "Dr. Niedermeier Regulatpro", "iS Clinical"] }
+              - { label: "Kategorie", name: "category", widget: "select", options: ["gesichtspflege", "koerperpflege", "reinigung", "serum", "creme", "sonnenschutz", "drinks", "sets", "anti-aging"] }
+              - { label: "Preis (CHF)", name: "price", widget: "number", value_type: "float", min: 0 }
+              - { label: "Beschreibung", name: "description", widget: "text" }
+              - { label: "Kurzbeschreibung", name: "shortDescription", widget: "string", required: false, hint: "Kurzer Text für die Produktkarte (max. 80 Zeichen)" }
+              - { label: "Produktbild", name: "image", widget: "image", required: false, hint: "Quadratisches Bild empfohlen (min. 600x600px)" }
+              - { label: "Grösse / Inhalt", name: "size", widget: "string", required: false, hint: "z.B. 50ml, 200ml, 20 Ampullen" }
+              - { label: "Verfügbar", name: "inStock", widget: "boolean", default: true }
+              - { label: "Bestseller", name: "featured", widget: "boolean", default: false, required: false }
+              - { label: "Sortierung", name: "sortOrder", widget: "number", default: 100, required: false, hint: "Niedrigere Zahl = weiter oben" }
+
+  # ===== BLOG POSTS =====
+  - name: "blog"
+    label: "Blog"
+    files:
+      - label: "Blog-Beiträge"
+        name: "posts"
+        file: "data/blog.json"
+        description: "Alle Blog-Beiträge verwalten"
+        fields:
+          - label: "Beiträge"
+            name: "posts"
+            widget: "list"
+            label_singular: "Beitrag"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "URL-Slug", name: "slug", widget: "string", hint: "Wird in der URL verwendet, z.B. hydra-facial-syndeo" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", picker_utc: true }
+              - { label: "Kategorie", name: "category", widget: "select", options: ["hautpflege", "behandlungen", "tipps", "clean-beauty", "wellness", "team"] }
+              - { label: "Kategorie-Label", name: "categoryLabel", widget: "string", hint: "Anzeigename der Kategorie, z.B. 'Tipps & Tricks'" }
+              - { label: "Titelbild", name: "image", widget: "image", required: false }
+              - { label: "Vorschautext", name: "excerpt", widget: "text", hint: "Kurzer Text für die Blog-Übersicht" }
+              - { label: "Autor", name: "author", widget: "string", default: "Charmelle Beauty Center" }
+              - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  # ===== SITE SETTINGS =====
+  - name: "settings"
+    label: "Einstellungen"
+    files:
+      - label: "Popup / Newsletter"
+        name: "popup"
+        file: "data/settings.json"
+        description: "Newsletter-Popup Texte und Einstellungen bearbeiten"
+        fields:
+          - label: "Popup"
+            name: "popup"
+            widget: "object"
+            fields:
+              - { label: "Popup aktiviert", name: "enabled", widget: "boolean", default: true, hint: "Popup ein- oder ausschalten" }
+              - { label: "Untertitel", name: "subtitle", widget: "string", default: "Exklusive Angebote" }
+              - { label: "Titel", name: "title", widget: "string", default: "Beauty-News & Aktionen" }
+              - { label: "Text", name: "text", widget: "text", default: "Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox." }
+              - { label: "Button-Text", name: "buttonText", widget: "string", default: "Anmelden" }
+              - { label: "Platzhalter E-Mail-Feld", name: "placeholder", widget: "string", default: "Ihre E-Mail-Adresse" }
+              - { label: "Hinweistext", name: "disclaimer", widget: "string", default: "Kein Spam, jederzeit abbestellbar." }
+              - { label: "Verzögerung (Sekunden)", name: "delaySeconds", widget: "number", default: 15, min: 5, max: 60, hint: "Nach wie vielen Sekunden das Popup erscheint" }
+              - { label: "Pause (Tage)", name: "cooldownDays", widget: "number", default: 7, min: 1, max: 30, hint: "Wie viele Tage bis das Popup erneut erscheint" }

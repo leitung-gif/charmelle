@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
+
   <!-- SEO Meta Tags -->
   <title>Kontakt | Charmelle Beauty Center - Girixweg 7, 5000 Aarau</title>
   <meta name="description" content="Kontaktieren Sie das Charmelle Beauty Center Aarau: ☎ 062 822 66 47 · 📍 Girixweg 7, 5000 Aarau · WhatsApp: 079 828 66 47 · Termin online buchen.">
@@ -337,7 +340,7 @@
         <!-- Map -->
         <div class="contact-map">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2706.5!2d8.044!3d47.392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47903be8e0d22f2d%3A0x1234567890abcdef!2sGirixweg%207%2C%205000%20Aarau!5e0!3m2!1sde!2sch!4v1700000000000!5m2!1sde!2sch" 
+            src="https://maps.google.com/maps?q=Charmelle+Beauty+Center,+Girixweg+7,+5000+Aarau,+Schweiz&t=&z=16&ie=UTF8&iwloc=&output=embed" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
@@ -445,7 +448,7 @@
       </div>
       <div class="footer-credit">Made by <a href="https://www.lorien.group/" target="_blank" rel="noopener">Lorien Group</a></div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
+        <span>&copy; <span class="copyright-year">2025</span> Charmelle Beauty Center GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-legal">
           <a href="#agb">AGB</a>
           <a href="#datenschutz">Datenschutz</a>
@@ -464,6 +467,24 @@
     </div>
   </div>
 
+  <!-- Newsletter Popup -->
+  <div class="newsletter-popup" id="newsletter-popup" role="dialog" aria-label="Newsletter">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Schliessen">✕</button>
+      <span class="subtitle">Exklusive Angebote</span>
+      <h3>Beauty-News & <em class="text-italic">Aktionen</em></h3>
+      <p>Erhalten Sie exklusive Angebote, Pflegetipps und Neuigkeiten direkt in Ihre Inbox.</p>
+      <form class="popup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="hidden" style="display:none;"><input name="bot-field"></p>
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        <button type="submit" class="btn btn--primary">Anmelden</button>
+        <p class="popup-disclaimer">Kein Spam, jederzeit abbestellbar. <a href="#datenschutz">Datenschutz</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
