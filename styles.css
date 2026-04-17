@@ -367,10 +367,10 @@ p {
 }
 
 /* ═══════════════════════════════════════════════════
-   Video Hero — Bubble Shape
+   Video Hero — Oval Bubble Shape
    ═══════════════════════════════════════════════════ */
 .video-hero {
-  padding: 60px 0 80px;
+  padding: 48px 0 56px;
   background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
@@ -378,18 +378,19 @@ p {
 
 .video-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
   align-items: center;
 }
 
 .video-hero-bubble {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: 48% 52% 42% 58% / 55% 45% 55% 45%;
+  max-width: 460px;
+  aspect-ratio: 5/4;
+  border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(74, 59, 50, 0.15);
+  box-shadow: 0 20px 50px rgba(74, 59, 50, 0.12);
 }
 
 .video-hero-bubble video {
@@ -410,31 +411,41 @@ p {
 
 .video-hero-text h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 400;
   color: var(--text-heading);
   line-height: 1.15;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .video-hero-text p {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   color: var(--text-light);
   line-height: 1.75;
-  margin-bottom: 28px;
-  max-width: 500px;
+  margin-bottom: 24px;
+  max-width: 480px;
 }
 
-/* Welcome Section (formerly hero) */
+/* Welcome Section — compact, text left, image right */
 .welcome-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
   align-items: center;
 }
 
+.welcome-visual {
+  order: 2;
+}
+
 .welcome-visual .arch-img {
-  max-height: 520px;
+  max-height: 380px;
+  max-width: 340px;
+  margin-left: auto;
+}
+
+.welcome-text {
+  order: 1;
 }
 
 .welcome-text h2 {
@@ -443,22 +454,22 @@ p {
 
 .welcome-text p {
   color: var(--text-light);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   line-height: 1.75;
 }
 
 @media (max-width: 900px) {
   .video-hero {
-    padding: 40px 0 60px;
+    padding: 32px 0 40px;
   }
 
   .video-hero-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .video-hero-bubble {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
@@ -468,7 +479,7 @@ p {
   }
 
   .video-hero-text p {
-    margin: 0 auto 28px;
+    margin: 0 auto 24px;
   }
 
   .video-hero-text .hero-buttons {
@@ -477,7 +488,7 @@ p {
 
   .welcome-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .welcome-visual {
@@ -485,8 +496,12 @@ p {
   }
 
   .welcome-visual .arch-img {
-    max-width: 400px;
+    max-width: 280px;
     margin: 0 auto;
+  }
+
+  .welcome-text {
+    order: 2;
   }
 }
 
@@ -3908,4 +3923,62 @@ p {
 #okapi-wasb-button {
   left: auto !important;
   right: 20px !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   WooCommerce Cart & Checkout Fixes
+   ═══════════════════════════════════════════════════ */
+
+/* Order summary product cards */
+.woocommerce-checkout-review-order-table .product-name {
+  max-width: 200px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.woocommerce-checkout-review-order-table .product-name .wc-item-meta,
+.woocommerce-checkout-review-order-table .product-name dl.variation,
+.woocommerce-checkout-review-order-table .product-name p {
+  display: none !important;
+}
+
+.woocommerce-checkout-review-order-table .product-name .product-quantity {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Cart table cleanup */
+.woocommerce table.shop_table td.product-name {
+  max-width: 250px;
+}
+
+.woocommerce table.shop_table td.product-name a {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.woocommerce table.shop_table td.product-name .variation,
+.woocommerce table.shop_table td.product-name dl.variation {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+/* Checkout order review sidebar */
+.woocommerce .woocommerce-checkout-review-order {
+  max-width: 100%;
+}
+
+.woocommerce .woocommerce-checkout-review-order-table td,
+.woocommerce .woocommerce-checkout-review-order-table th {
+  padding: 12px 8px;
+  vertical-align: top;
+  border-color: var(--border-color);
+}
+
+.woocommerce .woocommerce-checkout-review-order-table .product-total {
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 500;
 }
