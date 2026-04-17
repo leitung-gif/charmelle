@@ -36,7 +36,7 @@
                 <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>"<?php if ( is_page( 'behandlungen' ) ) echo ' class="active"'; ?>>Behandlungen</a>
                 <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>"<?php if ( is_page( 'team' ) ) echo ' class="active"'; ?>>Team</a>
                 <a href="<?php echo function_exists('wc_get_page_id') ? esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) : esc_url( home_url( '/shop/' ) ); ?>"<?php if ( function_exists('is_shop') && ( is_shop() || is_product_category() || is_product() ) ) echo ' class="active"'; ?>>Shop</a>
-                <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"<?php if ( is_home() || is_single() && get_post_type() === 'post' ) echo ' class="active"'; ?>>Blog</a>
+                <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"<?php if ( (is_home() && !is_front_page()) || (is_single() && get_post_type() === 'post') ) echo ' class="active"'; ?>>Blog</a>
                 <a href="<?php echo esc_url( home_url( '/gutscheine/' ) ); ?>"<?php if ( is_page( 'gutscheine' ) ) echo ' class="active"'; ?>>Gutscheine</a>
                 <a href="<?php echo esc_url( home_url( '/kontakt/' ) ); ?>"<?php if ( is_page( 'kontakt' ) ) echo ' class="active"'; ?>>Kontakt</a>
                 <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small header-cta--mobile" style="display:none;" target="_blank" rel="noopener">Termin Buchen</a>
