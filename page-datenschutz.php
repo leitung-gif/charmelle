@@ -4,8 +4,6 @@
  * Template for the Datenschutzerklärung (Privacy Policy) page.
  */
 get_header(); ?>
-
-<main id="main-content">
   <section class="page-hero">
     <div class="container">
       <span class="subtitle">Charmelle Beauty Center</span>
@@ -103,6 +101,4 @@ get_header(); ?>
 
     </div>
   </section>
-</main>
-
 <?php get_footer(); ?>

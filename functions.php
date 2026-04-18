@@ -510,7 +510,7 @@ remove_action( 'wp_head', 'wp_generator' );
 // ─── Blog Import Tool (one-time use) ───
 // Only loads when visiting: ?charmelle_import_blogs=1
 // Delete import-blogs.php from theme after successful import.
-if ( isset( $_GET['charmelle_import_blogs'] ) && file_exists( get_template_directory() . '/import-blogs.php' ) ) {
+if ( isset( $_GET['charmelle_import_blogs'] ) && current_user_can( 'manage_options' ) && file_exists( get_template_directory() . '/import-blogs.php' ) ) {
     require_once get_template_directory() . '/import-blogs.php';
 }
 
@@ -579,6 +579,27 @@ function charmelle_get_page_seo() {
             'description' => 'Beauty-Wissen, Pflegetipps und Neuigkeiten aus dem Charmelle Beauty Center Aarau. Erfahren Sie mehr über Hydra Facial, Microneedling und professionelle Hautpflege.',
             'keywords'    => 'Beauty Blog Aarau, Hautpflege Tipps, Kosmetik Ratgeber, Hydra Facial Erfahrung, Microneedling Blog',
             'url'         => $base . '/blog/',
+        );
+    } elseif ( is_page( 'agb' ) ) {
+        $seo = array(
+            'title'       => 'AGB — Charmelle Beauty Center Aarau',
+            'description' => 'Allgemeine Geschäftsbedingungen des Charmelle Beauty Center Aarau: Terminbuchung, Stornierung, Preise, Zahlungsmittel, Gutscheine und Rückgabe. Gültig ab Januar 2025.',
+            'keywords'    => 'AGB Kosmetikstudio Aarau, Geschäftsbedingungen Beauty Center, Charmelle AGB, Termin Stornierung Kosmetik',
+            'url'         => $base . '/agb/',
+        );
+    } elseif ( is_page( 'impressum' ) ) {
+        $seo = array(
+            'title'       => 'Impressum — Charmelle Beauty Center Aarau',
+            'description' => 'Impressum der Charmelle Beauty Center GmbH, Girixweg 7, 5000 Aarau. Handelsregister-Nr. CH-400.4.024.451-7, Kanton Aargau. Geschäftsführung: Aurora Mezzaucella & Oriana Raso.',
+            'keywords'    => 'Impressum Charmelle Aarau, Handelsregister Beauty Center, Charmelle GmbH, Kosmetikstudio Aarau Impressum',
+            'url'         => $base . '/impressum/',
+        );
+    } elseif ( is_page( 'datenschutz' ) ) {
+        $seo = array(
+            'title'       => 'Datenschutz — Charmelle Beauty Center Aarau',
+            'description' => 'Datenschutzerklärung des Charmelle Beauty Center Aarau: Informationen zur Erhebung, Verarbeitung und Speicherung Ihrer Daten gemäss DSG und DSGVO.',
+            'keywords'    => 'Datenschutz Kosmetikstudio Aarau, Datenschutzerklärung Beauty Center, Charmelle Datenschutz, DSG DSGVO Kosmetik',
+            'url'         => $base . '/datenschutz/',
         );
     }
 

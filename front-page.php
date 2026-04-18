@@ -9,6 +9,7 @@ $t = get_template_directory_uri();
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero section" id="hero" style="position:relative;overflow:hidden;">
+    <div class="hero-glow"></div>
     <div class="blob blob--gold blob--lg blob--float-1" style="top:60px;left:-100px;opacity:0.06;"></div>
     <div class="blob blob--cream blob--md blob--float-2" style="bottom:-60px;right:10%;opacity:0.07;"></div>
     <div class="container">
@@ -294,6 +295,30 @@ $t = get_template_directory_uri();
     </div>
   </section>
 
+  <!-- ===== STATS COUNTER BAR ===== -->
+  <section class="stats-bar" id="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-item">
+          <div class="stat-number" data-count="30" data-suffix="+">0+</div>
+          <div class="stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5.0" data-suffix="">0.0</div>
+          <div class="stat-label">Google Bewertung</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5" data-suffix="">0</div>
+          <div class="stat-label">Kosmetikerinnen</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="20" data-suffix="+">0+</div>
+          <div class="stat-label">Behandlungen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== BEHANDLUNGEN SEO SUMMARY ===== -->
   <section class="section" id="behandlungen-overview">
     <div class="container container--narrow">
@@ -355,6 +380,32 @@ $t = get_template_directory_uri();
     </div>
   </section>
   <?php endif; ?>
+
+  <!-- ===== BRAND PARTNERS MARQUEE ===== -->
+  <section class="brand-marquee" aria-label="Unsere Marken">
+    <span class="subtitle">Wir arbeiten mit den Besten</span>
+    <div class="brand-track">
+      <span class="brand-item"><span class="brand-dot"></span>Med Beauty Swiss</span>
+      <span class="brand-item"><span class="brand-dot"></span>Team Dr. Joseph</span>
+      <span class="brand-item"><span class="brand-dot"></span>Thalgo</span>
+      <span class="brand-item"><span class="brand-dot"></span>iS Clinical</span>
+      <span class="brand-item"><span class="brand-dot"></span>LPG Endermologie</span>
+      <span class="brand-item"><span class="brand-dot"></span>Dr. Niedermeier Regulatpro</span>
+      <span class="brand-item"><span class="brand-dot"></span>Med Beauty Swiss</span>
+      <span class="brand-item"><span class="brand-dot"></span>Team Dr. Joseph</span>
+      <span class="brand-item"><span class="brand-dot"></span>Thalgo</span>
+      <span class="brand-item"><span class="brand-dot"></span>iS Clinical</span>
+      <span class="brand-item"><span class="brand-dot"></span>LPG Endermologie</span>
+      <span class="brand-item"><span class="brand-dot"></span>Dr. Niedermeier Regulatpro</span>
+    </div>
+  </section>
+
+  <!-- ===== SECTION WAVE TRANSITION ===== -->
+  <div class="section-wave">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 48h1440V24C1280 0 1120 48 960 24S640 0 480 24 160 48 0 24v24z" fill="#2D241E"/>
+    </svg>
+  </div>
 
   <!-- ===== NEWSLETTER ===== -->
   <section class="section section--dark" id="newsletter">

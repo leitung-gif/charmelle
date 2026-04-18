@@ -109,9 +109,14 @@ get_header();
           </div>
         </div>
 
-        <!-- Map -->
-        <div class="contact-map">
-          <iframe src="https://maps.google.com/maps?q=Charmelle+Beauty+Center,+Girixweg+7,+5000+Aarau,+Schweiz&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Charmelle Beauty Center, Girixweg 7, 5000 Aarau"></iframe>
+        <!-- Map (Consent-Gated for DSG/GDPR Compliance) -->
+        <div class="contact-map" data-map-src="https://maps.google.com/maps?q=Charmelle+Beauty+Center,+Girixweg+7,+5000+Aarau,+Schweiz&t=&z=16&ie=UTF8&iwloc=&output=embed">
+          <div class="map-consent-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h4>Standort anzeigen</h4>
+            <p>Beim Laden der Karte werden Daten an Google übermittelt. Durch Klick auf «Karte laden» stimmen Sie der Datenübermittlung zu.</p>
+            <button class="btn btn--primary map-consent-btn">Karte laden</button>
+          </div>
         </div>
       </div>
     </div>
