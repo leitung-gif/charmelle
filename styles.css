@@ -4172,6 +4172,7 @@ body.page-transitioning {
   background: var(--bg-section);
   overflow: hidden;
   position: relative;
+  margin-bottom: -1px;
 }
 .brand-marquee::before,
 .brand-marquee::after {
@@ -4387,6 +4388,7 @@ body.page-transitioning {
   position: relative;
   margin-top: -1px;
   line-height: 0;
+  background: var(--bg-section);
 }
 .section-wave svg {
   display: block;
