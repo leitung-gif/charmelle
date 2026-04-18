@@ -400,13 +400,6 @@ $t = get_template_directory_uri();
     </div>
   </section>
 
-  <!-- ===== SECTION WAVE TRANSITION ===== -->
-  <div class="section-wave">
-    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 48h1440V24C1280 0 1120 48 960 24S640 0 480 24 160 48 0 24v24z" fill="#2D241E"/>
-    </svg>
-  </div>
-
   <!-- ===== NEWSLETTER ===== -->
   <section class="section section--dark" id="newsletter">
     <div class="container text-center">

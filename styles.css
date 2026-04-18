@@ -4383,17 +4383,25 @@ body.page-transitioning {
   user-select: none;
 }
 
-/* --- Section Wave Divider --- */
-.section-wave {
+/* --- Section Wave Transition (via pseudo-element, gap-proof) --- */
+#newsletter {
   position: relative;
-  margin-top: -1px;
-  line-height: 0;
-  background: var(--bg-section);
+  overflow: visible;
+  padding-top: calc(var(--section-padding) + 48px);
 }
-.section-wave svg {
-  display: block;
-  width: 100%;
-  height: auto;
+#newsletter::before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  left: -2%;
+  width: 104%;
+  height: 48px;
+  background: var(--bg-section);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  z-index: 1;
+}
+.section-wave {
+  display: none;
 }
 
 /* --- Safe Area Insets (Notched Devices) --- */
