@@ -117,17 +117,17 @@ $t = get_template_directory_uri();
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 4/3;">
-          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Plop Fenster Behandlung bei Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="April Aktion LPG und Hydrafacial bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
-          <span class="subtitle">Aktion des Monats</span>
-          <h2>Plop <em class="text-italic">Fenster</em></h2>
+          <span class="subtitle">April Aktion</span>
+          <h2>LPG + <em class="text-italic">Hydrafacial</em></h2>
           <hr class="golden-rule">
-          <p>Unsere exklusive Aktion dieses Monats: Das Plop Fenster - eine innovative Behandlung für sofort sichtbare Ergebnisse. Profitieren Sie jetzt von attraktiven Konditionen bei Charmelle in Aarau.</p>
-          <p style="color: var(--text-light); font-size: 0.95rem;">Fragen Sie uns nach den aktuellen Details und Kombinationsmöglichkeiten. Unser Team berät Sie gerne persönlich.</p>
+          <p><strong>20% auf LPG Gesicht</strong> — nur in Kombination mit Hydrafacial. Zwei Hightech-Behandlungen in einer Sitzung für maximale Wirkung: Die patentierte LPG Endermologie strafft und modelliert, während das Hydrafacial Ihre Haut tiefenwirksam reinigt und mit Feuchtigkeit versorgt.</p>
+          <p style="color: var(--text-light); font-size: 0.95rem;"><strong>Zusätzlich:</strong> 20% auf Cleanser und Tonic im Set — die perfekte Heimpflege für Ihr strahlendes Ergebnis.</p>
           <div class="treatment-meta" style="margin-bottom: 24px;">
-            <span class="duration">⏱ Auf Anfrage</span>
-            <span class="price">✦ Aktionspreis</span>
+            <span class="duration">⏱ 60–120 Min.</span>
+            <span class="price">✦ 20% Rabatt</span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -419,14 +419,15 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
-  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Aktion des Monats">
+  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="April Aktion">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
-      <span class="subtitle">Aktion des Monats</span>
-      <h3 style="margin-bottom: 12px;">Plop Fenster</h3>
+      <span class="subtitle">April Aktion</span>
+      <h3 style="margin-bottom: 12px;">LPG + Hydrafacial</h3>
       <hr class="golden-rule golden-rule--center">
-      <p style="color: var(--text-light); margin-top: 16px;">Unsere exklusive Aktion dieses Monats: Das Plop Fenster - eine innovative Behandlung für sofort sichtbare Ergebnisse. Jetzt bei Charmelle in Aarau.</p>
-      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">Aktionspreis</p>
+      <p style="color: var(--text-light); margin-top: 16px;"><strong>20% auf LPG Gesicht</strong> — nur in Kombination mit Hydrafacial.</p>
+      <p style="color: var(--text-light); margin-top: 8px;"><strong>20% auf Cleanser und Tonic im Set</strong></p>
+      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">20% Rabatt</p>
       <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%;">Jetzt Termin buchen</a>
     </div>
   </div>
