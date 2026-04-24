@@ -91,7 +91,13 @@ $all_categories = array_merge(
           $time  = $tr[2];
           $desc  = $tr[3];
           $flag  = isset($tr[4]) ? $tr[4] : '';
-          $price_str = $price == 0 ? 'Kostenlos' : 'CHF ' . number_format($price, 0, '.', "'") . '.—';
+          if ($price == 0 && $flag === 'spezial') {
+            $price_str = 'Auf Anfrage';
+          } elseif ($price == 0) {
+            $price_str = 'Kostenlos';
+          } else {
+            $price_str = 'CHF ' . number_format($price, 0, '.', "'") . '.—';
+          }
         ?>
         <div class="t-item reveal">
           <div>

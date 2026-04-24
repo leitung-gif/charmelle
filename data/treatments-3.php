@@ -51,11 +51,15 @@ return [
     ['Permanent Eyeliner ohne Wing',400,'120 Min.','Wasser- und wischfester Permanent Eyeliner, der Ihren Augenausdruck 24 Stunden am Tag verstärkt. Schluss mit täglichem Nachziehen – professionell pigmentiert für langanhaltende Schönheit.',''],
     ['Wimpernkranz Verstärkung oben',350,'90 Min.','Permanente Verdichtung und Betonung des oberen Wimpernkranzes. Optisch vollere Wimpern und ein intensiverer Blick – ganz ohne tägliches Schminken.',''],
     ['Wimpernkranzverstärkung unten (Kombi)',100,'30 Min.','Ergänzende Verstärkung des unteren Wimpernkranzes in Kombination mit Eyeliner oder oberer Wimpernkranzverstärkung für einen allumfassenden Augenausdruck.','kombi'],
-    ['Auffrischung Lips/Powder Brows nach 1 Jahr',345,'120 Min.','Auffrischung Ihres bestehenden Permanent Make-ups nach einem Jahr. Exklusiv für Kundinnen, die ihr PMU bei Charmelle stechen liessen – für dauerhaft perfekte Ergebnisse.',''],
+    ['PMU Auffrischung nach 1–2 Jahren (50% Rabatt)',0,'120 Min.','Auffrischung Ihres Permanent Make-ups innerhalb von 1–2 Jahren nach der Erstbehandlung zum halben Preis. Voraussetzung: Ihre PMU-Behandlung wurde bei Charmelle durchgeführt. 50% Rabatt auf den Originalpreis.','spezial'],
+    ['PMU Auffrischung nach 3–5 Jahren (30% Rabatt)',0,'120 Min.','Auffrischung Ihres Permanent Make-ups nach 3–5 Jahren mit 30% Rabatt auf den Originalpreis. Nur gültig für Kundinnen, deren PMU bei Charmelle gestochen wurde.','spezial'],
+    ['PMU Auffrischung nach 5+ Jahren (10% Rabatt)',0,'120 Min.','Auffrischung Ihres Permanent Make-ups nach über 5 Jahren mit 10% Rabatt auf den Originalpreis. Nur gültig für Kundinnen, deren PMU bei Charmelle gestochen wurde.','spezial'],
   ]],
   ['Phi Brows Microblading','microblading','Die Kunst der perfekten Augenbraue',[
     ['Phi Brows Microblading',450,'150 Min.','Natürlich verstärkte und modellierte Brauen mit der weltweit anerkannten Phibrows-Methode. Feinste Härchen werden von Hand in die Haut gezeichnet – hyperrealistisch und perfekt symmetrisch.',''],
-    ['Phi Brows Microblading Auffrischung nach 1 Jahr',250,'150 Min.','Auffrischung Ihres Phibrows Microbladings nach einem Jahr für weiterhin natürlich schöne, definierte Brauen. Exklusiv für Kundinnen, die ihr Microblading bei uns gemacht haben.',''],
+    ['Microblading Auffrischung nach 1 Jahr (50% Rabatt)',0,'150 Min.','Auffrischung Ihres Phibrows Microbladings nach einem Jahr zum halben Preis. Voraussetzung: Ihr Microblading wurde bei Charmelle durchgeführt. 50% Rabatt auf den Originalpreis.','spezial'],
+    ['Microblading Auffrischung nach 2 Jahren (30% Rabatt)',0,'150 Min.','Auffrischung Ihres Microbladings nach 2 Jahren mit 30% Rabatt auf den Originalpreis. Nur gültig für Kundinnen, deren Microblading bei Charmelle gemacht wurde.','spezial'],
+    ['Microblading Auffrischung nach 3+ Jahren (10% Rabatt)',0,'150 Min.','Auffrischung Ihres Microbladings nach 3 oder mehr Jahren mit 10% Rabatt. Nur gültig für Kundinnen, deren Microblading bei Charmelle gemacht wurde.','spezial'],
   ]],
   ['Wellness Körperbehandlungen','wellness','Entspannung für Körper und Seele',[
     ['Algen Körperbehandlung',200,'90 Min.','Luxuriöse Ganzkörper-Behandlung mit Thalgo Algenprodukten: Ganzkörper-Peeling, nährende Algenpackung, Ganzkörper-Einölen mit ayurvedischem Öl und 30 Minuten Rückenmassage. Wirkt entspannend, entgiftend und schenkt weiche, samtweiche Haut.',''],
