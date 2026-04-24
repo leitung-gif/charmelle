@@ -17,7 +17,7 @@ $t = get_template_directory_uri();
         <div class="hero-content">
           <span class="subtitle">Ihr Kosmetikstudio in Aarau — seit über 30 Jahren</span>
           <h1>Professionelle Kosmetik und <em class="text-italic">Hautpflege</em></h1>
-          <p style="color:var(--text-light);font-size:1.05rem;line-height:1.75;margin-bottom:28px;">Das Charmelle Beauty Center vereint seit über 30 Jahren medizinische Hightech-Kosmetik mit ganzheitlicher Schönheitspflege. Hydra Facial, Microneedling, LPG Endermologie und mehr — durchgeführt von diplomierten Kosmetikerinnen EFZ im Herzen von Aarau.</p>
+          <p style="color:var(--text-light);font-size:1.05rem;line-height:1.75;margin-bottom:28px;">Das Charmelle Beauty Center vereint seit über 30 Jahren medizinische Hightech-Kosmetik mit ganzheitlicher Schönheitspflege. Hydra Facial, Microneedling, LPG Endermologie, Korean/Wimpernlifting und mehr — durchgeführt von diplomierten Kosmetikerinnen EFZ im Herzen von Aarau.</p>
           <div class="hero-buttons" style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener">Termin Buchen</a>
             <a href="<?php echo esc_url( home_url( '/behandlungen/' ) ); ?>" class="btn btn--outline btn--large">Behandlungen entdecken</a>
@@ -44,7 +44,7 @@ $t = get_template_directory_uri();
         Das Charmelle Beauty Center am Girixweg 7 in Aarau ist seit über 30 Jahren die erste Adresse für professionelle Kosmetik und Hautpflege im Kanton Aargau. Ob Sie aus Aarau, Buchs, Suhr, Rohr, Küttigen, Erlinsbach, Gränichen, Oberentfelden, Unterentfelden, Schönenwerd oder Niedergösgen kommen - bei uns erwartet Sie ein Team von diplomierten Kosmetikerinnen EFZ, die sich mit Leidenschaft Ihrer Schönheit und Ihrem Wohlbefinden widmen.
       </p>
       <p style="font-size: 1.05rem; color: var(--text-light);">
-        Unser umfassendes Angebot reicht von medizinischer Hightech-Kosmetik wie <strong>Hydra Facial Syndeo</strong>, <strong>Microneedling mit Hyaluron</strong> und <strong>LPG Endermologie</strong> über klassische Gesichtspflege und Anti-Aging-Behandlungen bis hin zu <strong>Wimpernlifting</strong>, <strong>Permanent Make-Up</strong>, <strong>Microblading</strong> und professioneller Hand- und Fusspflege. Wir arbeiten ausschliesslich mit hochwertigen Produkten von <strong>Med Beauty Swiss</strong>, <strong>Team Dr. Joseph</strong>, <strong>iS Clinical</strong> und <strong>Thalgo</strong> - Marken, die für Innovation, Wirksamkeit und Nachhaltigkeit stehen.
+        Unser umfassendes Angebot reicht von medizinischer Hightech-Kosmetik wie <strong>Hydra Facial Syndeo</strong>, <strong>Microneedling mit Hyaluron</strong> und <strong>LPG Endermologie</strong> über klassische Gesichtspflege und Anti-Aging-Behandlungen bis hin zu <strong>Korean/Wimpernlifting</strong>, <strong>Permanent Make-Up</strong>, <strong>Microblading</strong>, <strong>Stosswellenbehandlung</strong> und professioneller Hand- und Fusspflege. Wir arbeiten ausschliesslich mit hochwertigen Produkten von <strong>Med Beauty Swiss</strong>, <strong>Team Dr. Joseph</strong>, <strong>iS Clinical</strong> und <strong>Thalgo</strong> - Marken, die für Innovation, Wirksamkeit und Nachhaltigkeit stehen.
       </p>
     </div>
   </section>
@@ -82,7 +82,7 @@ $t = get_template_directory_uri();
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Ausdrucksstark</h3>
-            <p>Wimpernlifting · Nägel · Permanent Make-Up</p>
+            <p>Korean/Wimpernlifting · Nägel · Permanent Make-Up</p>
           </div>
         </a>
       </div>
@@ -117,17 +117,17 @@ $t = get_template_directory_uri();
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 4/3;">
-          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Hydra Facial Syndeo Behandlung bei Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Plop Fenster Behandlung bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
           <span class="subtitle">Aktion des Monats</span>
-          <h2>Hydra Facial <em class="text-italic">Syndeo</em></h2>
+          <h2>Plop <em class="text-italic">Fenster</em></h2>
           <hr class="golden-rule">
-          <p>Die Hollywood-Behandlung der Stars - jetzt bei Charmelle in Aarau. Diese sanfte Abrasion mit hochaktiven Seren radiert Linien, Flecken und Unebenheiten sanft aus. Das Ergebnis: ein strahlendes, frisches Hautbild, das sofort sichtbar ist. Falten werden vorgebeugt und die Faltentiefe nachweislich reduziert.</p>
-          <p style="color: var(--text-light); font-size: 0.95rem;">Geeignet für alle Hauttypen. Bereits nach der ersten Behandlung sichtbare Ergebnisse. Ideal alle 4–6 Wochen für optimale Langzeitwirkung.</p>
+          <p>Unsere exklusive Aktion dieses Monats: Das Plop Fenster - eine innovative Behandlung für sofort sichtbare Ergebnisse. Profitieren Sie jetzt von attraktiven Konditionen bei Charmelle in Aarau.</p>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Fragen Sie uns nach den aktuellen Details und Kombinationsmöglichkeiten. Unser Team berät Sie gerne persönlich.</p>
           <div class="treatment-meta" style="margin-bottom: 24px;">
-            <span class="duration">⏱ 60–120 Min.</span>
-            <span class="price">✦ ab CHF 165.—</span>
+            <span class="duration">⏱ Auf Anfrage</span>
+            <span class="price">✦ Aktionspreis</span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -342,8 +342,8 @@ $t = get_template_directory_uri();
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Natürliche Kollagenstimulation und Body-Forming. Strafft die Haut ohne Nadeln. Ab CHF 100.—</p>
           </div>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
-            <h4 style="margin-bottom:4px;font-size:1rem;">Wimpernlifting und Extensions</h4>
-            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Der natürliche Wow-Effekt für Ihre Wimpern - mit oder ohne Extensions. Ab CHF 65.—</p>
+            <h4 style="margin-bottom:4px;font-size:1rem;">Korean/Wimpernlifting und Extensions</h4>
+            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Der natürliche Wow-Effekt für Ihre Wimpern mit koreanischer Technik - mit oder ohne Extensions. Ab CHF 65.—</p>
           </div>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Permanent Make-Up und Microblading</h4>
@@ -423,10 +423,10 @@ $t = get_template_directory_uri();
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
       <span class="subtitle">Aktion des Monats</span>
-      <h3 style="margin-bottom: 12px;">Hydra Facial Syndeo</h3>
+      <h3 style="margin-bottom: 12px;">Plop Fenster</h3>
       <hr class="golden-rule golden-rule--center">
-      <p style="color: var(--text-light); margin-top: 16px;">Die sanfte Abrasion mit hochaktiven Seren für ein strahlendes Hautbild. Jetzt bei Charmelle in Aarau.</p>
-      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">ab CHF 165.—</p>
+      <p style="color: var(--text-light); margin-top: 16px;">Unsere exklusive Aktion dieses Monats: Das Plop Fenster - eine innovative Behandlung für sofort sichtbare Ergebnisse. Jetzt bei Charmelle in Aarau.</p>
+      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">Aktionspreis</p>
       <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%;">Jetzt Termin buchen</a>
     </div>
   </div>

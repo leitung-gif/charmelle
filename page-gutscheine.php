@@ -85,13 +85,8 @@ $t = get_template_directory_uri();
           </div>
 
           <div class="form-group">
-            <label for="recipient-name">Name der beschenkten Person (optional)</label>
-            <input type="text" id="recipient-name" name="recipient" placeholder="z.B. Maria Müller">
-          </div>
-
-          <div class="form-group">
-            <label for="personal-message">Persönliche Botschaft (optional)</label>
-            <textarea id="personal-message" name="message" placeholder="z.B. Alles Gute zum Geburtstag! Gönn dir etwas Schönes ♥"></textarea>
+            <label for="recipient-name">Name der beschenkten Person *</label>
+            <input type="text" id="recipient-name" name="recipient" placeholder="z.B. Maria Müller" required>
           </div>
 
           <div class="price-display">

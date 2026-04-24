@@ -151,7 +151,6 @@ p {
 }
 
 .text-accent {
-  font-family: var(--font-accent);
   color: var(--accent-gold);
 }
 

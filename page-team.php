@@ -77,7 +77,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</span>
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Berufsbildnerin</li><li>Diplomierte Visagistin</li><li>Sachkundenachweis V-Nissg</li></ul>
           <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span></div>
-          <p class="team-bio">Oriana bringt umfassende Fachkompetenz in Body-Forming, Cellulite-Beratung, Hydra Facial, Micro- und Aquabrasion sowie Microneedling und Aknebehandlungen mit.</p>
+          <p class="team-bio">Oriana bringt umfassende Fachkompetenz in Body-Forming, Hydra Facial, Micro- und Aquabrasion sowie Microneedling und Aknebehandlungen mit. Ihre Behandlungen folgen der bewährten Charmelle Pflege-Philosophie.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Oriana buchen</a>
         </div>
       </div>
@@ -104,7 +104,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Kosmetikerin in Ausbildung</span>
           <div class="team-languages"><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇹🇷 Türkçe</span><span class="lang-tag">🇬🇧 English</span></div>
           <p class="team-bio">«Der Beruf der Kosmetikerin hat mich schon immer fasziniert, weil er weit mehr ist als nur die Anwendung von Pflegeprodukten.»</p>
-          <ul class="team-qualifications-list"><li>Piccolo Behandlung</li><li>Starter Best Ager</li><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie</li><li>Wimpern/Brauen färben und regulieren</li><li>Haarentfernung mit Warmwachs</li></ul>
+          <ul class="team-qualifications-list"><li>Piccolo Behandlung</li><li>Starter Best Ager</li><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie</li><li>Wimpern/Brauen färben und regulieren</li><li>Haarentfernung mit Warmwachs</li><li>Shellac</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
         </div>
       </div>
@@ -118,7 +118,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Kosmetikerin in Ausbildung</span>
           <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇬🇧 English</span><span class="lang-tag">🇫🇷 Français</span></div>
           <p class="team-bio">«Ich freue mich riesig, hier meine Ausbildung zu machen und jeden Tag Neues zu lernen.»</p>
-          <ul class="team-qualifications-list"><li>Manicure</li><li>Pedicure</li><li>Wachsbehandlungen</li></ul>
+          <ul class="team-qualifications-list"><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>Haarentfernung mit Warmwachs</li><li>Shellac</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
         </div>
       </div>

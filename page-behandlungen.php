@@ -142,6 +142,19 @@ get_header();
               <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Buchen</a>
             </div>
           </div>
+
+          <!-- Stosswellenbehandlung -->
+          <div class="treatment-item reveal">
+            <div class="treatment-info">
+              <h4><span class="text-accent">Stosswellenbehandlung</span></h4>
+              <p>Gezielte Stosswellentherapie zur Straffung und Regeneration des Gewebes. Wirksam bei Cellulite, Bindegewebsschwäche und zur Verbesserung der Hautstruktur. Die Stosswellen regen die Durchblutung und Kollagenneubildung an.</p>
+              <div class="treatment-meta"><span class="duration">⏱ 30–45 Min.</span></div>
+            </div>
+            <div class="treatment-action">
+              <span class="treatment-price-large">auf Anfrage</span>
+              <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Buchen</a>
+            </div>
+          </div>
         </div>
 
         <!-- FAQ: High-Tech -->
@@ -244,8 +257,8 @@ get_header();
 
           <div class="treatment-item reveal">
             <div class="treatment-info">
-              <h4><span class="text-accent">Wimpernlifting</span></h4>
-              <p>Der natürliche Wow-Effekt. Ihre eigenen Wimpern werden dauerhaft geschwungen und wirken sofort voller und länger - ganz ohne Extensions. Optional mit Färbung.</p>
+              <h4><span class="text-accent">Korean/Wimpernlifting</span></h4>
+              <p>Der natürliche Wow-Effekt mit koreanischer Technik. Ihre eigenen Wimpern werden dauerhaft geschwungen und wirken sofort voller und länger - ganz ohne Extensions. Die koreanische Methode sorgt für besonders natürliche, langanhaltende Ergebnisse. Optional mit Färbung.</p>
               <div class="treatment-meta"><span class="duration">⏱ ca. 60 Min.</span></div>
               <span class="addon-badge">+ Wimpern färben zusätzlich buchbar</span>
             </div>
@@ -332,9 +345,9 @@ get_header();
         <!-- FAQ: Ausdrucksstark -->
         <div class="faq-section reveal" id="faq-ausdrucksstark">
           <h3>Häufige Fragen - <em class="text-italic">Ausdrucksstark</em></h3>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Was kostet ein Wimpernlifting bei Charmelle?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Ein Wimpernlifting kostet ab CHF 65.—. Optional können Ihre Wimpern zusätzlich gefärbt werden. Die Behandlung dauert ca. 60 Minuten und das Ergebnis hält 6–8 Wochen.</div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Was kostet ein Korean/Wimpernlifting bei Charmelle?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Ein Korean/Wimpernlifting kostet ab CHF 65.—. Die koreanische Technik sorgt für besonders natürliche, langanhaltende Ergebnisse. Optional können Ihre Wimpern zusätzlich gefärbt werden. Die Behandlung dauert ca. 60 Minuten und das Ergebnis hält 6–8 Wochen.</div></div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Wie lange hält Permanent Make-Up?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Permanent Make-Up hält in der Regel 2–5 Jahre, je nach Hauttyp, Sonnenexposition und Pflege. Für ein optimales Ergebnis empfehlen wir nach 4–6 Wochen einen Nachstich.</div></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Was ist der Unterschied zwischen Wimpernlifting und Extensions?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Beim Wimpernlifting werden Ihre natürlichen Wimpern dauerhaft geschwungen (hält 6–8 Wochen). Extensions sind einzelne Kunsthaar-Wimpern für ein dramatischeres Ergebnis (Refill alle 2–3 Wochen).</div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Was ist der Unterschied zwischen Korean/Wimpernlifting und Extensions?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Beim Korean/Wimpernlifting werden Ihre natürlichen Wimpern mit koreanischer Technik dauerhaft geschwungen (hält 6–8 Wochen). Extensions sind einzelne Kunsthaar-Wimpern für ein dramatischeres Ergebnis (Refill alle 2–3 Wochen).</div></div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Was ist der Unterschied zwischen Microblading und Permanent Make-Up?</span><span class="faq-icon">+</span></button><div class="faq-answer" role="region"><div class="faq-answer-inner">Microblading ist manuell (Klinge, hyper-natürlich, 1–2 Jahre). Permanent Make-Up ist maschinell (definierte Linien, 2–5 Jahre).</div></div></div>
         </div>
       </div>
