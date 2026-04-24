@@ -61,15 +61,15 @@ $t = get_template_directory_uri();
         <p>Drei Kompetenzbereiche, ein Ziel - Ihre strahlendste Version. Von medizinischer Hightech-Kosmetik über klassische Verwöhnpflege bis zu ausdrucksstarken Wimpern und Brauen.</p>
       </div>
       <div class="grid grid--3">
-        <a href="<?php echo esc_url( home_url( '/behandlungen/#hightech' ) ); ?>" class="category-card reveal reveal-delay-1">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#hydrafacial' ) ); ?>" class="category-card reveal reveal-delay-1">
           <img src="<?php echo esc_url( $t . '/images/studio-real-3.jpg' ); ?>" alt="Medizinische Hightech-Behandlungen - Hydra Facial, Microneedling, LPG Endermologie in Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Medizinische High-Tech</h3>
-            <p>Hydra Facial · Microneedling · LPG · Laser</p>
+            <p>Hydra Facial · Needling · LPG · Stosswelle</p>
           </div>
         </a>
-        <a href="<?php echo esc_url( home_url( '/behandlungen/#klassisch' ) ); ?>" class="category-card reveal reveal-delay-2">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#gesichtsbehandlungen' ) ); ?>" class="category-card reveal reveal-delay-2">
           <img src="<?php echo esc_url( $t . '/images/studio-real-1.jpg' ); ?>" alt="Klassische Gesichtspflege und Anti-Aging-Behandlungen im Beauty Center Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
@@ -77,7 +77,7 @@ $t = get_template_directory_uri();
             <p>Verwöhnpflege · Anti-Aging · Regeneration</p>
           </div>
         </a>
-        <a href="<?php echo esc_url( home_url( '/behandlungen/#ausdrucksstark' ) ); ?>" class="category-card reveal reveal-delay-3">
+        <a href="<?php echo esc_url( home_url( '/behandlungen/#wimpern-brauen' ) ); ?>" class="category-card reveal reveal-delay-3">
           <img src="<?php echo esc_url( $t . '/images/studio-real-4.jpg' ); ?>" alt="Wimpernlifting, Permanent Make-Up, Nägel im Kosmetikstudio Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>

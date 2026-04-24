@@ -1,0 +1,58 @@
+<?php
+// Behandlungen Daten Teil 1: Kategorien 1-6
+return [
+  ['Beratungen','beratungen','Wir nehmen uns Zeit für Sie',[
+    ['Hautberatung',0,'30 Min.','Sie möchten etwas mehr für die Haut tun, wissen aber nicht was und wie? Buchen Sie einen kostenlosen Beratungstermin.',''],
+    ['Neukunden',0,'30 Min.','Sie waren noch nie bei uns oder schon länger nicht mehr? Buchen Sie dazu, damit wir genügend Zeit haben, Sie angemessen zu beraten und zu behandeln.',''],
+    ['Beratungsgespräch für LPG Körper/Body',0,'30 Min.','Buchen Sie ein Beratungsgespräch, damit wir Sie optimal betreuen können.',''],
+    ['Beratung Body und Cellulite',0,'30 Min.','Wir beraten Sie gerne, welche Behandlung und welches Konzept für Sie das richtige ist.',''],
+    ['Beratung Permanent Make-up / Microblading',0,'30 Min.','Denkst du über Permanent Make-up oder Microblading nach? Buche jetzt deinen kostenlosen Beratungstermin!',''],
+    ['Beratung Permanent Make-up / Phibrows',0,'45 Min.','Sie sind noch unsicher, ob ein Permanent Make-up oder Phibrows (Microblading) für Sie das richtige ist?',''],
+    ['Beratung Laserbehandlung',0,'30 Min.','Kostenlose Beratung zu unseren Laser- und IPL-Behandlungen.',''],
+  ]],
+  ['Gesichtsbehandlungen','gesichtsbehandlungen','Professionelle Pflege für jeden Hauttyp',[
+    ['Gesichtspflege Charmelle',150,'90 Min.','Die Charmelle Gesichtsbehandlung ist unsere klassische Entspannungsbehandlung. Die Haut wird gereinigt, abgestorbene Hautzellen werden sanft entfernt und hochwertige Seren eingearbeitet. Eine pflegende Maske sowie eine entspannende Décolleté- und Nackenmassage runden die Behandlung ab. Brauenkorrektur inklusive.',''],
+    ['Gesichtspflege Best Ager',175,'120 Min.','Speziell entwickelt für reifere Haut, die intensive Pflege und Regeneration benötigt. Gründliche Reinigung, sanftes Peeling, hochwertige Wirkstoffe, nährende Maske und entspannende Gesichts-, Décolleté- und Nackenmassage. Brauenkorrektur inklusive.',''],
+    ['Gesichtspflege de Luxe',220,'120 Min.','Unsere exklusive Intensivbehandlung mit Vlies- oder Alginat-Maske für intensive Regeneration. Inkl. Gesichts-, Décolleté-, Nacken- und Kopfmassage. Brauenkorrektur inklusive.',''],
+    ['Gesichtspflege Piccolo',89,'75 Min.','Kleine, feine Auszeit für zwischendurch. Wird von unseren Lernenden mit viel Sorgfalt durchgeführt und ist deshalb zum Spezialpreis erhältlich.','lernende'],
+    ['Starter Best Ager',115,'105 Min.','Speziell abgestimmte Gesichtspflege für reife Haut. Wird von unseren Lernenden sorgfältig durchgeführt und ist zum attraktiven Spezialpreis erhältlich.','lernende'],
+    ['NEU: Gua-Sha Facial von Team Dr. Joseph',175,'90 Min.','Verbessert die Durchblutung, regt den Lymphfluss und die Entschlackung an. Eine Mischung aus Lymphdrainage, Akupressur, Faszien-Massage und Muskelrelaxation. Reduziert Schwellungen und mimische Falten.','neu'],
+    ['NEU: Fire &amp; Ice Gesichtsbehandlung',125,'60 Min.','Neu im Sortiment mit iS Clinical Produkten. Eine erfrischende und intensive Behandlung für sofort sichtbare Ergebnisse.','neu'],
+    ['Décolleté-/Nackenmassage zu Gesichtspflegen',30,'15 Min.','Zusätzliche Massage als Ergänzung zu Ihrer Gesichtspflege.','addon'],
+  ]],
+  ['Behandlungen der unreinen Haut','unreine-haut','Gezielte Lösungen für ein reines Hautbild',[
+    ['Behandlung bei unreiner Haut',145,'90 Min.','Für alle, die sich in ihrer Haut wieder wohl fühlen möchten – bei unreiner Haut, Spätakne oder Kratzakne.',''],
+    ['Jugendliche unreine Haut',120,'90 Min.','Gesichtspflege für Jugendliche oder Studenten bis 25 Jahre.',''],
+    ['Teenie-Akne Behandlung',99,'75 Min.','Teenager Akne Behandlung bis 18 Jahre.',''],
+    ['Quick Akne Behandlung',75,'45 Min.','Kurze Akne-Ausreinigung: Reinigung, Enzympeeling, Ausreinigung und Abschlusspflege.',''],
+  ]],
+  ['Gesichtspflege mit High-Tech Geräten','hightech','Modernste Technologie für Ihre Haut',[
+    ['Aquaabrasion Classic',170,'90 Min.','Sanfte Tiefenreinigung mit Wasser- und Vakuumsystem. Poren werden gründlich gereinigt, hochwertige Seren mit Ultraschall eingearbeitet, pflegende Maske und Massage.',''],
+    ['Aquaabrasion Best Ager',190,'120 Min.','Sanfte, entspannende Abrasion inkl. Ultraschall für straffe und frische Haut.',''],
+    ['Microdermabrasion',170,'90 Min.','Bei grossen Poren, Narben und zum Verfeinern des Hautbilds.',''],
+    ['Skin Rejuvenation mit Vliesmaske',200,'60 Min.','Lichtbasierte Hautverjüngung für ebenmässige Haut. Reduziert Pigmentflecken, Rötungen und erweiterte Gefässe.',''],
+    ['iS Clinical Rejuvenating Masque',20,'15 Min.','Hochwertige Zusatzmaske als Ergänzung.','addon'],
+  ]],
+  ['Hydra Facial','hydrafacial','Die Hollywood-Behandlung der Stars',[
+    ['Hydra Facial Pur',220,'60 Min.','HydraFacial Treatment und Lichttherapie für eine strahlend frische Haut.',''],
+    ['Hydra Facial Clear inkl. Brauenregulieren',250,'90 Min.','HydraFacial Treatment inkl. Brauenkorrektur und Lichttherapie. Gesicht und Hals.',''],
+    ['Hydra Facial – Dermabuilder',320,'90 Min.','Für eine strahlend schöne und sichtlich verjüngte Haut an Gesicht und Hals.',''],
+    ['Hydra Facial – Dr. Nassif Ampulle',360,'90 Min.','Premium Hydra Facial mit der exklusiven Dr. Nassif Ampulle für intensive Hauterneuerung.',''],
+    ['Hydra Facial – JLo Booster',370,'90 Min.','Die exklusivste Hydra Facial Variante mit dem JLo Beauty Booster für maximalen Glow.',''],
+    ['Hydra Facial Pur Jugendliche/Studenten (bis 25 J.)',165,'60 Min.','Hydra Facial zum Spezialpreis für Jugendliche und Studenten bis 25 Jahre.',''],
+    ['Hydra Facial Rückenbehandlung',150,'45 Min.','Hydra Facial Behandlung speziell für den Rücken.',''],
+    ['Hydra Facial Pur Body',220,'60 Min.','Für den Body: Rücken, Gesäss, Bauch etc.',''],
+    ['Keravive Hydrafacial Kopfhautbehandlung 1/2 Kopf',320,'60 Min.','Innovative Kopfhautbehandlung für gesundes Haar und gesunde Kopfhaut.',''],
+    ['Keravive Hydrafacial Kopfhautbehandlung ganzer Kopf',420,'90 Min.','Komplette Kopfhautbehandlung für optimale Ergebnisse.',''],
+    ['Perk Lips',49,'15 Min.','Hydra Facial Lippenpflege-Booster.','addon'],
+    ['Perk Eye',59,'15 Min.','Hydra Facial Augenpflege-Booster.','addon'],
+    ['Lymphdrainage bei Hydra Facial',50,'30 Min.','Zusätzliche Lymphdrainage als Ergänzung zum Hydra Facial.','addon'],
+    ['Dr. Nassif Ampulle 1–2 Zonen',40,'5 Min.','Zusatz zur Refreshing Behandlung an 1–2 Zonen (z.B. Augen und Lippen).','addon'],
+    ['Dermabuilder 1–2 Zonen',20,'5 Min.','Dermabuilder-Zusatz für 1–2 Zonen (z.B. Augen und Lippen).','addon'],
+  ]],
+  ['Needling','needling','Kollagenstimulation für jugendliche Haut',[
+    ['Needling Gesicht &amp; Hals (Anti-Aging)',320,'75 Min.','Die Haut wird gründlich gereinigt und mit Säurepeeling vorbereitet. Feine Mikrokanäle regen die Kollagen- und Elastinproduktion an, während Seren von LAB91 eingearbeitet werden. Beruhigende Maske und kühlende Kugeln runden die Behandlung ab.',''],
+    ['Needling Gesicht (Aknenarben/Poren/Unreinheiten)',250,'75 Min.','Bei Narben, Aknespots, grossen Poren und Unreinheiten.',''],
+    ['Needling Décolleté',80,'15 Min.','Needling-Behandlung für das Décolleté als Zusatz.','addon'],
+  ]],
+];
