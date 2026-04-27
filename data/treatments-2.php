@@ -1,26 +1,19 @@
 <?php
-// Behandlungen Daten Teil 2: Kategorien 7-14
+// Behandlungen Daten Teil 2: Kategorien 7-13 (Herren entfernt)
 return [
   ['Sauerstoff Plasma Farblichtherapie','sauerstoff-plasma','Dermio Care Plus',[
     ['Sauerstoff Plasma Behandlung',50,'30 Min.','Innovative Sauerstoff-Plasma-Behandlung mit Dermio Care Plus Technologie. Verbessert die Hautdurchblutung, fördert die Zellregeneration und verleiht der Haut einen frischen, gesunden Glow.',''],
     ['Sauerstoff Plasma unreine Haut',90,'45 Min.','Gezielte Sauerstoff-Plasma-Behandlung speziell für unreine Haut. Die antibakterielle Wirkung des Plasmas bekämpft Entzündungen, klärt das Hautbild und beschleunigt die Heilung von Unreinheiten.',''],
   ]],
-  ['Herren','herren','Pflege speziell für den Mann',[
-    ['Hydra Facial Men inkl. Brauenregulieren',250,'90 Min.','HydraFacial Treatment speziell auf die Bedürfnisse der Männerhaut abgestimmt. Tiefenreinigung, Hydration und LED-Lichttherapie für ein frisches, gepflegtes Erscheinungsbild. Inkl. Brauenkorrektur für einen gepflegten Look.',''],
-  ]],
   ['Wimpern und Brauen','wimpern-brauen','Für einen ausdrucksstarken Blick',[
     ['Korean Wimpernlifting mit Wimpernfärben',119,'60 Min.','Die koreanische Lifting-Technik für natürlich geschwungene Wimpern mit zusätzlicher Färbung. Der Liftingeffekt wird verstärkt – Mascara und Wimpernzange werden überflüssig. Hält 6–8 Wochen.',''],
     ['Korean Wimpernlifting ohne Färben',99,'45 Min.','Langanhaltender Wimpernlifting-Effekt mit der koreanischen Technik. Ihre natürlichen Wimpern werden perfekt geschwungen – ganz ohne künstliche Wimpern oder tägliches Styling.',''],
     ['Wimpern färben',45,'30 Min.','Professionelles Wimpernfärben für ausdrucksstarke, definierte Augen. Intensive Farbe, die mehrere Wochen hält und den täglichen Griff zur Mascara erspart.','lehrjahr'],
-    ['Wimpern färben in Kombination',20,'5 Min.','Wimpernfärben zum vergünstigten Kombinationspreis als Zusatz zu einer anderen Behandlung. Ideal in Verbindung mit einem Wimpernlifting oder einer Gesichtspflege.','kombi'],
     ['Wimpern und Brauen färben und formen',69,'60 Min.','Das Rundum-Paket für strahlend schöne Augen: Wimpern- und Brauenfärbung kombiniert mit professioneller Brauenkorrektur für einen harmonischen, ausdrucksstarken Blick.',''],
-    ['Wimpern und Brauen färben und formen in Kombination',55,'30 Min.','Wimpern- und Brauenfärbung mit Formgebung zum attraktiven Kombinationspreis als Ergänzung zu Ihrer Gesichtsbehandlung.','kombi'],
     ['Wimpern und Brauen färben',49,'45 Min.','Wimpern- und Brauenfärbung in einer Sitzung für einen wachen, definierten Blick. Hochwertige Farben für ein natürliches, langanhaltendes Ergebnis.',''],
     ['Brauen formen',39,'30 Min.','Perfekt geformte Brauen sind ein Muss – professionelle Brauenkorrektur mit Fadentechnik oder Pinzette für eine makellose, symmetrische Brauenform.',''],
-    ['Brauen formen in Kombination',20,'15 Min.','Professionelle Brauenkorrektur zum Kombinationspreis als Ergänzung zu einer anderen Behandlung.','kombi'],
     ['Brauen formen und färben',59,'45 Min.','Formgebung und Färbung in einer Sitzung: Betont die eigenen Brauen und verleiht einen natürlichen, gepflegten Look, der wochenlang hält.',''],
     ['Brauen färben',35,'30 Min.','Professionelle Brauenfärbung für eine natürliche Betonung Ihrer Brauen. Hochwertige Farbe für ein harmonisches, definiertes Ergebnis.',''],
-    ['Brauen färben und formen in Kombination',39,'30 Min.','Brauenfärbung und Formgebung zum Spezial-Kombinationspreis. Keine weiteren Rabatte auf diesen Preis.','kombi'],
   ]],
   ['Wimpernextensions','wimpernextensions','Für einen umwerfenden Blick',[
     ['Wimpernextension Natural Neu-Set',180,'90 Min.','Professionelle Wimpernverlängerung mit natürlichem Effekt. Einzelne hochwertige Seiden- oder Kunsthaarwimpern werden an Ihre natürlichen Wimpern angebracht – für einen natürlichen, umwerfenden Blick.',''],
@@ -35,22 +28,18 @@ return [
   ['Manicure','manicure','Gepflegte Hände – Ihr Aushängeschild',[
     ['Klassische Manicure (mit/ohne Pflegelack)',69,'60 Min.','Professionelle Handpflege für schöne, gepflegte Hände. Nagelpflege, Nagelhautbehandlung und Hand-Massage mit optional pflegendem Lack für ein gepflegtes Finish.',''],
     ['Klassische Manicure mit Farblack',89,'75 Min.','Umfassende Handpflege mit professioneller Nagelpflege, Handmassage und Ihrem Wunsch-Farblack für schöne, farbenfrohe Nägel die begeistern.',''],
-    ['Manicure Classic',79,'60 Min.','Unsere klassische Manicure-Behandlung mit sorgfältiger Nagelpflege, Nagelhautbehandlung und pflegender Handmassage für samtweiche Hände.',''],
     ['Quick Manicure mit Lack',49,'45 Min.','Schnelle Nagelpflege für zwischendurch: Kurz feilen, formen und mit Ihrem Wunschlack lackieren. Ideal wenn es schnell gehen muss.',''],
     ['Shellac Manicure (inkl. Entfernen)',99,'90 Min.','Langanhaltende Shellac-Lackierung mit bis zu 3 Wochen Haltbarkeit. Inklusive professioneller Entfernung des alten Shellacs, Nagelpflege und Handmassage.',''],
     ['Quick Manicure mit Shellac (inkl. Entfernen)',79,'60 Min.','Schnelle Korrektur der Nagelform mit langanhaltender Shellac-Lackierung. Inkl. Entfernung des alten Shellacs – sofort trocken und sofort belastbar.',''],
-    ['Shellac Manicure in Kombination',79,'90 Min.','Shellac-Manicure zum attraktiven Kombinationspreis als Ergänzung zu einer anderen Behandlung bei Charmelle.','kombi'],
     ['Shellac nur entfernen (Hände)',0,'30 Min.','Kostenlose, schonende Entfernung Ihres bestehenden Shellac-Lacks. Professionell und ohne Beschädigung des Naturnagels.',''],
     ['Paraffinbad inkl. Handpeeling',35,'30 Min.','Wohltuendes Paraffinbad mit vorherigem Handpeeling für samtweiche, geschmeidige Hände. Die Wärme fördert die Durchblutung und pflegt die Haut intensiv.','addon'],
   ]],
   ['Pedicure','pedicure','Schöne Füsse – Schritt für Schritt',[
     ['Pedicure Classic',89,'60 Min.','Klassische, professionelle Fusspflege für gepflegte Füsse. Hornhautbehandlung, Nagelpflege, Fussmassage und optional Pflegelack für ein rundum schönes Ergebnis.',''],
     ['Klassische Pedicure mit Lack',99,'90 Min.','Umfassende Fusspflege mit Hornhautentfernung, Nagelpflege, Fussmassage und Ihrem Wunschlack. Bitte offene Schuhe mitbringen.',''],
-    ['Klassische Pedicure mit Lack in Kombination',85,'75 Min.','Pedicure mit Lack zum attraktiven Kombinationspreis als Ergänzung zu einer anderen Behandlung.','kombi'],
     ['Quick Pedicure mit Lack',59,'60 Min.','Schnelle Fusspflege: Nägel feilen, formen und mit Ihrem Wunschlack lackieren. Perfekt für eine gepflegte Optik in kurzer Zeit.',''],
     ['Pedicure mit Shellac Lackierung',119,'90 Min.','Professionelle Fusspflege mit langanhaltender Shellac-Lackierung. Sofort wieder in die Schuhe schlüpfen – der Lack hält bis zu 3 Wochen.','lehrjahr'],
     ['Pedicure mit Shellac Auffüllen (Fresh-up)',99,'75 Min.','Shellac-Auffrischung für Ihre Füsse: Herausgewachsenen Shellac-Lack korrigieren und auffrischen für ein stets gepflegtes Erscheinungsbild.',''],
-    ['Pedicure mit Shellac in Kombination',99,'90 Min.','Shellac-Pedicure zum attraktiven Kombinationspreis als Ergänzung zu einer anderen Behandlung bei Charmelle.','kombi'],
     ['Quick Pedicure mit Shellac',89,'60 Min.','Schnelle Fusspflege mit langanhaltender Shellac-Lackierung. Nägel feilen, formen und mit Shellac lackieren – sofort trocken und belastbar.',''],
     ['Pedicure mit Shellac ohne Massage',110,'90 Min.','Umfassende Shellac-Pedicure mit Hornhautbehandlung und Nagelpflege – ohne Massage für alle, die es eilig haben.',''],
     ['Shellac nur entfernen (Füsse)',0,'30 Min.','Kostenlose, professionelle Entfernung Ihres bestehenden Shellac-Lacks an den Füssen. Schonend und ohne Beschädigung des Naturnagels.',''],

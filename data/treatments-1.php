@@ -4,10 +4,8 @@ return [
   ['Beratungen','beratungen','Wir nehmen uns Zeit für Sie',[
     ['Hautberatung',0,'30 Min.','Sie möchten etwas mehr für Ihre Haut tun, wissen aber nicht was und wie? Bei unserer kostenlosen Hautberatung in Aarau analysieren wir Ihren Hauttyp und erstellen einen individuellen Pflegeplan.',''],
     ['Neukunden',0,'30 Min.','Sie waren noch nie bei uns oder schon länger nicht mehr? Buchen Sie diesen Termin dazu, damit wir genügend Zeit haben, Ihre Hautsituation zu analysieren und Sie persönlich zu beraten.',''],
-    ['Beratungsgespräch für LPG Körper/Body',0,'30 Min.','Vor Ihrer ersten LPG Endermologie-Behandlung empfehlen wir ein unverbindliches Beratungsgespräch, um die optimale Behandlungsstrategie für Ihre Ziele festzulegen.',''],
-    ['Beratung Body und Cellulite',0,'30 Min.','Wir beraten Sie gerne, welche Body-Forming-Behandlung – ob Kryolipolyse, Stosswelle oder LPG Endermologie – das richtige Konzept für Ihre individuellen Bedürfnisse ist.',''],
-    ['Beratung Permanent Make-up / Microblading',0,'30 Min.','Denken Sie über Permanent Make-up oder Microblading nach? Bei unserem kostenlosen Beratungstermin in Aarau besprechen wir Ihre Wünsche, Technik und den Ablauf.',''],
-    ['Beratung Permanent Make-up / Phibrows',0,'45 Min.','Ausführliche Beratung zu Permanent Make-up oder Phibrows Microblading. Wir besprechen Ihre gewünschte Brauenform, Farbgebung und klären alle offenen Fragen.',''],
+    ['Beratung Body, Cellulite &amp; LPG',0,'30 Min.','Wir beraten Sie gerne, welche Body-Forming-Behandlung – ob Kryolipolyse, Stosswelle oder LPG Endermologie – das richtige Konzept für Ihre individuellen Bedürfnisse ist. Unverbindlich und kostenlos.',''],
+    ['Beratung Permanent Make-up / Microblading / Phibrows',0,'30 Min.','Denken Sie über Permanent Make-up, Microblading oder Phibrows nach? Bei unserem kostenlosen Beratungstermin in Aarau besprechen wir Ihre Wünsche, Technik, Farbgebung und den Ablauf.',''],
     ['Beratung Laserbehandlung',0,'30 Min.','Kostenlose Erstberatung zu unseren Diodenlaser- und IPL-Behandlungen. Wir prüfen Ihren Hauttyp und erstellen einen individuellen Behandlungsplan für dauerhafte Haarentfernung.',''],
   ]],
   ['Gesichtsbehandlungen','gesichtsbehandlungen','Professionelle Pflege für jeden Hauttyp',[
@@ -18,7 +16,6 @@ return [
     ['Starter Best Ager',115,'105 Min.','Speziell abgestimmte Gesichtspflege für reife Haut mit straffenden Wirkstoffen und Anti-Aging-Massage. Wird von unseren Lernenden sorgfältig durchgeführt – hochwertige Pflege zum attraktiven Spezialpreis.','lernende'],
     ['NEU: Gua-Sha Facial von Team Dr. Joseph',175,'90 Min.','Diese innovative Gesichtsbehandlung verbessert die Durchblutung, regt den Lymphfluss und die Entschlackung an. Eine Mischung aus Lymphdrainage, Akupressur, Faszien-Massage und Muskelrelaxation. Reduziert Schwellungen und mimische Falten und lässt Sie in tiefe Entspannung sinken.','neu'],
     ['NEU: Fire &amp; Ice Gesichtsbehandlung',125,'60 Min.','Neu im Sortiment mit iS Clinical Produkten. Diese erfrischende und intensive Behandlung kombiniert wärmende und kühlende Wirkstoffe für sofort sichtbare Ergebnisse – straffere, strahlendere Haut in nur einer Sitzung.','neu'],
-    ['Décolleté-/Nackenmassage zu Gesichtspflegen',30,'15 Min.','Zusätzliche entspannende Massage für Décolleté und Nacken als wohltuende Ergänzung zu Ihrer Gesichtspflege. Löst Verspannungen und fördert die Hautdurchblutung.','addon'],
   ]],
   ['Behandlungen der unreinen Haut','unreine-haut','Gezielte Lösungen für ein reines Hautbild',[
     ['Behandlung bei unreiner Haut',145,'90 Min.','Diese professionelle Gesichtspflege eignet sich für alle, die sich in ihrer Haut wieder wohl fühlen möchten – bei unreiner Haut, Spätakne oder Kratzakne. Gezielte Ausreinigung, beruhigende Wirkstoffe und individuelle Pflegeberatung.',''],
@@ -28,10 +25,9 @@ return [
   ]],
   ['Gesichtspflege mit High-Tech Geräten','hightech','Modernste Technologie für Ihre Haut',[
     ['Aquaabrasion Classic',170,'90 Min.','Sanfte Tiefenreinigung der Haut mit modernem Wasser- und Vakuumsystem. Poren werden gründlich gereinigt, abgestorbene Hautzellen entfernt und hochwertige Seren mit Ultraschall tief eingearbeitet. Mit pflegender Maske und entspannender Massage für ein glattes, frisches Hautbild.',''],
-    ['Aquaabrasion Best Ager',190,'120 Min.','Sanfte, entspannende Abrasion inkl. Ultraschall-Einschleusung speziell für reife Haut. Straffende Anti-Aging-Wirkstoffe werden tief eingearbeitet für sichtbar verjüngte, strahlende Haut.',''],
-    ['Microdermabrasion',170,'90 Min.','Mechanische Hauterneuerung bei grossen Poren, Narben und unebenmässigem Hautbild. Feine Kristalle verfeinern die Hautstruktur und regen die Zellerneuerung an – für ein ebenmässiges, glattes Ergebnis.',''],
+    ['Aquaabrasion Best Ager',190,'120 Min.','Sanfte, entspannende Abrasion inkl. Ultraschall-Einschleusung speziell für reife Haut. Straffende Anti-Aging-Wirkstoffe werden tief eingearbeitet. Inkl. Pulsation und Décolleté-Massage für sichtbar verjüngte, strahlende Haut.',''],
+    ['Microdermabrasion',170,'90 Min.','Mechanische Hauterneuerung bei grossen Poren, Narben und unebenmässigem Hautbild. Feine Kristalle verfeinern die Hautstruktur und regen die Zellerneuerung an. Inkl. Décolleté-Massage für ein ebenmässiges, glattes Ergebnis.',''],
     ['Skin Rejuvenation mit Vliesmaske',200,'60 Min.','Lichtbasierte Hautverjüngung mit IPL-Technologie für ebenmässige Haut. Reduziert effektiv Pigmentflecken, Rötungen und erweiterte Gefässe. Inkl. intensiver Vliesmaske für einen gleichmässigen, strahlenden Teint.',''],
-    ['iS Clinical Rejuvenating Masque',20,'15 Min.','Hochwertige iS Clinical Zusatzmaske als intensivierende Ergänzung zu Ihrer Gesichtsbehandlung. Premium-Wirkstoffe für maximale Hauterneuerung.','addon'],
   ]],
   ['Hydra Facial','hydrafacial','Die Hollywood-Behandlung der Stars',[
     ['Hydra Facial Pur',220,'60 Min.','Das original HydraFacial Treatment mit patentierter Vortex-Technologie: Reinigung, Exfoliation, Extraktion und Hydration in einem Schritt. Inkl. LED-Lichttherapie für eine strahlend frische Haut.',''],
@@ -44,11 +40,7 @@ return [
     ['Hydra Facial Pur Body',220,'60 Min.','HydraFacial Behandlung für den gesamten Körper – Rücken, Gesäss, Bauch und mehr. Intensive Reinigung und Pflege für strahlende, glatte Haut am ganzen Body.',''],
     ['Keravive Hydrafacial Kopfhautbehandlung 1/2 Kopf',320,'60 Min.','Innovative HydraFacial Keravive Kopfhautbehandlung für gesundes, kräftiges Haar. Reinigt die Haarfollikel, nährt die Kopfhaut und fördert das natürliche Haarwachstum.',''],
     ['Keravive Hydrafacial Kopfhautbehandlung ganzer Kopf',420,'90 Min.','Komplette HydraFacial Keravive Behandlung der gesamten Kopfhaut. Maximale Reinigung und Nährstoffversorgung für optimale Ergebnisse – gesundes Haar beginnt an der Wurzel.',''],
-    ['Perk Lips',49,'15 Min.','HydraFacial Perk Lippenpflege-Booster: Peeling und Hydration für weiche, volle Lippen. Inklusive Perk-Serum für die Pflege zu Hause.','addon'],
-    ['Perk Eye',59,'15 Min.','HydraFacial Perk Augenpflege-Booster: Aufhellende und straffende Wirkstoffe für einen wachen, frischen Blick. Reduziert Schwellungen und dunkle Augenringe.','addon'],
-    ['Lymphdrainage bei Hydra Facial',50,'30 Min.','Zusätzliche manuelle Lymphdrainage als Ergänzung zum HydraFacial. Fördert den Abtransport von Schlacken und reduziert Schwellungen für ein definiertes Gesicht.','addon'],
-    ['Dr. Nassif Ampulle 1–2 Zonen',40,'5 Min.','Intensiv-Booster mit der Dr. Nassif Ampulle für gezielte Zonen wie Augen und Lippen. Verstärkt die Wirkung Ihrer HydraFacial-Behandlung.','addon'],
-    ['Dermabuilder 1–2 Zonen',20,'5 Min.','Peptid-Booster für 1–2 gezielte Zonen wie Augen oder Lippen. Glättet feine Linien und stärkt die Hautstruktur.','addon'],
+    ['Lymphdrainage bei Hydra Facial',50,'30 Min.','Apparative Lymphdrainage als Ergänzung zum HydraFacial. Fördert den Abtransport von Schlacken und reduziert Schwellungen für ein definiertes Gesicht.','addon'],
   ]],
   ['Needling','needling','Kollagenstimulation für jugendliche Haut',[
     ['Needling Gesicht &amp; Hals (Anti-Aging)',320,'75 Min.','Die Haut wird gründlich gereinigt und mit einem sanften Säurepeeling vorbereitet. Feine Mikrokanäle regen die natürliche Kollagen- und Elastinproduktion an, während hochwertige Seren von LAB91 tief eingearbeitet werden. Beruhigende Maske und kühlende Kugeln runden die Behandlung ab.',''],
