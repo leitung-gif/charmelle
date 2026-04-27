@@ -5,7 +5,8 @@ return [
     ['Hautberatung',0,'30 Min.','Sie möchten etwas mehr für Ihre Haut tun, wissen aber nicht was und wie? Bei unserer kostenlosen Hautberatung in Aarau analysieren wir Ihren Hauttyp und erstellen einen individuellen Pflegeplan.',''],
     ['Neukunden',0,'30 Min.','Sie waren noch nie bei uns oder schon länger nicht mehr? Buchen Sie diesen Termin dazu, damit wir genügend Zeit haben, Ihre Hautsituation zu analysieren und Sie persönlich zu beraten.',''],
     ['Beratung Body, Cellulite &amp; LPG',0,'30 Min.','Wir beraten Sie gerne, welche Body-Forming-Behandlung – ob Kryolipolyse, Stosswelle oder LPG Endermologie – das richtige Konzept für Ihre individuellen Bedürfnisse ist. Unverbindlich und kostenlos.',''],
-    ['Beratung Permanent Make-up / Microblading / Phibrows',0,'30 Min.','Denken Sie über Permanent Make-up, Microblading oder Phibrows nach? Bei unserem kostenlosen Beratungstermin in Aarau besprechen wir Ihre Wünsche, Technik, Farbgebung und den Ablauf.',''],
+    ['Beratung Permanent Make-up',0,'30 Min.','Denken Sie über Permanent Make-up nach? Ob Powder Brows, Aquarell Lips oder Eyeliner – bei unserem kostenlosen Beratungstermin in Aarau besprechen wir Ihre Wünsche, Technik und den Ablauf.',''],
+    ['Beratung Phibrows / Microblading',0,'30 Min.','Ausführliche Beratung zu Phibrows Microblading. Wir besprechen Ihre gewünschte Brauenform, Farbgebung, die Härchenzeichnung und klären alle offenen Fragen. Kostenlos und unverbindlich.',''],
     ['Beratung Laserbehandlung',0,'30 Min.','Kostenlose Erstberatung zu unseren Diodenlaser- und IPL-Behandlungen. Wir prüfen Ihren Hauttyp und erstellen einen individuellen Behandlungsplan für dauerhafte Haarentfernung.',''],
   ]],
   ['Gesichtsbehandlungen','gesichtsbehandlungen','Professionelle Pflege für jeden Hauttyp',[

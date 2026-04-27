@@ -346,8 +346,12 @@ $t = get_template_directory_uri();
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Der natürliche Wow-Effekt für Ihre Wimpern mit koreanischer Technik - mit oder ohne Extensions. Ab CHF 65.—</p>
           </div>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
-            <h4 style="margin-bottom:4px;font-size:1rem;">Permanent Make-Up und Microblading</h4>
-            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Perfekte Augenbrauen, Lippen oder Lidstriche - 24h am Tag. Ab CHF 350.—</p>
+            <h4 style="margin-bottom:4px;font-size:1rem;">Permanent Make-Up</h4>
+            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Powder Brows, Aquarell Lips, Eyeliner – perfekte Schönheit 24h am Tag. Kostenlose Beratung. Ab CHF 350.—</p>
+          </div>
+          <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+            <h4 style="margin-bottom:4px;font-size:1rem;">Phibrows / Microblading</h4>
+            <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Die Kunst der perfekten Augenbraue – hyperrealistisch und symmetrisch. Kostenlose Beratung. Ab CHF 250.—</p>
           </div>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Haarentfernung (Laser, Wachs)</h4>

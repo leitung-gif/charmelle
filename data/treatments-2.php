@@ -1,6 +1,12 @@
 <?php
 // Behandlungen Daten Teil 2: Kategorien 7-13 (Herren entfernt)
 return [
+  ['Herren','herren','Professionelle Pflege für den modernen Mann',[
+    ['Hydra Facial Men inkl. Brauenregulieren',250,'90 Min.','HydraFacial Treatment speziell auf die Bedürfnisse der Männerhaut abgestimmt. Tiefenreinigung, Hydration und LED-Lichttherapie für ein frisches, gepflegtes Erscheinungsbild. Inkl. Brauenkorrektur.',''],
+    ['Gesichtspflege Charmelle für Herren',150,'90 Min.','Unsere klassische Charmelle Gesichtsbehandlung, abgestimmt auf Männerhaut. Gründliche Reinigung, hochwertige Seren, pflegende Maske und entspannende Massage. Brauenkorrektur inklusive.',''],
+    ['Manicure für Herren',69,'60 Min.','Professionelle Handpflege für gepflegte Männerhände. Nagelpflege, Nagelhautbehandlung und Handmassage für ein sauberes, gepflegtes Erscheinungsbild.',''],
+    ['Pedicure für Herren',89,'60 Min.','Klassische Fusspflege speziell für Männer. Hornhautbehandlung, Nagelpflege und Fussmassage für gepflegte, gesunde Füsse.',''],
+  ]],
   ['Sauerstoff Plasma Farblichtherapie','sauerstoff-plasma','Dermio Care Plus',[
     ['Sauerstoff Plasma Behandlung',50,'30 Min.','Innovative Sauerstoff-Plasma-Behandlung mit Dermio Care Plus Technologie. Verbessert die Hautdurchblutung, fördert die Zellregeneration und verleiht der Haut einen frischen, gesunden Glow.',''],
     ['Sauerstoff Plasma unreine Haut',90,'45 Min.','Gezielte Sauerstoff-Plasma-Behandlung speziell für unreine Haut. Die antibakterielle Wirkung des Plasmas bekämpft Entzündungen, klärt das Hautbild und beschleunigt die Heilung von Unreinheiten.',''],
@@ -11,7 +17,7 @@ return [
     ['Wimpern färben',45,'30 Min.','Professionelles Wimpernfärben für ausdrucksstarke, definierte Augen. Intensive Farbe, die mehrere Wochen hält und den täglichen Griff zur Mascara erspart.','lehrjahr'],
     ['Wimpern und Brauen färben und formen',69,'60 Min.','Das Rundum-Paket für strahlend schöne Augen: Wimpern- und Brauenfärbung kombiniert mit professioneller Brauenkorrektur für einen harmonischen, ausdrucksstarken Blick.',''],
     ['Wimpern und Brauen färben',49,'45 Min.','Wimpern- und Brauenfärbung in einer Sitzung für einen wachen, definierten Blick. Hochwertige Farben für ein natürliches, langanhaltendes Ergebnis.',''],
-    ['Brauen formen',39,'30 Min.','Perfekt geformte Brauen sind ein Muss – professionelle Brauenkorrektur mit Fadentechnik oder Pinzette für eine makellose, symmetrische Brauenform.',''],
+    ['Brauen formen',39,'30 Min.','Perfekt geformte Brauen sind ein Muss – professionelle Brauenkorrektur mit Pinzette für eine makellose, symmetrische Brauenform.',''],
     ['Brauen formen und färben',59,'45 Min.','Formgebung und Färbung in einer Sitzung: Betont die eigenen Brauen und verleiht einen natürlichen, gepflegten Look, der wochenlang hält.',''],
     ['Brauen färben',35,'30 Min.','Professionelle Brauenfärbung für eine natürliche Betonung Ihrer Brauen. Hochwertige Farbe für ein harmonisches, definiertes Ergebnis.',''],
   ]],
