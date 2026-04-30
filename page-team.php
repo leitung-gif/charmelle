@@ -104,7 +104,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Kosmetikerin in Ausbildung</span>
           <div class="team-languages"><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇹🇷 Türkçe</span><span class="lang-tag">🇬🇧 English</span></div>
           <p class="team-bio">«Der Beruf der Kosmetikerin hat mich schon immer fasziniert, weil er weit mehr ist als nur die Anwendung von Pflegeprodukten.»</p>
-          <ul class="team-qualifications-list"><li>Piccolo Behandlung</li><li>Starter Best Ager</li><li>Manicure mit/ohne Lack</li><li>Pedicure mit/ohne Lack</li><li>LPG Endermologie</li><li>LPG Endermologie Körper</li><li>Wimpern/Brauen färben und regulieren</li><li>Haarentfernung mit Warmwachs</li></ul>
+          <ul class="team-qualifications-list"><li>Piccolo Behandlung</li><li>Starter Best Ager</li><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie</li><li>LPG Endermologie Körper</li><li>Wimpern/Brauen färben und regulieren</li><li>Haarentfernung mit Warmwachs</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
         </div>
       </div>
@@ -118,7 +118,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Kosmetikerin in Ausbildung</span>
           <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇬🇧 English</span><span class="lang-tag">🇫🇷 Français</span></div>
           <p class="team-bio">«Ich freue mich riesig, hier meine Ausbildung zu machen und jeden Tag Neues zu lernen.»</p>
-          <ul class="team-qualifications-list"><li>Manicure mit/ohne Lack</li><li>Pedicure mit/ohne Lack</li><li>LPG Endermologie Körper</li><li>Haarentfernung mit Warmwachs</li></ul>
+          <ul class="team-qualifications-list"><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie Körper</li><li>Haarentfernung mit Warmwachs</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
         </div>
       </div>

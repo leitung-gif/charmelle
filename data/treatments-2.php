@@ -37,7 +37,7 @@ return [
     ['Quick Manicure mit Lack',49,'45 Min.','Schnelle Nagelpflege für zwischendurch: Kurz feilen, formen und mit Ihrem Wunschlack lackieren. Ideal wenn es schnell gehen muss.',''],
     ['Shellac Manicure (inkl. Entfernen)',99,'90 Min.','Langanhaltende Shellac-Lackierung mit bis zu 3 Wochen Haltbarkeit. Inklusive professioneller Entfernung des alten Shellacs, Nagelpflege und Handmassage.',''],
     ['Quick Manicure mit Shellac (inkl. Entfernen)',79,'60 Min.','Schnelle Korrektur der Nagelform mit langanhaltender Shellac-Lackierung. Inkl. Entfernung des alten Shellacs – sofort trocken und sofort belastbar.',''],
-    ['Shellac nur entfernen (Hände)',0,'30 Min.','Kostenlose, schonende Entfernung Ihres bestehenden Shellac-Lacks. Professionell und ohne Beschädigung des Naturnagels.',''],
+    ['Shellac nur entfernen (Hände)',0,'30 Min.','Kostenlose Shellac-Entfernung – nur möglich, wenn der Shellac ursprünglich bei Charmelle aufgetragen wurde. Schonend und ohne Beschädigung des Naturnagels.',''],
     ['Paraffinbad inkl. Handpeeling',35,'30 Min.','Wohltuendes Paraffinbad mit vorherigem Handpeeling für samtweiche, geschmeidige Hände. Die Wärme fördert die Durchblutung und pflegt die Haut intensiv.','addon'],
   ]],
   ['Pedicure','pedicure','Schöne Füsse – Schritt für Schritt',[
@@ -48,7 +48,7 @@ return [
     ['Pedicure mit Shellac Auffüllen (Fresh-up)',99,'75 Min.','Shellac-Auffrischung für Ihre Füsse: Herausgewachsenen Shellac-Lack korrigieren und auffrischen für ein stets gepflegtes Erscheinungsbild.',''],
     ['Quick Pedicure mit Shellac',89,'60 Min.','Schnelle Fusspflege mit langanhaltender Shellac-Lackierung. Nägel feilen, formen und mit Shellac lackieren – sofort trocken und belastbar.',''],
     ['Pedicure mit Shellac ohne Massage',110,'90 Min.','Umfassende Shellac-Pedicure mit Hornhautbehandlung und Nagelpflege – ohne Massage für alle, die es eilig haben.',''],
-    ['Shellac nur entfernen (Füsse)',0,'30 Min.','Kostenlose, professionelle Entfernung Ihres bestehenden Shellac-Lacks an den Füssen. Schonend und ohne Beschädigung des Naturnagels.',''],
+    ['Shellac nur entfernen (Füsse)',0,'30 Min.','Kostenlose Shellac-Entfernung – nur möglich, wenn der Shellac ursprünglich bei Charmelle aufgetragen wurde. Schonend und ohne Beschädigung des Naturnagels.',''],
     ['Fusspeeling zu Pedicure',10,'5 Min.','Zusätzliches erfrischendes Fusspeeling als Add-on zu Ihrer Pedicure. Entfernt abgestorbene Hautzellen für seidig weiche Füsse.','addon'],
     ['Fusspeeling mit Fussmassage',40,'30 Min.','Erfrischendes Fusspeeling und entspannende Fussmassage (pro Fuss 5–10 Min.). Die ideale Verwöhnbehandlung für müde, beanspruchte Füsse.',''],
   ]],
