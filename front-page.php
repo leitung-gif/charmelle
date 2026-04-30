@@ -25,7 +25,7 @@ $t = get_template_directory_uri();
         </div>
         <div class="hero-visual">
           <div class="arch-img" style="max-width:380px;margin-left:auto;">
-            <video autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" style="width:100%;height:100%;object-fit:cover;display:block;">
               <source src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" type="video/mp4">
             </video>
           </div>
@@ -33,6 +33,38 @@ $t = get_template_directory_uri();
       </div>
     </div>
   </section>
+  <script>
+  (function(){
+    var v = document.getElementById('hero-video');
+    if (!v) return;
+    function tryPlay() {
+      if (v.paused) {
+        var p = v.play();
+        if (p !== undefined) {
+          p.catch(function(){
+            ['click','scroll','mousemove','touchstart'].forEach(function(evt){
+              document.addEventListener(evt, function handler(){
+                v.play();
+                document.removeEventListener(evt, handler);
+              }, {once: true, passive: true});
+            });
+          });
+        }
+      }
+    }
+    tryPlay();
+    v.addEventListener('loadeddata', tryPlay);
+    v.addEventListener('canplay', tryPlay);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ if (entry.isIntersecting) tryPlay(); });
+      }, {threshold: 0.1}).observe(v);
+    }
+    setTimeout(tryPlay, 300);
+    setTimeout(tryPlay, 1000);
+    setTimeout(tryPlay, 3000);
+  })();
+  </script>
 
 
   <!-- ===== INTRO TEXT - SEO RICH ===== -->
