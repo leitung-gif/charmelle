@@ -149,17 +149,24 @@ $t = get_template_directory_uri();
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 4/3;">
-          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="April Aktion LPG und Hydrafacial bei Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Mai Aktion Kryobehandlung und Sonnenprodukte bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
-          <span class="subtitle">April Aktion</span>
-          <h2>LPG + <em class="text-italic">Hydrafacial</em></h2>
+          <span class="subtitle">Mai Aktion ☀️</span>
+          <h2>Summer <em class="text-italic">Ready</em></h2>
           <hr class="golden-rule">
-          <p><strong>20% auf LPG Gesicht</strong> — nur in Kombination mit Hydrafacial. Zwei Hightech-Behandlungen in einer Sitzung für maximale Wirkung: Die patentierte LPG Endermologie strafft und modelliert, während das Hydrafacial Ihre Haut tiefenwirksam reinigt und mit Feuchtigkeit versorgt.</p>
-          <p style="color: var(--text-light); font-size: 0.95rem;"><strong>Zusätzlich:</strong> 20% auf Cleanser und Tonic im Set — die perfekte Heimpflege für Ihr strahlendes Ergebnis.</p>
-          <div class="treatment-meta" style="margin-bottom: 24px;">
-            <span class="duration">⏱ 60–120 Min.</span>
-            <span class="price">✦ 20% Rabatt</span>
+          <p><strong>20% auf alle Sonnenprodukte</strong> — schützen Sie Ihre Haut mit unseren hochwertigen Sonnenpflegeprodukten zum Aktionspreis. Die perfekte Vorbereitung für den Sommer.</p>
+          <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
+            <p style="font-weight: 600; margin-bottom: 8px;">Kryobehandlung — gestaffelte Rabatte:</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">1 Behandlung: <strong>10%</strong></span>
+              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">2 Behandlungen: <strong>20%</strong></span>
+              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">3 Behandlungen: <strong>30%</strong></span>
+            </div>
+          </div>
+          <p style="color: var(--text-light); font-size: 0.95rem;"><strong>Stosswelle Abo’s:</strong> 10% Rabatt auf alle Stosswellen-Abonnements.</p>
+          <div class="treatment-meta" style="margin: 20px 0 24px;">
+            <span class="price">✦ Bis zu 30% Rabatt</span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -455,15 +462,21 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
-  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="April Aktion">
+  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Mai Aktion">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
-      <span class="subtitle">April Aktion</span>
-      <h3 style="margin-bottom: 12px;">LPG + Hydrafacial</h3>
+      <span class="subtitle">Mai Aktion ☀️</span>
+      <h3 style="margin-bottom: 12px;">Summer Ready</h3>
       <hr class="golden-rule golden-rule--center">
-      <p style="color: var(--text-light); margin-top: 16px;"><strong>20% auf LPG Gesicht</strong> — nur in Kombination mit Hydrafacial.</p>
-      <p style="color: var(--text-light); margin-top: 8px;"><strong>20% auf Cleanser und Tonic im Set</strong></p>
-      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">20% Rabatt</p>
+      <p style="color: var(--text-light); margin-top: 16px;"><strong>20% auf alle Sonnenprodukte</strong></p>
+      <div style="margin: 16px 0; text-align: left;">
+        <p style="font-weight: 600; margin-bottom: 8px;">Kryobehandlung:</p>
+        <p style="color: var(--text-light); margin: 4px 0;">1 Behandlung: <strong>10%</strong> Rabatt</p>
+        <p style="color: var(--text-light); margin: 4px 0;">2 Behandlungen: <strong>20%</strong> Rabatt</p>
+        <p style="color: var(--text-light); margin: 4px 0;">3 Behandlungen: <strong>30%</strong> Rabatt</p>
+      </div>
+      <p style="color: var(--text-light);"><strong>Stosswelle Abo’s: 10%</strong></p>
+      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">Bis zu 30% Rabatt</p>
       <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%;">Jetzt Termin buchen</a>
     </div>
   </div>
