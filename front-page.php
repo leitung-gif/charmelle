@@ -242,7 +242,7 @@ $t = get_template_directory_uri();
           <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Mai Aktion Kryobehandlung und Sonnenprodukte bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
-          <span class="subtitle">Mai Aktion ☀️</span>
+          <span class="subtitle">Aktion des Monats</span>
           <h2>Summer <em class="text-italic">Ready</em></h2>
           <hr class="golden-rule">
           <p><strong>20% auf alle Sonnenprodukte</strong> — schützen Sie Ihre Haut mit unseren hochwertigen Sonnenpflegeprodukten zum Aktionspreis. Die perfekte Vorbereitung für den Sommer.</p>
@@ -555,7 +555,7 @@ $t = get_template_directory_uri();
   <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Mai Aktion">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
-      <span class="subtitle">Mai Aktion ☀️</span>
+      <span class="subtitle">Aktion des Monats</span>
       <h3 style="margin-bottom: 12px;">Summer Ready</h3>
       <hr class="golden-rule golden-rule--center">
       <p style="color: var(--text-light); margin-top: 16px;"><strong>20% auf alle Sonnenprodukte</strong></p>
