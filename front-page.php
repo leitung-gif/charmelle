@@ -24,10 +24,11 @@ $t = get_template_directory_uri();
           </div>
         </div>
         <div class="hero-visual">
-          <div class="arch-img" style="max-width:380px;margin-left:auto;">
-            <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>" style="width:100%;height:100%;object-fit:cover;display:block;">
-              <source src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" type="video/mp4">
-            </video>
+          <div class="arch-img" id="hero-video-wrap" style="max-width:380px;margin-left:auto;position:relative;background-image:url('<?php echo esc_url( $t . '/images/hero-treatment-new.png' ); ?>');background-size:cover;background-position:center;">
+            <video id="hero-video" autoplay muted loop playsinline preload="auto" src="<?php echo esc_url( $t . '/images/hero-video.mp4' ); ?>" style="width:100%;height:100%;object-fit:cover;display:block;" type="video/mp4"></video>
+            <button id="hero-play-btn" aria-label="Video abspielen" style="display:none;position:absolute;inset:0;background:rgba(0,0,0,0.25);border:none;cursor:pointer;z-index:2;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
           </div>
         </div>
       </div>
@@ -36,33 +37,122 @@ $t = get_template_directory_uri();
   <script>
   (function(){
     var v = document.getElementById('hero-video');
+    var wrap = document.getElementById('hero-video-wrap');
+    var playBtn = document.getElementById('hero-play-btn');
     if (!v) return;
+
+    // Force muted property (some browsers ignore HTML attribute)
+    v.muted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+
+    var playing = false;
+    var retryCount = 0;
+    var maxRetries = 10;
+
+    function onPlaying() {
+      playing = true;
+      // Remove background image once video plays
+      if (wrap) wrap.style.backgroundImage = 'none';
+      if (playBtn) playBtn.style.display = 'none';
+    }
+
+    v.addEventListener('playing', onPlaying);
+
     function tryPlay() {
-      if (v.paused) {
-        var p = v.play();
-        if (p !== undefined) {
-          p.catch(function(){
-            ['click','scroll','mousemove','touchstart'].forEach(function(evt){
-              document.addEventListener(evt, function handler(){
-                v.play();
-                document.removeEventListener(evt, handler);
-              }, {once: true, passive: true});
-            });
-          });
-        }
+      if (playing) return;
+      v.muted = true; // Always ensure muted
+      var p = v.play();
+      if (p !== undefined) {
+        p.then(function() {
+          onPlaying();
+        }).catch(function(err) {
+          retryCount++;
+          if (retryCount >= maxRetries && playBtn) {
+            // Show play button as last resort
+            playBtn.style.display = 'flex';
+            playBtn.style.alignItems = 'center';
+            playBtn.style.justifyContent = 'center';
+          }
+        });
       }
     }
+
+    // Play button click handler
+    if (playBtn) {
+      playBtn.addEventListener('click', function() {
+        v.muted = true;
+        v.play().then(function() {
+          onPlaying();
+        }).catch(function(){});
+        playBtn.style.display = 'none';
+      });
+    }
+
+    // Strategy 1: Immediate play attempts
     tryPlay();
+
+    // Strategy 2: On video ready events
+    v.addEventListener('loadedmetadata', tryPlay);
     v.addEventListener('loadeddata', tryPlay);
     v.addEventListener('canplay', tryPlay);
+    v.addEventListener('canplaythrough', tryPlay);
+
+    // Strategy 3: Handle stalled/error - force reload
+    v.addEventListener('stalled', function() {
+      if (!playing) {
+        v.load();
+        setTimeout(tryPlay, 200);
+      }
+    });
+
+    v.addEventListener('error', function() {
+      if (!playing && retryCount < maxRetries) {
+        // Try reloading with cache buster
+        var src = v.getAttribute('src');
+        if (src && src.indexOf('?') === -1) {
+          v.src = src + '?v=' + Date.now();
+        }
+        v.load();
+        setTimeout(tryPlay, 500);
+      }
+    });
+
+    // Strategy 4: Timed retries (aggressive)
+    [100, 300, 600, 1000, 2000, 3000, 5000, 8000].forEach(function(ms) {
+      setTimeout(tryPlay, ms);
+    });
+
+    // Strategy 5: Intersection Observer
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){ if (entry.isIntersecting) tryPlay(); });
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) tryPlay();
+        });
       }, {threshold: 0.1}).observe(v);
     }
-    setTimeout(tryPlay, 300);
-    setTimeout(tryPlay, 1000);
-    setTimeout(tryPlay, 3000);
+
+    // Strategy 6: User interaction as final fallback
+    var interactionEvents = ['click', 'scroll', 'mousemove', 'touchstart', 'keydown'];
+    function onInteraction() {
+      tryPlay();
+      if (playing) {
+        interactionEvents.forEach(function(evt) {
+          document.removeEventListener(evt, onInteraction);
+        });
+      }
+    }
+    interactionEvents.forEach(function(evt) {
+      document.addEventListener(evt, onInteraction, {passive: true});
+    });
+
+    // Strategy 7: Page visibility change (tab switching)
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) tryPlay();
+    });
+
+    // Strategy 8: Window focus
+    window.addEventListener('focus', tryPlay);
   })();
   </script>
 

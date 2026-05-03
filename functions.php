@@ -221,7 +221,8 @@ add_action( 'wp_ajax_nopriv_charmelle_newsletter', 'charmelle_newsletter_signup'
 // ─── Preload Critical Assets + GEO Discovery Links ───
 function charmelle_preload_assets() {
     $theme_uri = get_template_directory_uri();
-    echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/hero-treatment.png' ) . '" as="image" fetchpriority="high">' . "\n";
+    echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/hero-video.mp4' ) . '" as="video" type="video/mp4">' . "\n";
+    echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/hero-treatment-new.png' ) . '" as="image">' . "\n";
     echo '<link rel="preload" href="' . esc_url( $theme_uri . '/images/logo.png' ) . '" as="image">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
