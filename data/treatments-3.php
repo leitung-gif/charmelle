@@ -63,11 +63,5 @@ return [
     ['Rückenmassage',45,'45 Min.','Entspannende, professionelle Rückenmassage zum Lösen von Verspannungen und Blockaden. Eine wohltuende Auszeit für Körper und Geist.',''],
     ['Massagestuhl',15,'30 Min.','Entspannung pur im professionellen Massagestuhl. Lockert Verspannungen und fördert die Durchblutung – die perfekte kleine Auszeit für zwischendurch.',''],
   ]],
-  ['Make-up','makeup','Für jeden Anlass perfekt gestylt',[
-    ['Tages Make-up',69,'45 Min.','Professionelles Tages-Make-up, das diskret Ihre Schokoladenseite betont und Sie natürlich zum Strahlen bringt. Ideal für Bewerbungsfotos, Business-Events oder besondere Anlässe.',''],
-    ['Abend Make-up',79,'60 Min.','Glamouröses Abend-Make-up für einen besonderen Anlass oder wenn es mal etwas mehr sein darf. Professionelle Techniken für einen umwerfenden Auftritt.',''],
-    ['Make-up Beratung',99,'70 Min.','Individuelle Make-up Beratung: Erlernen Sie die für Sie besten Schminktechniken und finden Sie Ihre idealen Produkte und Farben – mit Tipps vom Profi für den Alltag.',''],
-    ['Braut Probe Make-up',99,'75 Min.','Ausführliches Probe-Make-up für Ihren Hochzeitstag. Wir besprechen und erstellen gemeinsam den perfekten Look, damit am grossen Tag kein Stress entsteht.',''],
-    ['Braut Make-up',75,'45 Min.','Perfektes, langanhaltendes Make-up für Ihren Hochzeitstag. Wasser- und wischfest für einen traumhaften Auftritt vom Ja-Wort bis zum letzten Tanz.',''],
-  ]],
+
 ];

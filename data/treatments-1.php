@@ -15,7 +15,7 @@ return [
     ['Gesichtspflege de Luxe',220,'120 Min.','Unsere exklusive Intensivbehandlung für höchste Ansprüche. Gründliche Reinigung, sanftes Peeling, tiefenwirksame Seren, Vlies- oder Alginat-Maske für intensive Regeneration. Inkl. Gesichts-, Décolleté-, Nacken- und wohltuender Kopfmassage. Brauenkorrektur inklusive.',''],
     ['Gesichtspflege Piccolo',89,'75 Min.','Geniessen und entspannen zum Spezialpreis: Unsere Piccolo Behandlung bietet eine kleine, feine Auszeit für zwischendurch. Die Behandlung wird von unseren Lernenden mit viel Sorgfalt durchgeführt – ideal für den Einstieg in die professionelle Gesichtspflege.','lernende'],
     ['Starter Best Ager',115,'105 Min.','Speziell abgestimmte Gesichtspflege für reife Haut mit straffenden Wirkstoffen und Anti-Aging-Massage. Wird von unseren Lernenden sorgfältig durchgeführt – hochwertige Pflege zum attraktiven Spezialpreis.','lernende'],
-    ['NEU: Gua-Sha Facial von Team Dr. Joseph',175,'90 Min.','Diese innovative Gesichtsbehandlung verbessert die Durchblutung, regt den Lymphfluss und die Entschlackung an. Eine Mischung aus Lymphdrainage, Akupressur, Faszien-Massage und Muskelrelaxation. Reduziert Schwellungen und mimische Falten und lässt Sie in tiefe Entspannung sinken.','neu'],
+
     ['NEU: Fire &amp; Ice Gesichtsbehandlung',125,'60 Min.','Neu im Sortiment mit iS Clinical Produkten. Diese erfrischende und intensive Behandlung kombiniert wärmende und kühlende Wirkstoffe für sofort sichtbare Ergebnisse – straffere, strahlendere Haut in nur einer Sitzung.','neu'],
   ]],
   ['Behandlungen der unreinen Haut','unreine-haut','Gezielte Lösungen für ein reines Hautbild',[
@@ -32,7 +32,7 @@ return [
   ]],
   ['Hydra Facial','hydrafacial','Die Hollywood-Behandlung der Stars',[
     ['Hydra Facial Pur',220,'60 Min.','Das original HydraFacial Treatment mit patentierter Vortex-Technologie: Reinigung, Exfoliation, Extraktion und Hydration in einem Schritt. Inkl. LED-Lichttherapie für eine strahlend frische Haut.',''],
-    ['Hydra Facial Clear inkl. Brauenregulieren',250,'90 Min.','Umfassendes HydraFacial Treatment für Gesicht und Hals inkl. Brauenkorrektur und LED-Lichttherapie. Die intensive Behandlung für ein rundum strahlendes, klares Hautbild.',''],
+    ['Hydra Facial Clear inkl. Hals',250,'90 Min.','Umfassendes HydraFacial Treatment für Gesicht und Hals inkl. Halsbehandlung und LED-Lichttherapie. Die intensive Behandlung für ein rundum strahlendes, klares Hautbild.',''],
     ['Hydra Facial – Dermabuilder',320,'90 Min.','Premium HydraFacial mit dem exklusiven Dermabuilder-Peptid-Komplex. Glättet feine Linien und Falten und sorgt für eine strahlend schöne, sichtlich verjüngte Haut an Gesicht und Hals.',''],
     ['Hydra Facial – Dr. Nassif Ampulle',360,'90 Min.','Premium HydraFacial mit der exklusiven Dr. Nassif Ampulle. Intensive Hauterneuerung mit einem Komplex aus Glykol-, Salicyl- und Milchsäure für ein ebenmässiges, klares Hautbild.',''],
     ['Hydra Facial – JLo Booster',370,'90 Min.','Die exklusivste Hydra Facial Variante mit dem JLo Beauty Booster. Angereichert mit Hyaluronsäure und Niacinamid für maximalen Glow – die Behandlung der Stars, jetzt bei Charmelle in Aarau.',''],

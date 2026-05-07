@@ -2,7 +2,7 @@
 // Behandlungen Daten Teil 2: Kategorien 7-13 (Herren entfernt)
 return [
   ['Herren','herren','Professionelle Pflege für den modernen Mann',[
-    ['Hydra Facial Men inkl. Brauenregulieren',250,'90 Min.','HydraFacial Treatment speziell auf die Bedürfnisse der Männerhaut abgestimmt. Tiefenreinigung, Hydration und LED-Lichttherapie für ein frisches, gepflegtes Erscheinungsbild. Inkl. Brauenkorrektur.',''],
+    ['Hydra Facial Men inkl. Hals',250,'90 Min.','HydraFacial Treatment speziell auf die Bedürfnisse der Männerhaut abgestimmt. Tiefenreinigung, Hydration und LED-Lichttherapie für ein frisches, gepflegtes Erscheinungsbild. Inkl. Halsbehandlung.',''],
     ['Gesichtspflege Charmelle für Herren',150,'90 Min.','Unsere klassische Charmelle Gesichtsbehandlung, abgestimmt auf Männerhaut. Gründliche Reinigung, hochwertige Seren, pflegende Maske und entspannende Massage. Brauenkorrektur inklusive.',''],
     ['Manicure für Herren',69,'60 Min.','Professionelle Handpflege für gepflegte Männerhände. Nagelpflege, Nagelhautbehandlung und Handmassage für ein sauberes, gepflegtes Erscheinungsbild.',''],
     ['Pedicure für Herren',89,'60 Min.','Klassische Fusspflege speziell für Männer. Hornhautbehandlung, Nagelpflege und Fussmassage für gepflegte, gesunde Füsse.',''],
