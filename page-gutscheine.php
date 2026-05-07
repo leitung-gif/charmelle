@@ -9,9 +9,11 @@ $t = get_template_directory_uri();
 
 <style>
     .voucher-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .voucher-visual{position:relative}
-    .voucher-visual .arch-img{aspect-ratio:3/4;max-height:540px;box-shadow:var(--shadow-elevated)}
-    .voucher-visual .floating-badge{position:absolute;bottom:-20px;right:-20px;background:var(--accent-gold);color:var(--text-white);width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow-card);z-index:2}
+    .voucher-visual{position:relative;display:flex;align-items:center;justify-content:center}
+    .voucher-img-wrap{width:100%;max-width:540px;filter:drop-shadow(0 20px 40px rgba(74,59,50,0.12));transition:transform var(--transition-smooth)}
+    .voucher-img-wrap:hover{transform:translateY(-8px) rotate(-1deg)}
+    .voucher-img-wrap img{width:100%;height:auto;display:block}
+    .voucher-visual .floating-badge{position:absolute;bottom:10px;right:0;background:var(--accent-gold);color:var(--text-white);width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow-card);z-index:2}
     .floating-badge .badge-text{font-family:var(--font-body);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8}
     .floating-badge .badge-amount{font-family:var(--font-heading);font-size:1.5rem;font-weight:600;line-height:1.1}
     .voucher-form-section{background:var(--bg-primary);border-radius:var(--border-radius-lg);padding:40px;box-shadow:var(--shadow-card)}
@@ -52,8 +54,8 @@ $t = get_template_directory_uri();
     <div class="container">
       <div class="voucher-hero-grid reveal">
         <div class="voucher-visual">
-          <div class="arch-img">
-            <img src="<?php echo esc_url($t.'/images/gutschein.jpg'); ?>" alt="Charmelle Geschenkgutschein - elegant verpackt mit Trockenblume" loading="lazy" width="768" height="1024" style="width:100%;height:100%;object-fit:cover;">
+          <div class="voucher-img-wrap">
+            <img src="<?php echo esc_url($t.'/images/gutschein-clean.png'); ?>" alt="Charmelle Geschenkgutschein - elegant präsentiert" loading="lazy" width="1024" height="1024">
           </div>
           <div class="floating-badge">
             <span class="badge-text">ab</span>
