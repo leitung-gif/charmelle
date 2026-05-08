@@ -27,6 +27,7 @@ $t = get_template_directory_uri();
       height:100%;
       object-fit:cover;
       display:block;
+      filter:sepia(0.35) saturate(0.6) brightness(1.08) contrast(0.92);
     }
     @keyframes blob-morph{
       0%{border-radius:42% 58% 62% 38% / 45% 55% 45% 55%}
