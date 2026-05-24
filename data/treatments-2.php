@@ -27,9 +27,6 @@ return [
     ['Wimpernextensions Auffüllen nach 2 Wochen',90,'75 Min.','Regelmässiges Auffüllen Ihrer Wimpernextensions nach 2 Wochen für ein stets perfektes, volles Ergebnis. Ausgefallene Wimpern werden professionell ersetzt.',''],
     ['Wimpernextensions Auffüllen nach 3 Wochen',110,'90 Min.','Professionelles Auffüllen nach 3 Wochen für einen frischen, gepflegten Look. Hinweis: Bei nicht bei uns gemachten Wimpern ist nur ein komplett neues Set möglich.',''],
     ['Wimpernextensions Auffüllen nach 4 Wochen',130,'90 Min.','Auffüllen Ihrer Extensions nach 4 Wochen. Ideal für alle, die den Wimpernlook regelmässig auffrischen möchten – professionell und schonend für Ihre Naturwimpern.',''],
-    ['Extensions bei Giulia – Neuset Natural/Light',90,'120 Min.','Wimpernextensions zum exklusiven Spezialpreis bei unserer Wimpern-Spezialistin Giulia Arcerito. Natural oder Light Neu-Set für einen natürlichen, schönen Blick.','spezial'],
-    ['Extensions bei Giulia – Auffüllen nach 2 Wochen',60,'90 Min.','Auffüllen nach 2 Wochen zum Spezialpreis bei unserer erfahrenen Wimpern-Spezialistin Giulia Arcerito.','spezial'],
-    ['Extensions bei Giulia – Auffüllen nach 3 Wochen',80,'105 Min.','Auffüllen nach 3 Wochen zum Spezialpreis bei Giulia Arcerito. Professionelle Arbeit für langanhaltend schöne Wimpern.','spezial'],
   ]],
   ['Manicure','manicure','Gepflegte Hände – Ihr Aushängeschild',[
     ['Klassische Manicure (mit/ohne Pflegelack)',69,'60 Min.','Professionelle Handpflege für schöne, gepflegte Hände. Nagelpflege, Nagelhautbehandlung und Hand-Massage mit optional pflegendem Lack für ein gepflegtes Finish.',''],
