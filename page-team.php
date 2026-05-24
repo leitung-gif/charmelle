@@ -90,7 +90,7 @@ $t = get_template_directory_uri();
           <span class="team-role">Kosmetikerin EFZ</span>
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Sachkundenachweis V-Nissg</li></ul>
           <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇬🇧 English</span></div>
-          <p class="team-bio">Giulia ist Expertin für Gesichtspflegen, Hydra Facial, Microneedling und LPG Endermologie. Sie beherrscht zudem Wimpernlifting für einen perfekten Blick.</p>
+          <p class="team-bio">Giulia ist Expertin für Gesichtspflegen, Hydra Facial, Microneedling, LPG Endermologie und Wimpernextensions. Sie beherrscht zudem Wimpernlifting für einen perfekten Blick.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Giulia buchen</a>
         </div>
       </div>
