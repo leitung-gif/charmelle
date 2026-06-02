@@ -238,25 +238,25 @@ $t = get_template_directory_uri();
   <section class="section section--sand" id="aktion">
     <div class="container">
       <div class="split-section reveal">
-        <div class="arch-img" style="aspect-ratio: 4/3;">
-          <img src="<?php echo esc_url( $t . '/images/hydra-facial.png' ); ?>" alt="Mai Aktion Kryobehandlung und Sonnenprodukte bei Charmelle Beauty Center Aarau" loading="lazy">
+        <div class="arch-img" style="aspect-ratio: 3/4;">
+          <img src="<?php echo esc_url( $t . '/images/aktion-juni.jpg' ); ?>" alt="Juni Aktion - 10% auf MALU WILZ Make-up und gratis Fusspeeling bei Pedicure im Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
           <span class="subtitle">Aktion des Monats</span>
-          <h2>Summer <em class="text-italic">Ready</em></h2>
+          <h2>Juni <em class="text-italic">Aktion</em></h2>
           <hr class="golden-rule">
-          <p><strong>20% auf alle Sonnenprodukte</strong> — schützen Sie Ihre Haut mit unseren hochwertigen Sonnenpflegeprodukten zum Aktionspreis. Die perfekte Vorbereitung für den Sommer.</p>
           <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
-            <p style="font-weight: 600; margin-bottom: 8px;">Kryobehandlung — gestaffelte Rabatte:</p>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">1 Behandlung: <strong>10%</strong></span>
-              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">2 Behandlungen: <strong>20%</strong></span>
-              <span style="background: var(--accent-gold-light); color: var(--accent-gold); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem;">3 Behandlungen: <strong>30%</strong></span>
-            </div>
+            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">10%</p>
+            <p style="font-weight: 600; margin-bottom: 4px;">auf alle MALU WILZ Make-up Produkte</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Solange Vorrat</p>
           </div>
-          <p style="color: var(--text-light); font-size: 0.95rem;"><strong>Stosswelle Abo’s:</strong> 10% Rabatt auf alle Stosswellen-Abonnements.</p>
+          <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
+            <p style="font-weight: 600; margin-bottom: 4px;">Bei jeder Pedicure</p>
+            <p style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--accent-gold); margin-bottom: 4px;">gratis ein Fusspeeling</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">geschenkt dazu.</p>
+          </div>
           <div class="treatment-meta" style="margin: 20px 0 24px;">
-            <span class="price">✦ Bis zu 30% Rabatt</span>
+            <span class="price">✦ Monats Aktion Juni</span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -552,22 +552,25 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
-  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Mai Aktion">
+  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Juni Aktion">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
-      <span class="subtitle">Aktion des Monats</span>
-      <h3 style="margin-bottom: 12px;">Summer Ready</h3>
+      <span class="subtitle">Monats Aktion</span>
+      <h3 style="margin-bottom: 12px;">Juni</h3>
       <hr class="golden-rule golden-rule--center">
-      <p style="color: var(--text-light); margin-top: 16px;"><strong>20% auf alle Sonnenprodukte</strong></p>
-      <div style="margin: 16px 0; text-align: left;">
-        <p style="font-weight: 600; margin-bottom: 8px;">Kryobehandlung:</p>
-        <p style="color: var(--text-light); margin: 4px 0;">1 Behandlung: <strong>10%</strong> Rabatt</p>
-        <p style="color: var(--text-light); margin: 4px 0;">2 Behandlungen: <strong>20%</strong> Rabatt</p>
-        <p style="color: var(--text-light); margin: 4px 0;">3 Behandlungen: <strong>30%</strong> Rabatt</p>
+      <div style="margin: 16px 0; text-align: center;">
+        <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); margin-bottom: 4px;">10%</p>
+        <p style="font-weight: 600; margin-bottom: 4px;">auf alle MALU WILZ Make-up Produkte</p>
+        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Solange Vorrat</p>
       </div>
-      <p style="color: var(--text-light);"><strong>Stosswelle Abo’s: 10%</strong></p>
-      <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin: 16px 0;">Bis zu 30% Rabatt</p>
-      <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%;">Jetzt Termin buchen</a>
+      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
+      <div style="text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 4px;">Bei jeder</p>
+        <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 4px;">Pedicure</p>
+        <p style="font-weight: 600; margin-bottom: 4px;">gratis ein Fusspeeling</p>
+        <p style="color: var(--text-light); font-size: 0.9rem;">geschenkt dazu.</p>
+      </div>
+      <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%; margin-top: 16px;">Jetzt Termin buchen</a>
     </div>
   </div>
 
