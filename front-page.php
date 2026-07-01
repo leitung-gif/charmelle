@@ -239,24 +239,24 @@ $t = get_template_directory_uri();
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 3/4;">
-          <img src="<?php echo esc_url( $t . '/images/aktion-juni.jpg' ); ?>" alt="Juni Aktion - 10% auf MALU WILZ Make-up und gratis Fusspeeling bei Pedicure im Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/aktion-juli.jpg' ); ?>" alt="Juli Aktion - 20% auf Thalgo Produkte und 10% auf Wimpern & Brauen bei Charmelle Beauty Center Aarau" loading="lazy">
         </div>
         <div>
           <span class="subtitle">Aktion des Monats</span>
-          <h2>Juni <em class="text-italic">Aktion</em></h2>
+          <h2>Juli <em class="text-italic">Aktion</em></h2>
           <hr class="golden-rule">
           <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
-            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">10%</p>
-            <p style="font-weight: 600; margin-bottom: 4px;">auf alle MALU WILZ Make-up Produkte</p>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Solange Vorrat</p>
+            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">20%</p>
+            <p style="font-weight: 600; margin-bottom: 4px;">auf alle Thalgo Produkte</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Nur solange der Vorrat reicht</p>
           </div>
           <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
-            <p style="font-weight: 600; margin-bottom: 4px;">Bei jeder Pedicure</p>
-            <p style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--accent-gold); margin-bottom: 4px;">gratis ein Fusspeeling</p>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">geschenkt dazu.</p>
+            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">10%</p>
+            <p style="font-weight: 600; margin-bottom: 4px;">auf Wimpern & Brauen färben & formen</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Gilt ausschliesslich für das Kombi-Angebot</p>
           </div>
           <div class="treatment-meta" style="margin: 20px 0 24px;">
-            <span class="price">✦ Monats Aktion Juni</span>
+            <span class="price">🌴 Monats Aktion Juli</span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -552,23 +552,22 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
-  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Juni Aktion">
+  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="Juli Aktion">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
       <span class="subtitle">Monats Aktion</span>
-      <h3 style="margin-bottom: 12px;">Juni</h3>
+      <h3 style="margin-bottom: 12px;">Juli 🌴</h3>
       <hr class="golden-rule golden-rule--center">
       <div style="margin: 16px 0; text-align: center;">
-        <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); margin-bottom: 4px;">10%</p>
-        <p style="font-weight: 600; margin-bottom: 4px;">auf alle MALU WILZ Make-up Produkte</p>
-        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Solange Vorrat</p>
+        <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); margin-bottom: 4px;">20%</p>
+        <p style="font-weight: 600; margin-bottom: 4px;">auf alle Thalgo Produkte</p>
+        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Nur solange der Vorrat reicht</p>
       </div>
       <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
       <div style="text-align: center;">
-        <p style="color: var(--text-light); margin-bottom: 4px;">Bei jeder</p>
-        <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 4px;">Pedicure</p>
-        <p style="font-weight: 600; margin-bottom: 4px;">gratis ein Fusspeeling</p>
-        <p style="color: var(--text-light); font-size: 0.9rem;">geschenkt dazu.</p>
+        <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 4px;">10%</p>
+        <p style="font-weight: 600; margin-bottom: 4px;">auf Wimpern & Brauen färben & formen</p>
+        <p style="color: var(--text-light); font-size: 0.9rem;">Nur Kombi-Angebot</p>
       </div>
       <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%; margin-top: 16px;">Jetzt Termin buchen</a>
     </div>
