@@ -235,28 +235,45 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS ===== -->
+  <!-- Inhalte kommen aus Design → Customizer → «Aktion des Monats» (siehe functions.php) -->
+  <?php
+  $aktion_monat = charmelle_aktion( 'monat' );
+  $aktion_alt   = trim( sprintf(
+      '%s Aktion - %s %s%s bei Charmelle Beauty Center Aarau',
+      $aktion_monat,
+      charmelle_aktion( 'a1_prozent' ),
+      charmelle_aktion( 'a1_titel' ),
+      charmelle_aktion_hat_zweites() ? ' und ' . charmelle_aktion( 'a2_prozent' ) . ' ' . charmelle_aktion( 'a2_titel' ) : ''
+  ) );
+  ?>
   <section class="section section--sand" id="aktion">
     <div class="container">
       <div class="split-section reveal">
         <div class="arch-img" style="aspect-ratio: 3/4;">
-          <img src="<?php echo esc_url( $t . '/images/aktion-august.jpg' ); ?>" alt="August Aktion - 10% auf Manicure mit Shellac und 20% auf Pflegeprodukte für Hände und Füsse bei Charmelle Beauty Center Aarau" loading="lazy">
+          <img src="<?php echo esc_url( charmelle_aktion_bild() ); ?>" alt="<?php echo esc_attr( $aktion_alt ); ?>" loading="lazy">
         </div>
         <div>
           <span class="subtitle">Aktion des Monats</span>
-          <h2>August <em class="text-italic">Aktion</em></h2>
+          <h2><?php echo esc_html( $aktion_monat ); ?> <em class="text-italic">Aktion</em></h2>
           <hr class="golden-rule">
           <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
-            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">10%</p>
-            <p style="font-weight: 600; margin-bottom: 4px;">auf Manicure mit Shellac</p>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Nicht gültig bei Quick Shellac</p>
+            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;"><?php echo esc_html( charmelle_aktion( 'a1_prozent' ) ); ?></p>
+            <p style="font-weight: 600; margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a1_titel' ) ); ?></p>
+            <?php if ( charmelle_aktion( 'a1_zusatz' ) ) : ?>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;"><?php echo esc_html( charmelle_aktion( 'a1_zusatz' ) ); ?></p>
+            <?php endif; ?>
           </div>
+          <?php if ( charmelle_aktion_hat_zweites() ) : ?>
           <div style="background: var(--bg-main); border-radius: 12px; padding: 20px; margin: 16px 0;">
-            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;">20%</p>
-            <p style="font-weight: 600; margin-bottom: 4px;">auf alle Pflegeprodukte für Hände oder Füsse</p>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Verwöhnen Sie Ihre Hände und Füsse mit unserer ausgewählten Pflege</p>
+            <p style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 8px;"><?php echo esc_html( charmelle_aktion( 'a2_prozent' ) ); ?></p>
+            <p style="font-weight: 600; margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a2_titel' ) ); ?></p>
+            <?php if ( charmelle_aktion( 'a2_zusatz' ) ) : ?>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;"><?php echo esc_html( charmelle_aktion( 'a2_zusatz' ) ); ?></p>
+            <?php endif; ?>
           </div>
+          <?php endif; ?>
           <div class="treatment-meta" style="margin: 20px 0 24px;">
-            <span class="price">Monats Aktion August</span>
+            <span class="price">Monats Aktion <?php echo esc_html( $aktion_monat ); ?></span>
           </div>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary" target="_blank" rel="noopener">Jetzt buchen</a>
         </div>
@@ -552,25 +569,33 @@ $t = get_template_directory_uri();
   </section>
 
   <!-- ===== AKTION DES MONATS LIGHTBOX ===== -->
-  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="August Aktion">
+  <?php if ( charmelle_aktion( 'popup' ) ) : ?>
+  <div class="lightbox-overlay auto-popup" id="aktion-lightbox" role="dialog" aria-label="<?php echo esc_attr( $aktion_monat . ' Aktion' ); ?>">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Schliessen">✕</button>
       <span class="subtitle">Monats Aktion</span>
-      <h3 style="margin-bottom: 12px;">August</h3>
+      <h3 style="margin-bottom: 12px;"><?php echo esc_html( $aktion_monat ); ?></h3>
       <hr class="golden-rule golden-rule--center">
       <div style="margin: 16px 0; text-align: center;">
-        <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); margin-bottom: 4px;">10%</p>
-        <p style="font-weight: 600; margin-bottom: 4px;">auf Manicure mit Shellac</p>
-        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Nicht gültig bei Quick Shellac</p>
+        <p style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a1_prozent' ) ); ?></p>
+        <p style="font-weight: 600; margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a1_titel' ) ); ?></p>
+        <?php if ( charmelle_aktion( 'a1_zusatz' ) ) : ?>
+        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;"><?php echo esc_html( charmelle_aktion( 'a1_zusatz' ) ); ?></p>
+        <?php endif; ?>
       </div>
+      <?php if ( charmelle_aktion_hat_zweites() ) : ?>
       <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
       <div style="text-align: center;">
-        <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 4px;">20%</p>
-        <p style="font-weight: 600; margin-bottom: 4px;">auf alle Pflegeprodukte für Hände oder Füsse</p>
-        <p style="color: var(--text-light); font-size: 0.9rem;">Für gepflegte Hände und Füsse</p>
+        <p style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a2_prozent' ) ); ?></p>
+        <p style="font-weight: 600; margin-bottom: 4px;"><?php echo esc_html( charmelle_aktion( 'a2_titel' ) ); ?></p>
+        <?php if ( charmelle_aktion( 'a2_zusatz' ) ) : ?>
+        <p style="color: var(--text-light); font-size: 0.9rem;"><?php echo esc_html( charmelle_aktion( 'a2_zusatz' ) ); ?></p>
+        <?php endif; ?>
       </div>
+      <?php endif; ?>
       <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" target="_blank" rel="noopener" style="width: 100%; margin-top: 16px;">Jetzt Termin buchen</a>
     </div>
   </div>
+  <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -1116,3 +1116,103 @@ function charmelle_a11y_inline_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'charmelle_a11y_inline_styles', 21 );
 
+// ─── Aktion des Monats: Customizer ───
+// Design → Customizer → «Aktion des Monats». Ersetzt die früher fest im
+// Template stehende Aktion. Die Standardwerte unten sind der Stand August 2026
+// und greifen nur, solange im Customizer nichts gesetzt wurde.
+function charmelle_aktion_defaults() {
+    return array(
+        'monat'      => 'August',
+        'a1_prozent' => '10%',
+        'a1_titel'   => 'auf Manicure mit Shellac',
+        'a1_zusatz'  => 'Nicht gültig bei Quick Shellac',
+        'a2_prozent' => '20%',
+        'a2_titel'   => 'auf alle Pflegeprodukte für Hände oder Füsse',
+        'a2_zusatz'  => 'Verwöhnen Sie Ihre Hände und Füsse mit unserer ausgewählten Pflege',
+        'popup'      => true,
+    );
+}
+
+// Einzelwert holen, inkl. Rückfall auf den Standardwert.
+function charmelle_aktion( $key ) {
+    $defaults = charmelle_aktion_defaults();
+    $default  = $defaults[ $key ] ?? '';
+    return get_theme_mod( 'charmelle_aktion_' . $key, $default );
+}
+
+// Bild-URL holen: Customizer-Upload, sonst das mitgelieferte Theme-Bild.
+function charmelle_aktion_bild() {
+    $bild = get_theme_mod( 'charmelle_aktion_bild', '' );
+    if ( $bild ) {
+        return $bild;
+    }
+    return get_template_directory_uri() . '/images/aktion-august.jpg';
+}
+
+// Ist das zweite Angebot befüllt? Sonst wird die Box ausgeblendet.
+function charmelle_aktion_hat_zweites() {
+    return (bool) trim( charmelle_aktion( 'a2_titel' ) );
+}
+
+function charmelle_aktion_customizer( $wp_customize ) {
+    $defaults = charmelle_aktion_defaults();
+
+    $wp_customize->add_section( 'charmelle_aktion', array(
+        'title'       => 'Aktion des Monats',
+        'priority'    => 30,
+        'description' => 'Die Aktion auf der Startseite und im Popup. Änderungen erscheinen sofort in der Vorschau rechts — erst mit «Veröffentlichen» werden sie für Besucher sichtbar. Zweites Angebot leer lassen, wenn es diesen Monat nur eines gibt.',
+    ) );
+
+    $felder = array(
+        'monat'      => array( 'Monat', 'Erscheint als Titel, z.B. «August».' ),
+        'a1_prozent' => array( '1. Angebot — Rabatt', 'z.B. «10%».' ),
+        'a1_titel'   => array( '1. Angebot — Text', 'z.B. «auf Manicure mit Shellac».' ),
+        'a1_zusatz'  => array( '1. Angebot — Kleingedrucktes', 'Optional, z.B. «Nicht gültig bei Quick Shellac».' ),
+        'a2_prozent' => array( '2. Angebot — Rabatt', 'z.B. «20%».' ),
+        'a2_titel'   => array( '2. Angebot — Text', 'Leer lassen, wenn es nur ein Angebot gibt.' ),
+        'a2_zusatz'  => array( '2. Angebot — Kleingedrucktes', 'Optional.' ),
+    );
+
+    foreach ( $felder as $key => $meta ) {
+        $wp_customize->add_setting( 'charmelle_aktion_' . $key, array(
+            'default'           => $defaults[ $key ],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ) );
+        $wp_customize->add_control( 'charmelle_aktion_' . $key, array(
+            'label'       => $meta[0],
+            'description' => $meta[1],
+            'section'     => 'charmelle_aktion',
+            'type'        => 'text',
+        ) );
+    }
+
+    $wp_customize->add_setting( 'charmelle_aktion_bild', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'charmelle_aktion_bild', array(
+        'label'       => 'Bild der Aktion',
+        'description' => 'Hochformat im Verhältnis 3:4 (z.B. 1024 × 1365 Pixel) sieht am besten aus. Ohne Auswahl bleibt das aktuelle Bild stehen.',
+        'section'     => 'charmelle_aktion',
+    ) ) );
+
+    $wp_customize->add_setting( 'charmelle_aktion_popup', array(
+        'default'           => $defaults['popup'],
+        'sanitize_callback' => 'charmelle_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'charmelle_aktion_popup', array(
+        'label'       => 'Popup automatisch anzeigen',
+        'description' => 'Das Fenster erscheint drei Sekunden nach dem Öffnen der Startseite.',
+        'section'     => 'charmelle_aktion',
+        'type'        => 'checkbox',
+    ) );
+}
+add_action( 'customize_register', 'charmelle_aktion_customizer' );
+
+function charmelle_sanitize_checkbox( $value ) {
+    return ( isset( $value ) && true === (bool) $value );
+}
+
