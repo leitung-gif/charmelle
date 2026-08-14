@@ -497,31 +497,27 @@ add_filter( 'loop_shop_per_page', function() { return 24; } );
 // ─── WooCommerce: Products per row ───
 add_filter( 'loop_shop_columns', function() { return 3; } );
 
-// ─── WooCommerce: «Direkte Banküberweisung» (BACS) als TWINT ausgeben ───
-// Die Zahlung läuft manuell: die Kundschaft sendet den Betrag per TWINT an die
-// Studio-Nummer, die Bestellung bleibt bis zur Kontrolle auf «In Wartestellung».
-// Titel, Beschreibung und Anweisung kommen bewusst aus dem Code, damit sie auf
-// allen Kanälen (Checkout, Danke-Seite, Bestellbestätigung) identisch sind.
+// ─── WooCommerce: TWINT als zusätzliche Zahlungsart ───
+// Steht im Checkout neben der direkten Banküberweisung, die unverändert bleibt.
+// Die Klasse wird erst im Filter geladen, weil WC_Payment_Gateway zum Zeitpunkt
+// des Theme-Ladens noch nicht garantiert vorhanden ist.
 function charmelle_twint_number() {
     return apply_filters( 'charmelle_twint_number', '+41 79 828 66 47' );
 }
 
-add_filter( 'option_woocommerce_bacs_settings', function( $settings ) {
-    if ( ! is_array( $settings ) ) {
-        return $settings;
+add_filter( 'woocommerce_payment_gateways', function( $gateways ) {
+    if ( ! class_exists( 'WC_Payment_Gateway' ) ) {
+        return $gateways;
     }
 
-    $nummer = charmelle_twint_number();
+    if ( ! class_exists( 'Charmelle_Gateway_TWINT' ) ) {
+        require_once get_template_directory() . '/inc/class-charmelle-gateway-twint.php';
+    }
 
-    $settings['title']        = 'TWINT';
-    $settings['description']  = 'Senden Sie den Betrag per TWINT an ' . $nummer . '. Bitte geben Sie im Mitteilungsfeld Ihre Bestellnummer an. Wir bearbeiten Ihre Bestellung, sobald die Zahlung eingegangen ist.';
-    $settings['instructions'] = 'Bitte senden Sie den Rechnungsbetrag per TWINT an ' . $nummer . ' und geben Sie im Mitteilungsfeld Ihre Bestellnummer als Referenz an. Sobald die Zahlung bei uns eingegangen ist, bereiten wir Ihre Bestellung vor.';
+    $gateways[] = 'Charmelle_Gateway_TWINT';
 
-    return $settings;
+    return $gateways;
 } );
-
-// Keine Bankkonto-Tabelle auf der Danke-Seite und in den E-Mails ausgeben.
-add_filter( 'woocommerce_bacs_accounts', '__return_empty_array' );
 
 // ─── Remove WordPress Emoji Scripts (Performance) ───
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
