@@ -503,8 +503,11 @@ add_filter( 'loop_shop_columns', function() { return 3; } );
 // Darum nennt die bestehende Banküberweisung (BACS) beide Wege in einem Text.
 // Titel, Beschreibung und Anweisung kommen aus dem Code — Änderungen unter
 // WooCommerce → Zahlungen wirken deshalb nicht.
+// Übergangslösung (14.08.2026): TWINT auf die Studio-Nummer +41 79 828 66 47
+// funktioniert nicht, darum vorerst die private Nummer von Aurora. Zurückstellen,
+// sobald TWINT auf die Geschäftsnummer läuft.
 function charmelle_twint_number() {
-    return apply_filters( 'charmelle_twint_number', '+41 79 828 66 47' );
+    return apply_filters( 'charmelle_twint_number', '+41 79 383 31 98' );
 }
 
 function charmelle_zahlungstext() {
