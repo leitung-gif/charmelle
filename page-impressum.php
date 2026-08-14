@@ -26,7 +26,7 @@ get_header(); ?>
       Website: <a href="https://www.charmelle.ch">www.charmelle.ch</a></p>
 
       <h2>Vertretungsberechtigte Personen</h2>
-      <p>Aurora Mezzaucella, Geschäftsführerin<br>
+      <p>Aurora Liloia, Geschäftsführerin<br>
       Oriana Raso, Geschäftsführerin</p>
 
       <h2>Handelsregistereintrag</h2>

@@ -1,7 +1,7 @@
 /* Charmelle Beauty Center — www.charmelle.ch */
 
 /* TEAM */
-  Owner & Lead Cosmetics: Aurora Mezzaucella, Oriana Raso
+  Owner & Lead Cosmetics: Aurora Liloia, Oriana Raso
   Design & Development: Lorien Group (lorien.group)
 
 /* SITE */

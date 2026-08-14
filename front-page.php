@@ -312,32 +312,19 @@ $t = get_template_directory_uri();
       </div>
       <div class="grid grid--3">
         <div class="team-card reveal reveal-delay-1">
-          <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/aurora.jpg' ); ?>" alt="Aurora Mezzaucella - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
-          <h3>Aurora Mezzaucella</h3>
+          <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/aurora.jpg' ); ?>" alt="Aurora Liloia - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
+          <h3>Aurora Liloia</h3>
           <p class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</p>
-          <div class="team-languages">
-            <span class="lang-tag">🇮🇹 Italiano</span>
-            <span class="lang-tag">🇩🇪 Deutsch</span>
-          </div>
         </div>
         <div class="team-card reveal reveal-delay-2">
           <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/oriana.jpg' ); ?>" alt="Oriana Raso - Kosmetikerin EFZ und Berufsbildnerin bei Charmelle Aarau" width="1030" height="704" loading="lazy"></div>
           <h3>Oriana Raso</h3>
           <p class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</p>
-          <div class="team-languages">
-            <span class="lang-tag">🇮🇹 Italiano</span>
-            <span class="lang-tag">🇩🇪 Deutsch</span>
-          </div>
         </div>
         <div class="team-card reveal reveal-delay-3">
           <div class="arch-img"><img src="<?php echo esc_url( $t . '/images/giulia.jpg' ); ?>" alt="Giulia Arcerito - Kosmetikerin EFZ bei Charmelle Aarau" width="1030" height="754" loading="lazy"></div>
           <h3>Giulia Arcerito</h3>
           <p class="team-role">Kosmetikerin EFZ</p>
-          <div class="team-languages">
-            <span class="lang-tag">🇮🇹 Italiano</span>
-            <span class="lang-tag">🇩🇪 Deutsch</span>
-            <span class="lang-tag">🇬🇧 English</span>
-          </div>
         </div>
       </div>
       <div class="text-center mt-lg reveal">

@@ -58,12 +58,11 @@ $t = get_template_directory_uri();
 
       <!-- AURORA -->
       <div class="team-detail-card reveal">
-        <div class="team-detail-image"><div class="arch-img"><img src="<?php echo esc_url($t.'/images/aurora.jpg'); ?>" alt="Aurora Mezzaucella - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Beauty Center Aarau" width="1030" height="704" loading="lazy"></div></div>
+        <div class="team-detail-image"><div class="arch-img"><img src="<?php echo esc_url($t.'/images/aurora.jpg'); ?>" alt="Aurora Liloia - Kosmetikerin EFZ, Berufsbildnerin und Visagistin bei Charmelle Beauty Center Aarau" width="1030" height="704" loading="lazy"></div></div>
         <div class="team-detail-info">
-          <h3>Aurora Mezzaucella</h3>
+          <h3>Aurora Liloia</h3>
           <span class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin · PMU &amp; Microblading Artistin</span>
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Berufsbildnerin</li><li>Diplomierte Visagistin</li><li>PMU &amp; Microblading Artistin</li><li>Sachkundenachweis V-Nissg</li></ul>
-          <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span></div>
           <p class="team-bio">Aurora vereint jahrelange Erfahrung mit Leidenschaft für Hautpflege. Ihre Expertise umfasst Hydra Facial, Microblading, Microneedling, Permanent Make-Up, Wimpernextensions sowie Aknebehandlungen und Body-Forming.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Aurora buchen</a>
         </div>
@@ -76,7 +75,6 @@ $t = get_template_directory_uri();
           <h3>Oriana Raso</h3>
           <span class="team-role">Inhaberin · Kosmetikerin EFZ · Berufsbildnerin · Visagistin</span>
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Berufsbildnerin</li><li>Diplomierte Visagistin</li><li>Sachkundenachweis V-Nissg</li></ul>
-          <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span></div>
           <p class="team-bio">Oriana bringt umfassende Fachkompetenz in Body-Forming, Hydra Facial, Micro- und Aquabrasion sowie Microneedling und Aknebehandlungen mit. Ihre Behandlungen folgen der bewährten Charmelle Pflege-Philosophie.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Oriana buchen</a>
         </div>
@@ -89,7 +87,6 @@ $t = get_template_directory_uri();
           <h3>Giulia Arcerito</h3>
           <span class="team-role">Kosmetikerin EFZ</span>
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Sachkundenachweis V-Nissg</li></ul>
-          <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇬🇧 English</span></div>
           <p class="team-bio">Giulia ist Expertin für Gesichtspflegen, Hydra Facial, Microneedling, LPG Endermologie und Wimpernextensions. Sie beherrscht zudem Wimpernlifting für einen perfekten Blick.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Giulia buchen</a>
         </div>
@@ -102,7 +99,6 @@ $t = get_template_directory_uri();
           <span class="apprentice-badge">✦ Lernende - 2. Lehrjahr</span>
           <h3>Elif Tasdemir</h3>
           <span class="team-role">Kosmetikerin in Ausbildung</span>
-          <div class="team-languages"><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇹🇷 Türkçe</span><span class="lang-tag">🇬🇧 English</span></div>
           <p class="team-bio">«Der Beruf der Kosmetikerin hat mich schon immer fasziniert, weil er weit mehr ist als nur die Anwendung von Pflegeprodukten.»</p>
           <ul class="team-qualifications-list"><li>Piccolo Behandlung</li><li>Starter Best Ager</li><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie</li><li>LPG Endermologie Körper</li><li>Wimpern/Brauen färben und regulieren</li><li>Haarentfernung mit Warmwachs</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
@@ -116,7 +112,6 @@ $t = get_template_directory_uri();
           <span class="apprentice-badge">✦ Lernende - 1. Lehrjahr</span>
           <h3>Stella Giangreco</h3>
           <span class="team-role">Kosmetikerin in Ausbildung</span>
-          <div class="team-languages"><span class="lang-tag">🇮🇹 Italiano</span><span class="lang-tag">🇩🇪 Deutsch</span><span class="lang-tag">🇬🇧 English</span><span class="lang-tag">🇫🇷 Français</span></div>
           <p class="team-bio">«Ich freue mich riesig, hier meine Ausbildung zu machen und jeden Tag Neues zu lernen.»</p>
           <ul class="team-qualifications-list"><li>Manicure mit/ohne Lack und Shellac</li><li>Pedicure mit/ohne Lack und Shellac</li><li>LPG Endermologie Körper</li><li>Haarentfernung mit Warmwachs</li></ul>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--outline btn--small" target="_blank" rel="noopener">Termin buchen</a>
