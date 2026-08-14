@@ -497,26 +497,30 @@ add_filter( 'loop_shop_per_page', function() { return 24; } );
 // ─── WooCommerce: Products per row ───
 add_filter( 'loop_shop_columns', function() { return 3; } );
 
-// ─── WooCommerce: TWINT als zusätzliche Zahlungsart ───
-// Steht im Checkout neben der direkten Banküberweisung, die unverändert bleibt.
-// Die Klasse wird erst im Filter geladen, weil WC_Payment_Gateway zum Zeitpunkt
-// des Theme-Ladens noch nicht garantiert vorhanden ist.
+// ─── WooCommerce: Banküberweisung und TWINT in einer Zahlungsart ───
+// Bewusst keine zweite Zahlungsart: der Block-Checkout zeigt nur die von
+// WooCommerce mitgelieferten Zahlungsarten an, eigene bleiben unsichtbar.
+// Darum nennt die bestehende Banküberweisung (BACS) beide Wege in einem Text.
+// Titel, Beschreibung und Anweisung kommen aus dem Code — Änderungen unter
+// WooCommerce → Zahlungen wirken deshalb nicht.
 function charmelle_twint_number() {
     return apply_filters( 'charmelle_twint_number', '+41 79 828 66 47' );
 }
 
-add_filter( 'woocommerce_payment_gateways', function( $gateways ) {
-    if ( ! class_exists( 'WC_Payment_Gateway' ) ) {
-        return $gateways;
+function charmelle_zahlungstext() {
+    return 'Überweisen Sie den Betrag direkt an unsere Bankverbindung — die Kontoangaben erhalten Sie nach Abschluss der Bestellung. Oder bezahlen Sie per TWINT an ' . charmelle_twint_number() . '. Bitte geben Sie in beiden Fällen Ihre Bestellnummer als Verwendungszweck an. Ihre Bestellung wird bearbeitet, sobald die Zahlung bei uns eingegangen ist.';
+}
+
+add_filter( 'option_woocommerce_bacs_settings', function( $settings ) {
+    if ( ! is_array( $settings ) ) {
+        return $settings;
     }
 
-    if ( ! class_exists( 'Charmelle_Gateway_TWINT' ) ) {
-        require_once get_template_directory() . '/inc/class-charmelle-gateway-twint.php';
-    }
+    $settings['title']        = 'Banküberweisung oder TWINT';
+    $settings['description']  = charmelle_zahlungstext();
+    $settings['instructions'] = charmelle_zahlungstext();
 
-    $gateways[] = 'Charmelle_Gateway_TWINT';
-
-    return $gateways;
+    return $settings;
 } );
 
 // ─── Remove WordPress Emoji Scripts (Performance) ───
