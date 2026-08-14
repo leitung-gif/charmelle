@@ -497,143 +497,31 @@ add_filter( 'loop_shop_per_page', function() { return 24; } );
 // ─── WooCommerce: Products per row ───
 add_filter( 'loop_shop_columns', function() { return 3; } );
 
-// ─── WooCommerce: TWINT als Zahlungsart (manuelle Zahlung an Handynummer) ───
-add_filter( 'woocommerce_payment_gateways', function( $gateways ) {
-    $gateways[] = 'Charmelle_Gateway_TWINT';
-    return $gateways;
+// ─── WooCommerce: «Direkte Banküberweisung» (BACS) als TWINT ausgeben ───
+// Die Zahlung läuft manuell: die Kundschaft sendet den Betrag per TWINT an die
+// Studio-Nummer, die Bestellung bleibt bis zur Kontrolle auf «In Wartestellung».
+// Titel, Beschreibung und Anweisung kommen bewusst aus dem Code, damit sie auf
+// allen Kanälen (Checkout, Danke-Seite, Bestellbestätigung) identisch sind.
+function charmelle_twint_number() {
+    return apply_filters( 'charmelle_twint_number', '+41 79 828 66 47' );
+}
+
+add_filter( 'option_woocommerce_bacs_settings', function( $settings ) {
+    if ( ! is_array( $settings ) ) {
+        return $settings;
+    }
+
+    $nummer = charmelle_twint_number();
+
+    $settings['title']        = 'TWINT';
+    $settings['description']  = 'Senden Sie den Betrag per TWINT an ' . $nummer . '. Bitte geben Sie im Mitteilungsfeld Ihre Bestellnummer an. Wir bearbeiten Ihre Bestellung, sobald die Zahlung eingegangen ist.';
+    $settings['instructions'] = 'Bitte senden Sie den Rechnungsbetrag per TWINT an ' . $nummer . ' und geben Sie im Mitteilungsfeld Ihre Bestellnummer als Referenz an. Sobald die Zahlung bei uns eingegangen ist, bereiten wir Ihre Bestellung vor.';
+
+    return $settings;
 } );
 
-add_action( 'plugins_loaded', 'charmelle_init_twint_gateway', 11 );
-function charmelle_init_twint_gateway() {
-
-    if ( ! class_exists( 'WC_Payment_Gateway' ) || class_exists( 'Charmelle_Gateway_TWINT' ) ) {
-        return;
-    }
-
-    class Charmelle_Gateway_TWINT extends WC_Payment_Gateway {
-
-        public $instructions;
-        public $twint_number;
-
-        public function __construct() {
-            $this->id                 = 'charmelle_twint';
-            $this->has_fields         = false;
-            $this->method_title       = 'TWINT';
-            $this->method_description = 'Die Kundschaft bezahlt die Bestellung per TWINT an die hinterlegte Handynummer. Die Bestellung bleibt auf «In Wartestellung», bis der Zahlungseingang im Studio geprüft und die Bestellung manuell auf «In Bearbeitung» gesetzt wird.';
-
-            $this->init_form_fields();
-            $this->init_settings();
-
-            $this->title        = $this->get_option( 'title' );
-            $this->description  = $this->get_option( 'description' );
-            $this->instructions = $this->get_option( 'instructions' );
-            $this->twint_number = $this->get_option( 'twint_number' );
-
-            add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
-            add_action( 'woocommerce_thankyou_' . $this->id, array( $this, 'thankyou_page' ) );
-            add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
-        }
-
-        public function init_form_fields() {
-            $this->form_fields = array(
-                'enabled' => array(
-                    'title'   => 'Aktivieren',
-                    'type'    => 'checkbox',
-                    'label'   => 'TWINT im Checkout anbieten',
-                    'default' => 'no',
-                ),
-                'title' => array(
-                    'title'       => 'Bezeichnung im Checkout',
-                    'type'        => 'text',
-                    'description' => 'Der Name, den die Kundschaft beim Bezahlen sieht.',
-                    'default'     => 'TWINT',
-                    'desc_tip'    => true,
-                ),
-                'twint_number' => array(
-                    'title'       => 'TWINT-Handynummer',
-                    'type'        => 'text',
-                    'description' => 'An diese Nummer wird der Betrag per TWINT gesendet.',
-                    'default'     => '+41 79 828 66 47',
-                    'desc_tip'    => true,
-                ),
-                'description' => array(
-                    'title'       => 'Beschreibung im Checkout',
-                    'type'        => 'textarea',
-                    'description' => 'Text unter der Auswahl «TWINT». {nummer} wird durch die Handynummer ersetzt.',
-                    'default'     => 'Senden Sie den Betrag per TWINT an {nummer}. Ihre Bestellung wird bearbeitet, sobald die Zahlung bei uns eingegangen ist.',
-                    'desc_tip'    => true,
-                ),
-                'instructions' => array(
-                    'title'       => 'Zahlungsanweisung',
-                    'type'        => 'textarea',
-                    'description' => 'Erscheint nach der Bestellung und in der Bestellbestätigung. {nummer}, {betrag} und {bestellnummer} werden automatisch ersetzt.',
-                    'default'     => 'Bitte senden Sie {betrag} per TWINT an {nummer} und geben Sie im Mitteilungsfeld die Bestellnummer {bestellnummer} an. Sobald die Zahlung eingegangen ist, bereiten wir Ihre Bestellung vor.',
-                    'desc_tip'    => true,
-                ),
-            );
-        }
-
-        /** Platzhalter in den Texten ersetzen. */
-        private function fill_placeholders( $text, $order = null ) {
-            $replacements = array( '{nummer}' => $this->twint_number );
-            if ( $order ) {
-                $replacements['{betrag}']       = html_entity_decode( wp_strip_all_tags( $order->get_formatted_order_total() ), ENT_QUOTES, 'UTF-8' );
-                $replacements['{bestellnummer}'] = $order->get_order_number();
-            }
-            return strtr( $text, $replacements );
-        }
-
-        public function get_description() {
-            return apply_filters( 'woocommerce_gateway_description', $this->fill_placeholders( (string) $this->description ), $this->id );
-        }
-
-        public function process_payment( $order_id ) {
-            $order = wc_get_order( $order_id );
-
-            $order->update_status(
-                apply_filters( 'charmelle_twint_process_payment_order_status', 'on-hold', $order ),
-                'Warten auf TWINT-Zahlung an ' . $this->twint_number . '.'
-            );
-
-            wc_reduce_stock_levels( $order_id );
-
-            if ( WC()->cart ) {
-                WC()->cart->empty_cart();
-            }
-
-            return array(
-                'result'   => 'success',
-                'redirect' => $this->get_return_url( $order ),
-            );
-        }
-
-        public function thankyou_page( $order_id ) {
-            $order = wc_get_order( $order_id );
-            if ( ! $order || ! $this->instructions ) {
-                return;
-            }
-            echo '<section class="woocommerce-twint-instructions" style="margin:0 0 32px;padding:24px 28px;background:var(--accent-gold-light,#F6EFE6);border-radius:12px;">';
-            echo '<h2 style="margin-bottom:8px;">So bezahlen Sie mit TWINT</h2>';
-            echo wpautop( wptexturize( esc_html( $this->fill_placeholders( $this->instructions, $order ) ) ) );
-            echo '</section>';
-        }
-
-        public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-            if ( $sent_to_admin || ! $this->instructions ) {
-                return;
-            }
-            if ( $order->get_payment_method() !== $this->id || ! $order->has_status( 'on-hold' ) ) {
-                return;
-            }
-            $text = $this->fill_placeholders( $this->instructions, $order );
-            if ( $plain_text ) {
-                echo esc_html( $text ) . PHP_EOL . PHP_EOL;
-            } else {
-                echo wpautop( wptexturize( esc_html( $text ) ) ) . PHP_EOL;
-            }
-        }
-    }
-}
+// Keine Bankkonto-Tabelle auf der Danke-Seite und in den E-Mails ausgeben.
+add_filter( 'woocommerce_bacs_accounts', '__return_empty_array' );
 
 // ─── Remove WordPress Emoji Scripts (Performance) ───
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
