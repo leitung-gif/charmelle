@@ -48,6 +48,14 @@ $t = get_template_directory_uri();
     .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent-gold)}
     .form-group textarea{resize:vertical;min-height:80px}
     .form-group select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A3B32' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+    .voucher-form-section .form-label{display:block;font-size:0.82rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-heading);margin-bottom:8px}
+    .voucher-delivery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .voucher-delivery-option{display:flex;align-items:center;gap:10px;padding:14px 16px;font-size:0.92rem;color:var(--text-heading);background:var(--bg-section);border:1.5px solid var(--border-color);border-radius:var(--border-radius-sm);cursor:pointer;transition:border-color var(--transition-fast),background var(--transition-fast)}
+    .voucher-delivery-option:hover{border-color:var(--accent-gold)}
+    .voucher-delivery-option input{width:auto;margin:0;accent-color:var(--accent-gold)}
+    .voucher-delivery-option:has(input:checked){border-color:var(--accent-gold);background:var(--accent-gold-light)}
+    .voucher-delivery-note{font-size:0.78rem;color:var(--text-light);margin:10px 0 0}
+    @media(max-width:520px){.voucher-delivery{grid-template-columns:1fr}}
     .price-display{text-align:center;padding:24px;background:var(--accent-gold-light);border-radius:var(--border-radius-md);margin-bottom:24px}
     .price-display .total-label{font-size:0.82rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);margin-bottom:4px}
     .price-display .total-amount{font-family:var(--font-heading);font-size:2.2rem;color:var(--accent-gold);font-weight:600}
@@ -87,42 +95,64 @@ $t = get_template_directory_uri();
           </div>
         </div>
 
+        <?php $voucher_product_id = function_exists( 'charmelle_voucher_product_id' ) ? charmelle_voucher_product_id() : 0; ?>
         <div class="voucher-form-section">
           <span class="subtitle">Wertgutschein</span>
           <h3>Charmelle Geschenkgutschein</h3>
           <p>Wählen Sie den gewünschten Betrag. Der Gutschein ist für alle Behandlungen und Produkte einlösbar.</p>
 
-          <div class="form-group">
-            <label for="voucher-amount">Betrag wählen</label>
-            <select id="voucher-amount" name="amount">
-              <option value="50">CHF 50.—</option>
-              <option value="100" selected>CHF 100.—</option>
-              <option value="150">CHF 150.—</option>
-              <option value="200">CHF 200.—</option>
-              <option value="250">CHF 250.—</option>
-              <option value="300">CHF 300.—</option>
-              <option value="custom">Eigener Betrag</option>
-            </select>
-          </div>
+          <?php if ( function_exists( 'woocommerce_output_all_notices' ) ) { woocommerce_output_all_notices(); } ?>
 
-          <div class="form-group" id="custom-amount-group" style="display: none;">
-            <label for="custom-amount">Eigener Betrag (CHF)</label>
-            <input type="number" id="custom-amount" name="custom_amount" min="20" max="1000" placeholder="z.B. 175">
-          </div>
+          <?php if ( $voucher_product_id ) : ?>
+          <form method="post" action="<?php echo esc_url( charmelle_voucher_page_url() ); ?>">
 
-          <div class="form-group">
-            <label for="recipient-name">Name der beschenkten Person *</label>
-            <input type="text" id="recipient-name" name="recipient" placeholder="z.B. Maria Müller" required>
-          </div>
+            <div class="form-group">
+              <label for="voucher-amount">Betrag wählen</label>
+              <select id="voucher-amount" name="voucher_amount">
+                <?php foreach ( charmelle_voucher_amounts() as $voucher_amount ) : ?>
+                <option value="<?php echo esc_attr( $voucher_amount ); ?>" <?php selected( 100, $voucher_amount ); ?>>CHF <?php echo esc_html( $voucher_amount ); ?>.—</option>
+                <?php endforeach; ?>
+                <option value="custom">Eigener Betrag</option>
+              </select>
+            </div>
 
-          <div class="price-display">
-            <p class="total-label mb-0">Gutscheinwert</p>
-            <span class="total-amount" id="price-total">CHF 100.—</span>
-          </div>
+            <div class="form-group" id="custom-amount-group" style="display: none;">
+              <label for="custom-amount">Eigener Betrag (CHF)</label>
+              <input type="number" id="custom-amount" name="voucher_custom_amount" min="<?php echo esc_attr( charmelle_voucher_min() ); ?>" max="<?php echo esc_attr( charmelle_voucher_max() ); ?>" placeholder="z.B. 175">
+            </div>
 
-          <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--large" style="width: 100%;" target="_blank" rel="noopener" id="buy-voucher-btn">Gutschein kaufen</a>
+            <div class="form-group">
+              <label for="recipient-name">Name der beschenkten Person *</label>
+              <input type="text" id="recipient-name" name="voucher_recipient" placeholder="z.B. Maria Müller" required>
+            </div>
 
-          <p style="font-size: 0.78rem; color: var(--text-light); margin-top: 12px; text-align: center;">Sie werden zu unserem sicheren Bestellformular weitergeleitet. Kauf auch direkt im Studio möglich.</p>
+            <div class="form-group">
+              <span class="form-label">Übergabe</span>
+              <div class="voucher-delivery">
+                <?php foreach ( charmelle_voucher_delivery_options() as $delivery_key => $delivery_label ) : ?>
+                <label class="voucher-delivery-option">
+                  <input type="radio" name="voucher_delivery" value="<?php echo esc_attr( $delivery_key ); ?>" <?php checked( 'abholung', $delivery_key ); ?>>
+                  <span><?php echo esc_html( $delivery_label ); ?></span>
+                </label>
+                <?php endforeach; ?>
+              </div>
+              <p class="voucher-delivery-note">Beide Varianten sind kostenlos. Beim Versand geht der Gutschein an die Adresse aus Ihrer Bestellung.</p>
+            </div>
+
+            <div class="price-display">
+              <p class="total-label mb-0">Gutscheinwert</p>
+              <span class="total-amount" id="price-total">CHF 100.—</span>
+            </div>
+
+            <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $voucher_product_id ); ?>">
+            <button type="submit" class="btn btn--primary btn--large" style="width: 100%;" id="buy-voucher-btn">Gutschein kaufen</button>
+
+            <p style="font-size: 0.78rem; color: var(--text-light); margin-top: 12px; text-align: center;">Im nächsten Schritt bezahlen Sie direkt hier über unsere Kasse. Kauf auch direkt im Studio möglich.</p>
+          </form>
+          <?php else : ?>
+          <p style="color: var(--text-light);">Der Gutschein-Kauf über die Website wird gerade eingerichtet. Rufen Sie uns an oder kommen Sie im Studio vorbei — wir stellen Ihren Gutschein gerne persönlich zusammen.</p>
+          <a href="tel:+41628226647" class="btn btn--primary btn--large" style="width: 100%;">062 822 66 47</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>

@@ -1242,3 +1242,237 @@ function charmelle_sanitize_checkbox( $value ) {
     return ( isset( $value ) && true === (bool) $value );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Wertgutschein im eigenen Shop
+// Der Gutschein wird nicht mehr über coboma verkauft, sondern als WooCommerce-
+// Produkt: konfiguriert wird er auf der Gutschein-Seite (Betrag, beschenkte
+// Person, Abholung oder Post), bezahlt wird im normalen Checkout.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Fest vorgegebene Beträge im Auswahlfeld. */
+function charmelle_voucher_amounts() {
+    return apply_filters( 'charmelle_voucher_amounts', array( 50, 100, 150, 200, 250, 300 ) );
+}
+
+/** Grenzen für den frei wählbaren Betrag. */
+function charmelle_voucher_min() { return (int) apply_filters( 'charmelle_voucher_min', 20 ); }
+function charmelle_voucher_max() { return (int) apply_filters( 'charmelle_voucher_max', 1000 ); }
+
+/** Die beiden Übergabearten. */
+function charmelle_voucher_delivery_options() {
+    return array(
+        'abholung' => 'Im Studio abholen',
+        'post'     => 'Per Post zusenden',
+    );
+}
+
+function charmelle_voucher_delivery_label( $key ) {
+    $options = charmelle_voucher_delivery_options();
+    return isset( $options[ $key ] ) ? $options[ $key ] : $options['abholung'];
+}
+
+/** URL der Gutschein-Seite. */
+function charmelle_voucher_page_url() {
+    return apply_filters( 'charmelle_voucher_page_url', home_url( '/gutscheine/' ) );
+}
+
+/** ID des Gutschein-Produkts, 0 wenn es (noch) keines gibt. */
+function charmelle_voucher_product_id() {
+    $id = (int) get_option( 'charmelle_voucher_product_id' );
+    if ( $id && 'product' === get_post_type( $id ) && 'publish' === get_post_status( $id ) ) {
+        return $id;
+    }
+    return 0;
+}
+
+/**
+ * Legt das Gutschein-Produkt einmalig an. Ein bereits vorhandenes Produkt mit
+ * derselben Artikelnummer wird übernommen, damit nichts doppelt entsteht.
+ */
+function charmelle_create_voucher_product() {
+    if ( ! function_exists( 'wc_get_product_id_by_sku' ) || charmelle_voucher_product_id() ) {
+        return;
+    }
+
+    $sku      = 'CHARMELLE-GUTSCHEIN';
+    $existing = wc_get_product_id_by_sku( $sku );
+    if ( $existing ) {
+        update_option( 'charmelle_voucher_product_id', (int) $existing );
+        return;
+    }
+
+    $product = new WC_Product_Simple();
+    $product->set_name( 'Charmelle Wertgutschein' );
+    $product->set_sku( $sku );
+    $product->set_regular_price( (string) min( charmelle_voucher_amounts() ) );
+    $product->set_virtual( true );
+    $product->set_sold_individually( false );
+    $product->set_catalog_visibility( 'visible' );
+    $product->set_short_description( 'Einlösbar für alle Behandlungen und Produkte, fünf Jahre gültig. Betrag und beschenkte Person wählen Sie auf der Gutschein-Seite.' );
+    $product->set_description( 'Ein Wertgutschein vom Charmelle Beauty Center in Aarau — das schönste Geschenk für besondere Menschen. Der Gutschein ist für unser gesamtes Angebot einlösbar, ab Kaufdatum fünf Jahre gültig und übertragbar. Sie können ihn im Studio abholen oder sich per Post zusenden lassen.' );
+    $product->set_status( 'publish' );
+
+    $id = $product->save();
+    if ( $id ) {
+        update_option( 'charmelle_voucher_product_id', (int) $id );
+    }
+}
+add_action( 'init', 'charmelle_create_voucher_product', 20 );
+
+/** Betrag aus dem Formular lesen und auf gültige Werte begrenzen. */
+function charmelle_voucher_amount_from_request() {
+    $selected = isset( $_POST['voucher_amount'] ) ? sanitize_text_field( wp_unslash( $_POST['voucher_amount'] ) ) : '';
+
+    if ( 'custom' === $selected ) {
+        $amount = isset( $_POST['voucher_custom_amount'] ) ? (int) $_POST['voucher_custom_amount'] : 0;
+    } else {
+        $amount = (int) $selected;
+        if ( ! in_array( $amount, charmelle_voucher_amounts(), true ) ) {
+            $amount = 0;
+        }
+    }
+
+    if ( $amount < charmelle_voucher_min() || $amount > charmelle_voucher_max() ) {
+        return 0;
+    }
+
+    return $amount;
+}
+
+/** Formular prüfen, bevor der Gutschein im Warenkorb landet. */
+add_filter( 'woocommerce_add_to_cart_validation', function( $passed, $product_id ) {
+    if ( (int) $product_id !== charmelle_voucher_product_id() ) {
+        return $passed;
+    }
+
+    if ( ! charmelle_voucher_amount_from_request() ) {
+        wc_add_notice( sprintf( 'Bitte wählen Sie einen Gutscheinbetrag zwischen CHF %d.— und CHF %d.—.', charmelle_voucher_min(), charmelle_voucher_max() ), 'error' );
+        return false;
+    }
+
+    $recipient = isset( $_POST['voucher_recipient'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['voucher_recipient'] ) ) ) : '';
+    if ( '' === $recipient ) {
+        wc_add_notice( 'Bitte geben Sie den Namen der beschenkten Person an.', 'error' );
+        return false;
+    }
+
+    return $passed;
+}, 10, 2 );
+
+/** Betrag, Name und Übergabeart am Warenkorb-Eintrag merken. */
+add_filter( 'woocommerce_add_cart_item_data', function( $cart_item_data, $product_id ) {
+    if ( (int) $product_id !== charmelle_voucher_product_id() ) {
+        return $cart_item_data;
+    }
+
+    $delivery = isset( $_POST['voucher_delivery'] ) ? sanitize_key( wp_unslash( $_POST['voucher_delivery'] ) ) : 'abholung';
+    if ( ! array_key_exists( $delivery, charmelle_voucher_delivery_options() ) ) {
+        $delivery = 'abholung';
+    }
+
+    $cart_item_data['charmelle_voucher'] = array(
+        'amount'    => charmelle_voucher_amount_from_request(),
+        'recipient' => isset( $_POST['voucher_recipient'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['voucher_recipient'] ) ) ) : '',
+        'delivery'  => $delivery,
+    );
+
+    // Eigener Schlüssel, damit zwei Gutscheine mit verschiedenen Beträgen
+    // nicht zu einer Position mit Menge 2 zusammenfallen.
+    $cart_item_data['charmelle_voucher_key'] = md5( wp_json_encode( $cart_item_data['charmelle_voucher'] ) . microtime() );
+
+    return $cart_item_data;
+}, 10, 2 );
+
+/** Der gewählte Betrag ist der Preis. */
+add_action( 'woocommerce_before_calculate_totals', function( $cart ) {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+        return;
+    }
+    if ( did_action( 'woocommerce_before_calculate_totals' ) >= 2 ) {
+        return;
+    }
+
+    foreach ( $cart->get_cart() as $cart_item ) {
+        if ( ! empty( $cart_item['charmelle_voucher']['amount'] ) ) {
+            $cart_item['data']->set_price( (float) $cart_item['charmelle_voucher']['amount'] );
+        }
+    }
+}, 20 );
+
+/** Angaben in Warenkorb und Kasse anzeigen. */
+add_filter( 'woocommerce_get_item_data', function( $item_data, $cart_item ) {
+    if ( empty( $cart_item['charmelle_voucher'] ) ) {
+        return $item_data;
+    }
+
+    $voucher = $cart_item['charmelle_voucher'];
+
+    if ( ! empty( $voucher['recipient'] ) ) {
+        $item_data[] = array( 'key' => 'Für', 'value' => wc_clean( $voucher['recipient'] ) );
+    }
+    $item_data[] = array( 'key' => 'Übergabe', 'value' => charmelle_voucher_delivery_label( $voucher['delivery'] ) );
+
+    return $item_data;
+}, 10, 2 );
+
+/** Angaben an der Bestellposition sichern (Bestellung, E-Mails, Backend). */
+add_action( 'woocommerce_checkout_create_order_line_item', function( $item, $cart_item_key, $values ) {
+    if ( empty( $values['charmelle_voucher'] ) ) {
+        return;
+    }
+
+    $voucher = $values['charmelle_voucher'];
+
+    $item->add_meta_data( 'Gutscheinwert', 'CHF ' . number_format_i18n( (float) $voucher['amount'] ) . '.—', true );
+    if ( ! empty( $voucher['recipient'] ) ) {
+        $item->add_meta_data( 'Für', $voucher['recipient'], true );
+    }
+    $item->add_meta_data( 'Übergabe', charmelle_voucher_delivery_label( $voucher['delivery'] ), true );
+}, 10, 3 );
+
+/** Nach dem Konfigurieren direkt zur Kasse. */
+add_filter( 'woocommerce_add_to_cart_redirect', function( $url ) {
+    if ( isset( $_REQUEST['add-to-cart'] ) && (int) $_REQUEST['add-to-cart'] === charmelle_voucher_product_id() && function_exists( 'wc_get_checkout_url' ) ) {
+        return wc_get_checkout_url();
+    }
+    return $url;
+} );
+
+/** Im Shop «ab CHF 50.—» statt eines festen Preises zeigen. */
+add_filter( 'woocommerce_get_price_html', function( $price, $product ) {
+    if ( $product->get_id() === charmelle_voucher_product_id() ) {
+        return 'ab ' . wc_price( min( charmelle_voucher_amounts() ) );
+    }
+    return $price;
+}, 10, 2 );
+
+/** Ohne eigenes Produktbild das Gutschein-Bild aus dem Theme verwenden. */
+add_filter( 'woocommerce_product_get_image', function( $image, $product ) {
+    if ( $product->get_id() === charmelle_voucher_product_id() && ! $product->get_image_id() ) {
+        $image = '<img src="' . esc_url( get_template_directory_uri() . '/images/gutschein.jpg' ) . '" alt="Charmelle Geschenkgutschein" width="768" height="1024" loading="lazy">';
+    }
+    return $image;
+}, 10, 2 );
+
+/** In der Shop-Übersicht auf die Gutschein-Seite verlinken statt in den Warenkorb. */
+add_filter( 'woocommerce_loop_add_to_cart_link', function( $html, $product ) {
+    if ( $product->get_id() === charmelle_voucher_product_id() ) {
+        $html = '<a href="' . esc_url( charmelle_voucher_page_url() ) . '" class="button">Gutschein wählen</a>';
+    }
+    return $html;
+}, 10, 2 );
+
+/** Auf der Produktseite ebenfalls auf die Gutschein-Seite führen. */
+add_action( 'woocommerce_single_product_summary', function() {
+    global $product;
+    if ( ! $product || $product->get_id() !== charmelle_voucher_product_id() ) {
+        return;
+    }
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+    add_action( 'woocommerce_single_product_summary', 'charmelle_voucher_single_cta', 30 );
+}, 25 );
+
+function charmelle_voucher_single_cta() {
+    echo '<a href="' . esc_url( charmelle_voucher_page_url() ) . '" class="btn btn--primary btn--large">Gutschein zusammenstellen</a>';
+    echo '<p style="font-size:0.85rem;color:var(--text-light);margin-top:12px;">Betrag und Name der beschenkten Person wählen Sie im nächsten Schritt.</p>';
+}
