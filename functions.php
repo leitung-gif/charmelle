@@ -571,7 +571,7 @@ function charmelle_get_page_seo() {
     } elseif ( is_page( 'team' ) ) {
         $seo = array(
             'title'       => 'Team — Charmelle Beauty Center Aarau',
-            'description' => 'Lernen Sie das Charmelle-Team kennen: Aurora, Oriana, Giulia, Elif & Stella — erfahrene Kosmetikerinnen EFZ in Aarau. Wir sprechen Deutsch, Italienisch & Englisch.',
+            'description' => 'Lernen Sie das Charmelle-Team kennen: Aurora, Oriana, Giulia, Maja, Elif & Stella — erfahrene Kosmetikerinnen EFZ in Aarau. Wir sprechen Deutsch, Italienisch & Englisch.',
             'keywords'    => 'Kosmetikerin Aarau, Beauty Team Aarau, Kosmetikerin EFZ, Berufsbildnerin, Visagistin, Kosmetikstudio Team Aarau',
             'url'         => $base . '/team/',
         );

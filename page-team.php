@@ -20,6 +20,8 @@ $t = get_template_directory_uri();
     .team-detail-info .team-qualifications-list li::before{content:'✦';color:var(--accent-gold);font-size:0.7rem;flex-shrink:0}
     .team-detail-info .team-languages{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
     .team-detail-info .team-bio{font-size:0.95rem;color:var(--text-light);line-height:1.7;margin-bottom:20px}
+    .team-photo-placeholder{display:flex;align-items:center;justify-content:center;background:var(--accent-gold-light)}
+    .team-photo-placeholder span{font-family:var(--font-heading);font-size:clamp(3rem,6vw,4.5rem);color:var(--accent-gold);letter-spacing:0.08em}
     .apprentice-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-gold-light);color:var(--accent-gold);padding:6px 16px;border-radius:20px;font-size:0.82rem;font-weight:400;margin-bottom:16px}
     .studio-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .studio-gallery .arch-img{aspect-ratio:3/4}
@@ -89,6 +91,25 @@ $t = get_template_directory_uri();
           <ul class="team-qualifications-list"><li>Kosmetikerin EFZ</li><li>Sachkundenachweis V-Nissg</li></ul>
           <p class="team-bio">Giulia ist Expertin für Gesichtspflegen, Hydra Facial, Microneedling, LPG Endermologie und Wimpernextensions. Sie beherrscht zudem Wimpernlifting für einen perfekten Blick.</p>
           <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Giulia buchen</a>
+        </div>
+      </div>
+
+      <!-- MAJA -->
+      <?php $maja_foto = file_exists( get_template_directory() . '/images/maja.jpg' ); ?>
+      <div class="team-detail-card reveal">
+        <div class="team-detail-image"><div class="arch-img<?php echo $maja_foto ? '' : ' team-photo-placeholder'; ?>">
+          <?php if ( $maja_foto ) : ?>
+          <img src="<?php echo esc_url($t.'/images/maja.jpg'); ?>" alt="Maja Reichleser - Gesichtsbehandlungen und Hightech-Kosmetik bei Charmelle Beauty Center Aarau" width="1030" height="704" loading="lazy">
+          <?php else : ?>
+          <span aria-hidden="true">MR</span>
+          <?php endif; ?>
+        </div></div>
+        <div class="team-detail-info">
+          <h3>Maja Reichleser</h3>
+          <span class="team-role">Gesichtsbehandlungen · Hightech-Kosmetik · LPG</span>
+          <ul class="team-qualifications-list"><li>Mikrodermabrasion</li><li>Aquabrasion</li><li>Hydra Facial</li><li>Needling</li><li>Klassische Gesichtspflege</li><li>Aknebehandlungen</li><li>LPG Endermologie</li></ul>
+          <p class="team-bio">Maja ist bei Charmelle für die Gesichtsbehandlungen mit Hightech-Geräten da, von der Mikrodermabrasion bis zum Hydra Facial. Dazu kommen klassische Gesichtspflege, Aknebehandlungen und LPG Endermologie.</p>
+          <a href="https://charmelle.coboma.ch/booking" class="btn btn--primary btn--small" target="_blank" rel="noopener">Termin bei Maja buchen</a>
         </div>
       </div>
 
