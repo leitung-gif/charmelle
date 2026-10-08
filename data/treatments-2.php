@@ -8,8 +8,8 @@ return [
     ['Pedicure für Herren',89,'60 Min.','Klassische Fusspflege speziell für Männer. Hornhautbehandlung, Nagelpflege und Fussmassage für gepflegte, gesunde Füsse.',''],
   ]],
   ['Sauerstoff Plasma Farblichtherapie','sauerstoff-plasma','Dermio Care Plus',[
-    ['Sauerstoff Plasma Behandlung',50,'30 Min.','Innovative Sauerstoff-Plasma-Behandlung mit Dermio Care Plus Technologie. Verbessert die Hautdurchblutung, fördert die Zellregeneration und verleiht der Haut einen frischen, gesunden Glow.',''],
-    ['Sauerstoff Plasma unreine Haut',90,'45 Min.','Gezielte Sauerstoff-Plasma-Behandlung speziell für unreine Haut. Die antibakterielle Wirkung des Plasmas bekämpft Entzündungen, klärt das Hautbild und beschleunigt die Heilung von Unreinheiten.',''],
+    ['Sauerstoff Plasma Behandlung',59,'45 Min.','Innovative Sauerstoff-Plasma-Behandlung mit Dermio Care Plus Technologie. Verbessert die Hautdurchblutung, fördert die Zellregeneration und verleiht der Haut einen frischen, gesunden Glow.',''],
+    ['Sauerstoff Plasma unreine Haut',90,'60 Min.','Gezielte Sauerstoff-Plasma-Behandlung speziell für unreine Haut. Die antibakterielle Wirkung des Plasmas bekämpft Entzündungen, klärt das Hautbild und beschleunigt die Heilung von Unreinheiten.',''],
   ]],
   ['Wimpern und Brauen','wimpern-brauen','Für einen ausdrucksstarken Blick',[
     ['Korean Wimpernlifting mit Wimpernfärben',119,'60 Min.','Die koreanische Lifting-Technik für natürlich geschwungene Wimpern mit zusätzlicher Färbung. Der Liftingeffekt wird verstärkt – Mascara und Wimpernzange werden überflüssig. Hält 6–8 Wochen.',''],
@@ -31,19 +31,15 @@ return [
   ['Manicure','manicure','Gepflegte Hände – Ihr Aushängeschild',[
     ['Klassische Manicure (mit/ohne Pflegelack)',69,'60 Min.','Professionelle Handpflege für schöne, gepflegte Hände. Nagelpflege, Nagelhautbehandlung und Hand-Massage mit optional pflegendem Lack für ein gepflegtes Finish.',''],
     ['Klassische Manicure mit Farblack',89,'75 Min.','Umfassende Handpflege mit professioneller Nagelpflege, Handmassage und Ihrem Wunsch-Farblack für schöne, farbenfrohe Nägel die begeistern.',''],
-    ['Quick Manicure mit Lack',49,'45 Min.','Schnelle Nagelpflege für zwischendurch: Kurz feilen, formen und mit Ihrem Wunschlack lackieren. Ideal wenn es schnell gehen muss.',''],
     ['Shellac Manicure (inkl. Entfernen)',99,'90 Min.','Langanhaltende Shellac-Lackierung mit bis zu 3 Wochen Haltbarkeit. Inklusive professioneller Entfernung des alten Shellacs, Nagelpflege und Handmassage.',''],
-    ['Quick Manicure mit Shellac (inkl. Entfernen)',79,'60 Min.','Schnelle Korrektur der Nagelform mit langanhaltender Shellac-Lackierung. Inkl. Entfernung des alten Shellacs – sofort trocken und sofort belastbar.',''],
     ['Shellac nur entfernen (Hände)',0,'30 Min.','Kostenlose Shellac-Entfernung – nur möglich, wenn der Shellac ursprünglich bei Charmelle aufgetragen wurde. Schonend und ohne Beschädigung des Naturnagels.',''],
     ['Paraffinbad inkl. Handpeeling',35,'30 Min.','Wohltuendes Paraffinbad mit vorherigem Handpeeling für samtweiche, geschmeidige Hände. Die Wärme fördert die Durchblutung und pflegt die Haut intensiv.','addon'],
   ]],
   ['Pedicure','pedicure','Schöne Füsse – Schritt für Schritt',[
     ['Pedicure Classic',89,'60 Min.','Klassische, professionelle Fusspflege für gepflegte Füsse. Hornhautbehandlung, Nagelpflege, Fussmassage und optional Pflegelack für ein rundum schönes Ergebnis.',''],
     ['Klassische Pedicure mit Lack',99,'90 Min.','Umfassende Fusspflege mit Hornhautentfernung, Nagelpflege, Fussmassage und Ihrem Wunschlack. Bitte offene Schuhe mitbringen.',''],
-    ['Quick Pedicure mit Lack',59,'60 Min.','Schnelle Fusspflege: Nägel feilen, formen und mit Ihrem Wunschlack lackieren. Perfekt für eine gepflegte Optik in kurzer Zeit.',''],
     ['Pedicure mit Shellac Lackierung',119,'90 Min.','Professionelle Fusspflege mit langanhaltender Shellac-Lackierung. Sofort wieder in die Schuhe schlüpfen – der Lack hält bis zu 3 Wochen.','lehrjahr'],
     ['Pedicure mit Shellac Auffüllen (Fresh-up)',99,'75 Min.','Shellac-Auffrischung für Ihre Füsse: Herausgewachsenen Shellac-Lack korrigieren und auffrischen für ein stets gepflegtes Erscheinungsbild.',''],
-    ['Quick Pedicure mit Shellac',89,'60 Min.','Schnelle Fusspflege mit langanhaltender Shellac-Lackierung. Nägel feilen, formen und mit Shellac lackieren – sofort trocken und belastbar.',''],
     ['Pedicure mit Shellac ohne Massage',110,'90 Min.','Umfassende Shellac-Pedicure mit Hornhautbehandlung und Nagelpflege – ohne Massage für alle, die es eilig haben.',''],
     ['Shellac nur entfernen (Füsse)',0,'30 Min.','Kostenlose Shellac-Entfernung – nur möglich, wenn der Shellac ursprünglich bei Charmelle aufgetragen wurde. Schonend und ohne Beschädigung des Naturnagels.',''],
     ['Fusspeeling zu Pedicure',10,'5 Min.','Zusätzliches erfrischendes Fusspeeling als Add-on zu Ihrer Pedicure. Entfernt abgestorbene Hautzellen für seidig weiche Füsse.','addon'],

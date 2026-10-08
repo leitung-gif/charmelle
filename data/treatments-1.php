@@ -16,11 +16,11 @@ return [
     ['Gesichtspflege Piccolo',89,'75 Min.','Geniessen und entspannen zum Spezialpreis: Unsere Piccolo Behandlung bietet eine kleine, feine Auszeit für zwischendurch. Die Behandlung wird von unseren Lernenden mit viel Sorgfalt durchgeführt – ideal für den Einstieg in die professionelle Gesichtspflege.','lernende'],
     ['Starter Best Ager',115,'105 Min.','Speziell abgestimmte Gesichtspflege für reife Haut mit straffenden Wirkstoffen und Anti-Aging-Massage. Wird von unseren Lernenden sorgfältig durchgeführt – hochwertige Pflege zum attraktiven Spezialpreis.','lernende'],
 
-    ['NEU: Fire &amp; Ice Gesichtsbehandlung',125,'60 Min.','Neu im Sortiment mit iS Clinical Produkten. Diese erfrischende und intensive Behandlung kombiniert wärmende und kühlende Wirkstoffe für sofort sichtbare Ergebnisse – straffere, strahlendere Haut in nur einer Sitzung.','neu'],
+    ['Fire &amp; Ice Gesichtsbehandlung',125,'60 Min.','Mit Produkten von iS Clinical. Diese erfrischende und intensive Behandlung kombiniert wärmende und kühlende Wirkstoffe für sofort sichtbare Ergebnisse – straffere, strahlendere Haut in nur einer Sitzung.','neu'],
   ]],
   ['Behandlungen der unreinen Haut','unreine-haut','Gezielte Lösungen für ein reines Hautbild',[
     ['Behandlung bei unreiner Haut',145,'90 Min.','Diese professionelle Gesichtspflege eignet sich für alle, die sich in ihrer Haut wieder wohl fühlen möchten – bei unreiner Haut, Spätakne oder Kratzakne. Gezielte Ausreinigung, beruhigende Wirkstoffe und individuelle Pflegeberatung.',''],
-    ['Jugendliche unreine Haut',120,'90 Min.','Professionelle Gesichtspflege speziell für Jugendliche und Studenten bis 25 Jahre. Sanfte Ausreinigung, klärende Wirkstoffe und Tipps für die tägliche Hautpflege zu Hause.',''],
+    ['Jugendliche unreine Haut (bis 21 J.)',120,'90 Min.','Professionelle Gesichtspflege speziell für Jugendliche bis 21 Jahre. Sanfte Ausreinigung, klärende Wirkstoffe und Tipps für die tägliche Hautpflege zu Hause.',''],
     ['Teenie-Akne Behandlung',99,'75 Min.','Gezielte Akne-Behandlung für Teenager bis 18 Jahre. Gründliche Reinigung, professionelle Ausreinigung und beruhigende Pflege für ein klareres, gesünderes Hautbild.',''],
     ['Quick Akne Behandlung',75,'45 Min.','Schnelle und effektive Akne-Ausreinigung für zwischendurch. Beinhaltet Reinigung, Enzympeeling, professionelle Ausreinigung und Abschlusspflege – ideal bei akuten Unreinheiten.',''],
   ]],
@@ -36,7 +36,7 @@ return [
     ['Hydra Facial – Dermabuilder',320,'90 Min.','Premium HydraFacial mit dem exklusiven Dermabuilder-Peptid-Komplex. Glättet feine Linien und Falten und sorgt für eine strahlend schöne, sichtlich verjüngte Haut an Gesicht und Hals.',''],
     ['Hydra Facial – Dr. Nassif Ampulle',360,'90 Min.','Premium HydraFacial mit der exklusiven Dr. Nassif Ampulle. Intensive Hauterneuerung mit einem Komplex aus Glykol-, Salicyl- und Milchsäure für ein ebenmässiges, klares Hautbild.',''],
     ['Hydra Facial – JLo Booster',370,'90 Min.','Die exklusivste Hydra Facial Variante mit dem JLo Beauty Booster. Angereichert mit Hyaluronsäure und Niacinamid für maximalen Glow – die Behandlung der Stars, jetzt bei Charmelle in Aarau.',''],
-    ['Hydra Facial Pur Jugendliche/Studenten (bis 25 J.)',165,'60 Min.','Das original HydraFacial Treatment zum Spezialpreis für Jugendliche und Studenten bis 25 Jahre. Professionelle Hautpflege von Anfang an – für ein strahlendes, reines Hautbild.',''],
+    ['Hydra Facial Pur Jugendliche (bis 21 J.) / Studenten (bis 25 J.)',165,'60 Min.','Das original HydraFacial Treatment zum Spezialpreis für Jugendliche bis 21 Jahre und Studenten bis 25 Jahre. Professionelle Hautpflege von Anfang an – für ein strahlendes, reines Hautbild.',''],
     ['Hydra Facial Pur Body',180,'60 Min.','HydraFacial Behandlung für den gesamten Körper – Rücken, Gesäss, Bauch und mehr. Intensive Reinigung und Pflege für strahlende, glatte Haut am ganzen Body.',''],
     ['Keravive Hydrafacial Kopfhautbehandlung 1/2 Kopf',320,'60 Min.','Innovative HydraFacial Keravive Kopfhautbehandlung für gesundes, kräftiges Haar. Reinigt die Haarfollikel, nährt die Kopfhaut und fördert das natürliche Haarwachstum.',''],
     ['Keravive Hydrafacial Kopfhautbehandlung ganzer Kopf',420,'90 Min.','Komplette HydraFacial Keravive Behandlung der gesamten Kopfhaut. Maximale Reinigung und Nährstoffversorgung für optimale Ergebnisse – gesundes Haar beginnt an der Wurzel.',''],
