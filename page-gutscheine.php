@@ -136,7 +136,7 @@ $t = get_template_directory_uri();
                 </label>
                 <?php endforeach; ?>
               </div>
-              <p class="voucher-delivery-note">Beide Varianten sind kostenlos. Beim Versand geht der Gutschein an die Adresse aus Ihrer Bestellung.</p>
+              <p class="voucher-delivery-note"><?php echo esc_html( charmelle_gutschein_porto_hinweis() ); ?></p>
             </div>
 
             <div class="price-display">

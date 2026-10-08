@@ -1479,3 +1479,87 @@ function charmelle_voucher_single_cta() {
     echo '<a href="' . esc_url( charmelle_voucher_page_url() ) . '" class="btn btn--primary btn--large">Gutschein zusammenstellen</a>';
     echo '<p style="font-size:0.85rem;color:var(--text-light);margin-top:12px;">Betrag und Name der beschenkten Person wählen Sie im nächsten Schritt.</p>';
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Versand (seit 08.10.2026, Wunsch Aurora vom 06.10.2026)
+// Produkte: portofrei ab CHF 100 Warenwert inkl. MWST, darunter die
+// Versandpauschale aus WooCommerce. Gutscheine per Post: portofrei ab CHF 50
+// Gutscheinwert, darunter eine Porto-Gebühr. Reist der Gutschein mit Produkten
+// im selben Paket, kostet er kein eigenes Porto.
+// Die Grenze von CHF 100 gilt aus dem Code, auch wenn unter WooCommerce →
+// Versand bei «Kostenlose Lieferung» ein tieferer Mindestbestellwert steht.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function charmelle_portofrei_ab() { return (float) apply_filters( 'charmelle_portofrei_ab', 100 ); }
+function charmelle_gutschein_portofrei_ab() { return (float) apply_filters( 'charmelle_gutschein_portofrei_ab', 50 ); }
+function charmelle_gutschein_porto() { return (float) apply_filters( 'charmelle_gutschein_porto', 9 ); }
+
+/** Warenwert eines Versandpakets inkl. MWST, nach Rabatten. */
+function charmelle_paket_warenwert( $package ) {
+    $summe = 0.0;
+    if ( empty( $package['contents'] ) || ! is_array( $package['contents'] ) ) {
+        return $summe;
+    }
+    foreach ( $package['contents'] as $item ) {
+        $summe += (float) ( $item['line_total'] ?? 0 ) + (float) ( $item['line_tax'] ?? 0 );
+    }
+    return $summe;
+}
+
+/** Kostenlose Lieferung erst ab CHF 100 Warenwert. */
+add_filter( 'woocommerce_shipping_free_shipping_is_available', function( $is_available, $package ) {
+    if ( $is_available && charmelle_paket_warenwert( $package ) < charmelle_portofrei_ab() ) {
+        return false;
+    }
+    return $is_available;
+}, 10, 2 );
+
+/** Ist die Lieferung gratis, die Pauschale gar nicht erst anbieten. */
+add_filter( 'woocommerce_package_rates', function( $rates ) {
+    $hat_gratis = false;
+    foreach ( $rates as $rate ) {
+        if ( 'free_shipping' === $rate->get_method_id() ) {
+            $hat_gratis = true;
+            break;
+        }
+    }
+    if ( ! $hat_gratis ) {
+        return $rates;
+    }
+    foreach ( $rates as $id => $rate ) {
+        if ( 'flat_rate' === $rate->get_method_id() ) {
+            unset( $rates[ $id ] );
+        }
+    }
+    return $rates;
+}, 20 );
+
+/** Porto für Gutscheine per Post unter CHF 50, sofern kein Paket mitgeht. */
+add_action( 'woocommerce_cart_calculate_fees', function( $cart ) {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+        return;
+    }
+
+    $post_wert = 0.0;
+    foreach ( $cart->get_cart() as $cart_item ) {
+        if ( ! empty( $cart_item['charmelle_voucher'] ) && 'post' === ( $cart_item['charmelle_voucher']['delivery'] ?? '' ) ) {
+            $post_wert += (float) $cart_item['charmelle_voucher']['amount'] * (int) $cart_item['quantity'];
+        }
+    }
+
+    if ( $post_wert <= 0 || $post_wert >= charmelle_gutschein_portofrei_ab() || $cart->needs_shipping() ) {
+        return;
+    }
+
+    // Ohne MWST-Aufschlag, damit der Betrag im Warenkorb genau dem Porto entspricht.
+    $cart->add_fee( 'Porto Gutschein', charmelle_gutschein_porto(), false );
+} );
+
+/** Hinweis unter der Übergabe-Auswahl auf der Gutschein-Seite. */
+function charmelle_gutschein_porto_hinweis() {
+    return sprintf(
+        'Abholen im Studio ist kostenlos. Per Post ist der Versand ab CHF %1$s.— Gutscheinwert gratis, darunter kostet er CHF %2$s.—. Beim Versand geht der Gutschein an die Adresse aus Ihrer Bestellung.',
+        number_format( charmelle_gutschein_portofrei_ab(), 0, '.', "'" ),
+        number_format( charmelle_gutschein_porto(), 0, '.', "'" )
+    );
+}
