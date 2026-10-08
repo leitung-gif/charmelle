@@ -7,11 +7,11 @@ get_header();
 $t = get_template_directory_uri();
 
 // Load all treatment data
-$all_categories = array_merge(
+$all_categories = charmelle_behandlungen_filtern( array_merge(
   include get_template_directory() . '/data/treatments-1.php',
   include get_template_directory() . '/data/treatments-2.php',
   include get_template_directory() . '/data/treatments-3.php'
-);
+) );
 ?>
 
 <style>
@@ -56,7 +56,7 @@ $all_categories = array_merge(
     <div class="container">
       <span class="subtitle">Charmelle Beauty Center Aarau</span>
       <h1>Unsere <em class="text-italic">Behandlungen</em></h1>
-      <p>Über 150 professionelle Behandlungen — von medizinischer Hightech-Kosmetik über klassische Verwöhnpflege bis zu Permanent Make-up. Entdecken Sie unser umfassendes Angebot.</p>
+      <p>Über 100 professionelle Behandlungen — von medizinischer Hightech-Kosmetik über klassische Verwöhnpflege bis zu <?php echo charmelle_pmu_aktiv() ? 'Permanent Make-up' : 'ausdrucksstarken Wimpern und Brauen'; ?>. Entdecken Sie unser umfassendes Angebot.</p>
     </div>
   </section>
 

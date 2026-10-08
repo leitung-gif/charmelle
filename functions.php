@@ -305,7 +305,7 @@ function charmelle_structured_data() {
                     'url'           => $base . '/',
                     'telephone'     => '+41628226647',
                     'email'         => 'info@charmelle.ch',
-                    'description'   => 'Premium Kosmetikstudio in Aarau. Seit über 30 Jahren bieten wir Gesichtspflege, Hydra Facial, Microneedling, Anti-Aging-Behandlungen, LPG Endermologie, Wimpernlifting, Permanent Make-Up und medizinische Kosmetik im Kanton Aargau.',
+                    'description'   => 'Premium Kosmetikstudio in Aarau. Seit über 30 Jahren bieten wir Gesichtspflege, Hydra Facial, Microneedling, Anti-Aging-Behandlungen, LPG Endermologie, Wimpernlifting' . ( charmelle_pmu_aktiv() ? ', Permanent Make-Up' : '' ) . ' und medizinische Kosmetik im Kanton Aargau.',
                     'address'       => array(
                         '@type'           => 'PostalAddress',
                         'streetAddress'   => 'Girixweg 7',
@@ -355,13 +355,14 @@ function charmelle_structured_data() {
                     'hasOfferCatalog' => array(
                         '@type' => 'OfferCatalog',
                         'name'  => 'Kosmetik-Behandlungen',
-                        'itemListElement' => array(
+                        'itemListElement' => array_merge( array(
                             array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Hydra Facial Syndeo', 'description' => 'Die Hollywood-Behandlung fuer strahlende Haut' ) ),
                             array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Microneedling mit Hyaluron', 'description' => 'Medical-Kosmetik zur Hauterneuerung und Straffung' ) ),
                             array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'LPG Endermologie', 'description' => 'Patentierte Technologie fuer Straffung und Body-Forming' ) ),
                             array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Wimpernlifting', 'description' => 'Natuerlicher Wow-Effekt fuer Ihre Wimpern' ) ),
+                        ), charmelle_pmu_aktiv() ? array(
                             array( '@type' => 'Offer', 'itemOffered' => array( '@type' => 'Service', 'name' => 'Permanent Make-Up', 'description' => 'Augenbrauen, Lippen und Lidstriche dauerhaft betont' ) ),
-                        ),
+                        ) : array() ),
                     ),
                 ),
                 array(
@@ -436,7 +437,7 @@ function charmelle_structured_data() {
             '@type'      => 'FAQPage',
             'mainEntity' => array(
                 array( '@type' => 'Question', 'name' => 'Wie oft sollte man eine Gesichtsbehandlung machen?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Wir empfehlen eine professionelle Gesichtsbehandlung alle 4-6 Wochen. So kann die Haut optimal regenerieren und die Ergebnisse werden nachhaltig verbessert. Bei speziellen Behandlungen wie Microneedling oder Hydra Facial besprechen wir den idealen Rhythmus individuell.' ) ),
-                array( '@type' => 'Question', 'name' => 'Was kostet eine Behandlung bei Charmelle?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Unsere Behandlungen starten ab CHF 15 fuer Haarentfernung mit Wachs. Eine klassische Gesichtspflege kostet ab CHF 155, Hydra Facial ab CHF 165, Microneedling ab CHF 250 und Permanent Make-Up ab CHF 350. Die genauen Preise finden Sie auf unserer Behandlungsseite.' ) ),
+                array( '@type' => 'Question', 'name' => 'Was kostet eine Behandlung bei Charmelle?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Unsere Behandlungen starten ab CHF 15 fuer Haarentfernung mit Wachs. Eine klassische Gesichtspflege kostet ab CHF 155, Hydra Facial ab CHF 165' . ( charmelle_pmu_aktiv() ? ', Microneedling ab CHF 250 und Permanent Make-Up ab CHF 350.' : ' und Microneedling ab CHF 250.' ) . ' Die genauen Preise finden Sie auf unserer Behandlungsseite.' ) ),
                 array( '@type' => 'Question', 'name' => 'Brauche ich einen Termin?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Ja, wir arbeiten ausschliesslich mit Terminen. So koennen wir uns voll und ganz auf Sie konzentrieren. Buchen Sie bequem online, per Telefon (062 822 66 47) oder WhatsApp (079 828 66 47).' ) ),
                 array( '@type' => 'Question', 'name' => 'Welche Zahlungsmittel akzeptiert Charmelle?', 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => 'Wir akzeptieren Bargeld, EC-Karte, Kreditkarte (Visa, Mastercard) und TWINT.' ) ),
             ),
@@ -551,8 +552,8 @@ function charmelle_get_page_seo() {
     // Default fallback
     $seo = array(
         'title'       => 'Charmelle Beauty Center Aarau — Kosmetikstudio',
-        'description' => 'Charmelle Beauty Center in Aarau — Ihr Kosmetikstudio für Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting, Permanent Make-Up & LPG Endermologie. Erfahrene Kosmetikerinnen EFZ. Seit über 30 Jahren.',
-        'keywords'    => 'Kosmetikstudio Aarau, Beauty Center Aarau, Hydra Facial Aarau, Microneedling Aarau, Anti-Aging Aarau, Gesichtspflege Aarau, Wimpernlifting Aarau, Permanent Make-Up Aarau, Kosmetikerin EFZ Aarau, LPG Endermologie Aarau',
+        'description' => 'Charmelle Beauty Center in Aarau — Ihr Kosmetikstudio für Hydra Facial, Microneedling, Anti-Aging, Wimpernlifting' . ( charmelle_pmu_aktiv() ? ', Permanent Make-Up' : '' ) . ' & LPG Endermologie. Erfahrene Kosmetikerinnen EFZ. Seit über 30 Jahren.',
+        'keywords'    => 'Kosmetikstudio Aarau, Beauty Center Aarau, Hydra Facial Aarau, Microneedling Aarau, Anti-Aging Aarau, Gesichtspflege Aarau, Wimpernlifting Aarau, ' . ( charmelle_pmu_aktiv() ? 'Permanent Make-Up Aarau, ' : '' ) . 'Kosmetikerin EFZ Aarau, LPG Endermologie Aarau',
         'url'         => $base . '/',
     );
 
@@ -564,8 +565,8 @@ function charmelle_get_page_seo() {
     if ( is_page( 'behandlungen' ) ) {
         $seo = array(
             'title'       => 'Behandlungen — Charmelle Beauty Center Aarau',
-            'description' => 'Alle Behandlungen im Charmelle Beauty Center Aarau: Hydra Facial Syndeo, Microneedling, LPG Endermologie, Dermabrasion, Wimpernlifting, Permanent Make-Up, Gesichtspflege, Anti-Aging und medizinische Kosmetik.',
-            'keywords'    => 'Hydra Facial Aarau, Microneedling Aarau, LPG Endermologie, Gesichtspflege Aarau, Wimpernlifting, Permanent Make-Up Aarau, Anti-Aging Behandlung, Kosmetik Behandlungen Aargau',
+            'description' => 'Alle Behandlungen im Charmelle Beauty Center Aarau: Hydra Facial Syndeo, Microneedling, LPG Endermologie, Dermabrasion, Wimpernlifting, ' . ( charmelle_pmu_aktiv() ? 'Permanent Make-Up, ' : '' ) . 'Gesichtspflege, Anti-Aging und medizinische Kosmetik.',
+            'keywords'    => 'Hydra Facial Aarau, Microneedling Aarau, LPG Endermologie, Gesichtspflege Aarau, Wimpernlifting, ' . ( charmelle_pmu_aktiv() ? 'Permanent Make-Up Aarau, ' : '' ) . 'Anti-Aging Behandlung, Kosmetik Behandlungen Aargau',
             'url'         => $base . '/behandlungen/',
         );
     } elseif ( is_page( 'team' ) ) {
@@ -1563,3 +1564,63 @@ function charmelle_gutschein_porto_hinweis() {
         number_format( charmelle_gutschein_porto(), 0, '.', "'" )
     );
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Angebot: Permanent Make-up und Microblading
+// Seit 08.10.2026 provisorisch ausgeblendet (Wunsch Aurora vom 06.10.2026).
+// Wieder einblenden: Design → Customizer → «Angebot» → Häkchen setzen →
+// Veröffentlichen. Dann sind Behandlungen, Beratungen, Startseiten-Karten,
+// Footer-Link und die SEO-Texte wieder da, ohne neuen Deploy.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function charmelle_pmu_aktiv() {
+    return (bool) get_theme_mod( 'charmelle_pmu_aktiv', false );
+}
+
+/** Behandlungsliste ohne PMU, Microblading und die beiden Beratungen dazu. */
+function charmelle_behandlungen_filtern( $kategorien ) {
+    if ( charmelle_pmu_aktiv() ) {
+        return $kategorien;
+    }
+
+    $ohne_kategorien = array( 'permanent-makeup', 'microblading' );
+    $ohne_beratungen = array( 'Beratung Permanent Make-up', 'Beratung Phibrows / Microblading' );
+    $ergebnis        = array();
+
+    foreach ( $kategorien as $kategorie ) {
+        if ( in_array( $kategorie[1], $ohne_kategorien, true ) ) {
+            continue;
+        }
+        $behandlungen = array();
+        foreach ( $kategorie[3] as $behandlung ) {
+            if ( ! in_array( $behandlung[0], $ohne_beratungen, true ) ) {
+                $behandlungen[] = $behandlung;
+            }
+        }
+        $kategorie[3] = $behandlungen;
+        $ergebnis[]   = $kategorie;
+    }
+
+    return $ergebnis;
+}
+
+function charmelle_angebot_customizer( $wp_customize ) {
+    $wp_customize->add_section( 'charmelle_angebot', array(
+        'title'       => 'Angebot',
+        'priority'    => 31,
+        'description' => 'Behandlungen vorübergehend aus der Website nehmen und wieder einblenden.',
+    ) );
+
+    $wp_customize->add_setting( 'charmelle_pmu_aktiv', array(
+        'default'           => false,
+        'sanitize_callback' => 'charmelle_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'charmelle_pmu_aktiv', array(
+        'label'       => 'Permanent Make-up und Microblading anzeigen',
+        'description' => 'Ohne Häkchen fehlen beide Kategorien samt Beratung auf der Behandlungsseite, auf der Startseite und im Footer.',
+        'section'     => 'charmelle_angebot',
+        'type'        => 'checkbox',
+    ) );
+}
+add_action( 'customize_register', 'charmelle_angebot_customizer' );

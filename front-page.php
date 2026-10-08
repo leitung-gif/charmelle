@@ -166,7 +166,7 @@ $t = get_template_directory_uri();
         Das Charmelle Beauty Center am Girixweg 7 in Aarau ist seit über 30 Jahren die erste Adresse für professionelle Kosmetik und Hautpflege im Kanton Aargau. Ob Sie aus Aarau, Buchs, Suhr, Rohr, Küttigen, Erlinsbach, Gränichen, Oberentfelden, Unterentfelden, Schönenwerd oder Niedergösgen kommen - bei uns erwartet Sie ein Team von diplomierten Kosmetikerinnen EFZ, die sich mit Leidenschaft Ihrer Schönheit und Ihrem Wohlbefinden widmen.
       </p>
       <p style="font-size: 1.05rem; color: var(--text-light);">
-        Unser umfassendes Angebot reicht von medizinischer Hightech-Kosmetik wie <strong>Hydra Facial Syndeo</strong>, <strong>Microneedling mit Hyaluron</strong> und <strong>LPG Endermologie</strong> über klassische Gesichtspflege und Anti-Aging-Behandlungen bis hin zu <strong>Korean/Wimpernlifting</strong>, <strong>Permanent Make-Up</strong>, <strong>Microblading</strong>, <strong>Stosswellenbehandlung</strong> und professioneller Hand- und Fusspflege. Wir arbeiten ausschliesslich mit hochwertigen Produkten von <strong>Med Beauty Swiss</strong>, <strong>Team Dr. Joseph</strong>, <strong>iS Clinical</strong> und <strong>Thalgo</strong> - Marken, die für Innovation, Wirksamkeit und Nachhaltigkeit stehen.
+        Unser umfassendes Angebot reicht von medizinischer Hightech-Kosmetik wie <strong>Hydra Facial Syndeo</strong>, <strong>Microneedling mit Hyaluron</strong> und <strong>LPG Endermologie</strong> über klassische Gesichtspflege und Anti-Aging-Behandlungen bis hin zu <strong>Korean/Wimpernlifting</strong>, <?php if ( charmelle_pmu_aktiv() ) : ?><strong>Permanent Make-Up</strong>, <strong>Microblading</strong>, <?php endif; ?><strong>Stosswellenbehandlung</strong> und professioneller Hand- und Fusspflege. Wir arbeiten ausschliesslich mit hochwertigen Produkten von <strong>Med Beauty Swiss</strong>, <strong>Team Dr. Joseph</strong>, <strong>iS Clinical</strong> und <strong>Thalgo</strong> - Marken, die für Innovation, Wirksamkeit und Nachhaltigkeit stehen.
       </p>
     </div>
   </section>
@@ -200,11 +200,11 @@ $t = get_template_directory_uri();
           </div>
         </a>
         <a href="<?php echo esc_url( home_url( '/behandlungen/#wimpern-brauen' ) ); ?>" class="category-card reveal reveal-delay-3">
-          <img src="<?php echo esc_url( $t . '/images/studio-real-4.jpg' ); ?>" alt="Wimpernlifting, Permanent Make-Up, Nägel im Kosmetikstudio Aarau" width="529" height="705" loading="lazy">
+          <img src="<?php echo esc_url( $t . '/images/studio-real-4.jpg' ); ?>" alt="Wimpernlifting, Brauen und Nägel im Kosmetikstudio Aarau" width="529" height="705" loading="lazy">
           <div class="category-card-overlay">
             <span class="card-arrow">↗</span>
             <h3>Ausdrucksstark</h3>
-            <p>Korean/Wimpernlifting · Nägel · Permanent Make-Up</p>
+            <p>Korean/Wimpernlifting · Nägel · <?php echo charmelle_pmu_aktiv() ? 'Permanent Make-Up' : 'Brauen'; ?></p>
           </div>
         </a>
       </div>
@@ -478,6 +478,7 @@ $t = get_template_directory_uri();
             <h4 style="margin-bottom:4px;font-size:1rem;">Korean/Wimpernlifting und Extensions</h4>
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Der natürliche Wow-Effekt für Ihre Wimpern mit koreanischer Technik - mit oder ohne Extensions. Ab CHF 65.—</p>
           </div>
+          <?php if ( charmelle_pmu_aktiv() ) : ?>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Permanent Make-Up</h4>
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Powder Brows, Aquarell Lips, Eyeliner – perfekte Schönheit 24h am Tag. Kostenlose Beratung. Ab CHF 350.—</p>
@@ -486,6 +487,7 @@ $t = get_template_directory_uri();
             <h4 style="margin-bottom:4px;font-size:1rem;">Phibrows / Microblading</h4>
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Die Kunst der perfekten Augenbraue – hyperrealistisch und symmetrisch. Kostenlose Beratung. Ab CHF 250.—</p>
           </div>
+          <?php endif; ?>
           <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
             <h4 style="margin-bottom:4px;font-size:1rem;">Haarentfernung (Laser, Wachs)</h4>
             <p style="color:var(--text-light);font-size:0.9rem;margin:0;">Langanhaltende Haarentfernung mit modernster Technologie. Auf Anfrage.</p>

@@ -36,7 +36,9 @@
                     <a href="<?php echo esc_url( home_url( '/behandlungen/#hightech' ) ); ?>">LPG Endermologie</a>
                     <a href="<?php echo esc_url( home_url( '/behandlungen/#klassisch' ) ); ?>">Gesichtspflege</a>
                     <a href="<?php echo esc_url( home_url( '/behandlungen/#ausdrucksstark' ) ); ?>">Wimpernlifting</a>
+                    <?php if ( charmelle_pmu_aktiv() ) : ?>
                     <a href="<?php echo esc_url( home_url( '/behandlungen/#ausdrucksstark' ) ); ?>">Permanent Make-Up</a>
+                    <?php endif; ?>
                 </div>
                 <div class="footer-col">
                     <h5>Kontakt</h5>
